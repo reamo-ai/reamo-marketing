@@ -1,0 +1,201 @@
+import LegalPage, { LegalSection, LegalSubSection, LegalList, LegalP } from '@/components/LegalPage';
+
+export const metadata = {
+  title: 'Privacy Policy | Reamo',
+};
+
+export default function PrivacyPolicy() {
+  return (
+    <LegalPage title="Privacy Policy" effectiveDate="May 15, 2026">
+
+      <LegalP>
+        This Privacy Policy explains how Reamo, Inc. collects, uses, and shares information about
+        you when you use our platform and services.
+      </LegalP>
+      <LegalP>By using Reamo, you agree to the practices described here.</LegalP>
+
+      <LegalSection heading="1. Overview">
+        <LegalP>
+          Reamo, Inc. (&ldquo;Reamo,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates a vertical SaaS platform for
+          licensed real estate professionals. This Privacy Policy applies to information we collect
+          through our platform, website (reamo.ai), APIs, and related services (collectively, the
+          &ldquo;Service&rdquo;).
+        </LegalP>
+        <LegalP>
+          Reamo operates in two distinct capacities depending on the context:
+        </LegalP>
+        <LegalList items={[
+          'As a data controller — when we collect and process information about you as a subscriber, including account data, billing data, and usage data.',
+          'As a data processor — when we process personal data you submit about your own clients and prospects ("End User Data") on your behalf. In that capacity, you are the data controller and you direct how that data is used.',
+        ]} />
+        <LegalP>
+          This Policy primarily addresses our role as a data controller. Our processing of End User
+          Data on your behalf is governed by our Terms of Service and any applicable Data Processing
+          Addendum.
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection heading="2. Information We Collect">
+        <LegalSubSection heading="2.1 Information You Provide Directly">
+          <LegalList items={[
+            'Account information: name, email address, phone number, job title, brokerage or team name, and password when you register.',
+            'Billing and payment information: payment card details, billing address, and transaction history. Full payment card numbers are processed by our third-party payment processor and are not stored on Reamo\'s servers.',
+            'Profile and preferences: settings, notification preferences, workflow configurations, and any other information you add to your Account.',
+            'Communications: messages you send to our support team, feedback submissions, and responses to surveys or research requests.',
+            'End User Data: contact names, phone numbers, email addresses, property details, notes, and other data you import or enter about your clients and prospects.',
+          ]} />
+        </LegalSubSection>
+        <LegalSubSection heading="2.2 Information Collected Automatically">
+          <LegalList items={[
+            'Usage data: features accessed, pages viewed, actions taken within the platform, workflow configurations activated, frequency and duration of use, and interaction patterns.',
+            'Device and browser information: IP address, browser type and version, operating system, device identifiers, screen resolution, and language settings.',
+            'Log data: server logs including access times, referring URLs, error logs, and API request metadata.',
+            'Performance data: response times, crash reports, and diagnostic data used to maintain and improve the Service.',
+          ]} />
+        </LegalSubSection>
+        <LegalSubSection heading="2.3 Information from VoIP and Calendar Integrations">
+          <LegalList items={[
+            'Call data: call metadata (duration, timestamp, caller ID, direction), call recordings, and AI-generated transcripts and summaries, received via webhook or API from your connected VoIP provider.',
+            'Calendar data: event titles, attendees, times, and meeting notes from connected calendar integrations, used to power scheduling and follow-up features.',
+          ]} />
+        </LegalSubSection>
+        <LegalSubSection heading="2.4 Information from Third Parties">
+          <LegalList items={[
+            'Payment processors: transaction confirmation, billing status, and fraud signals.',
+            'Analytics and advertising partners: aggregated or pseudonymous data about how users reach our website or interact with our marketing.',
+          ]} />
+        </LegalSubSection>
+      </LegalSection>
+
+      <LegalSection heading="3. How We Use Your Information">
+        <LegalP>We use the information we collect for the following purposes:</LegalP>
+        <LegalList items={[
+          'Providing the Service — Processing call data, executing workflow automations, and syncing calendar data.',
+          'AI Data Processing and Transparency — To provide our core services, Reamo utilizes a self-hosted AI model. Unlike applications that rely on external third-party AI APIs for real-time processing, Reamo\'s AI infrastructure is hosted and managed directly within our secure environment. This allows us to process and summarize your data without sharing the raw content of your communications or personal data with third-party AI providers for model inference.',
+          'Account management — Creating and maintaining your Account, authenticating logins, managing subscriptions and billing.',
+          'Communications — Sending transactional emails and SMS, responding to support requests, delivering product updates and notifications.',
+          'Product improvement — Analyzing usage patterns, identifying bugs, and improving AI model accuracy using aggregated and de-identified data.',
+          'Legal and compliance — Complying with applicable law, responding to lawful requests, enforcing our Terms of Service.',
+        ]} />
+      </LegalSection>
+
+      <LegalSection heading="4. How We Share Your Information">
+        <LegalSubSection heading="4.1 Service Providers and Processors">
+          <LegalP>
+            We share information with third-party vendors who help us operate the Service, under
+            confidentiality obligations and data processing agreements. While we use a self-hosted AI
+            model for data processing and inference to ensure user transparency and data isolation,
+            we may use infrastructure providers for the following:
+          </LegalP>
+          <LegalList items={[
+            'Cloud infrastructure and hosting providers (e.g., to host our internal AI models)',
+            'Vector database and search infrastructure providers',
+            'Payment processing providers',
+            'Email and SMS delivery providers',
+            'Calendar integration providers',
+            'Analytics and product intelligence platforms',
+          ]} />
+        </LegalSubSection>
+        <LegalSubSection heading="4.2 SMS Communications">
+          <LegalP>
+            Mobile opt-in data and phone numbers collected for SMS communications will never be
+            shared, sold, or transferred to third parties or affiliates for marketing or promotional
+            purposes. SMS consent is collected separately and is not required to use the Reamo
+            platform.
+          </LegalP>
+        </LegalSubSection>
+        <LegalSubSection heading="4.3 Business Transfers">
+          <LegalP>
+            If Reamo undergoes a merger or acquisition, your information may be transferred as part
+            of that transaction. We will provide notice of any such transfer.
+          </LegalP>
+        </LegalSubSection>
+        <LegalSubSection heading="4.4 Legal Requirements">
+          <LegalP>
+            We may disclose your information if required to do so by law or court order.
+          </LegalP>
+        </LegalSubSection>
+        <LegalSubSection heading="4.5 What We Do Not Do">
+          <LegalP>
+            We do not sell your personal information. We do not allow third-party AI providers to
+            train their models on your identifiable data, as all AI inference is performed via our
+            self-hosted infrastructure.
+          </LegalP>
+        </LegalSubSection>
+      </LegalSection>
+
+      <LegalSection heading="5. Cookies and Tracking Technologies">
+        <LegalP>
+          Reamo uses cookies and similar technologies to operate the Service and understand usage.
+          You can control cookies through your browser settings, though disabling them may affect
+          Service functionality.
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection heading="6. Data Retention">
+        <LegalP>
+          We retain your information for as long as your Account is active. Account data is typically
+          retained for the duration of your subscription plus 30 days. Billing records are retained
+          for 7 years for compliance.
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection heading="7. Data Security">
+        <LegalP>
+          We implement industry-standard security measures, including encryption of data in transit
+          (TLS) and at rest. In the event of a data breach, we will notify you within 72 hours of
+          confirmation, where practicable.
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection heading="8. Your Rights and Choices">
+        <LegalP>
+          Depending on your location, you may have the right to access, correct, delete, or port your
+          personal information. To exercise these rights, contact{' '}
+          <a href="mailto:legal@reamo.ai" className="text-accent hover:underline">legal@reamo.ai</a>.
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection heading="9. California Privacy Rights (CCPA / CPRA)">
+        <LegalP>
+          California residents have specific rights regarding their personal information, including
+          the right to know what is collected, the right to delete, and the right to opt out of the
+          &ldquo;sharing&rdquo; of information for cross-context behavioral advertising.
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection heading="10. Children's Privacy">
+        <LegalP>
+          The Service is intended for adults aged 18 and older. We do not knowingly collect
+          information from individuals under 18.
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection heading="11. International Users">
+        <LegalP>
+          Reamo is operated from the United States. By using the Service, you consent to the transfer
+          and processing of your information in the U.S.
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection heading="12. Changes to This Policy">
+        <LegalP>
+          We may update this Policy from time to time. For material changes, we will provide 30
+          days&apos; advance notice.
+        </LegalP>
+      </LegalSection>
+
+      <LegalSection heading="13. Contact Us">
+        <LegalList items={[
+          'Privacy / Legal: legal@reamo.ai',
+          'Support: support@reamo.ai',
+        ]} />
+      </LegalSection>
+
+      <div className="border-t border-[var(--color-border)] pt-6 text-xs text-secondary">
+        © 2026 Reamo LLC. All rights reserved. Privacy Policy. Updated May 15, 2026.
+      </div>
+
+    </LegalPage>
+  );
+}

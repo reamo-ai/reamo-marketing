@@ -28,6 +28,15 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# local marketing videos (production uses CloudFront)
+public/videos/*.mov
+public/videos/*.mp4
+public/videos/*.MOV
+public/videos/*.MP4
+
+# cursor
+.cursor/
+
 # vercel
 .vercel
 
