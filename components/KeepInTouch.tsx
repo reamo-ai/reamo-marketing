@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { FormEvent, useState } from 'react';
 
 const inputClass =
-  'w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-input)] px-4 py-3 text-sm font-normal text-primary placeholder-[var(--color-text-secondary)] outline-none transition-colors focus:border-accent focus:ring-0 disabled:opacity-60';
+  'w-full min-w-0 rounded-lg border border-[var(--color-border)] bg-[var(--color-input)] px-4 py-3 text-base font-normal text-primary placeholder-[var(--color-text-secondary)] outline-none transition-colors focus:border-accent focus:ring-0 disabled:opacity-60 sm:text-sm';
 
 const labelClass =
   'text-xs font-normal uppercase tracking-wide text-secondary';
@@ -103,7 +103,7 @@ export default function KeepInTouch() {
 
       <form
         onSubmit={handleSubmit}
-        className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-10 sm:px-16 lg:gap-10 lg:px-24"
+        className="mx-auto flex w-full min-w-0 max-w-7xl flex-col items-start gap-8 px-4 sm:px-16 lg:gap-10 lg:px-24"
       >
         <div className="max-w-md text-left">
           <p className="text-xs font-medium uppercase tracking-widest text-accent">
@@ -114,14 +114,14 @@ export default function KeepInTouch() {
             <span className="block">
               Get instant updates about new
               <br />
-              <span className="whitespace-nowrap">
+              <span className="sm:whitespace-nowrap">
                 integrations and features in Reamo.
               </span>
             </span>
           </p>
         </div>
 
-        <div className="relative flex w-full max-w-sm flex-col gap-4">
+        <div className="relative flex w-full max-w-full flex-col gap-4 sm:max-w-sm">
           <div className="absolute left-[-9999px] top-0" aria-hidden>
             <label htmlFor="keep-in-touch-website">Website</label>
             <input
@@ -166,7 +166,7 @@ export default function KeepInTouch() {
           <button
             type="submit"
             disabled={status === 'loading' || status === 'success'}
-            className="w-full rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-[var(--color-background)] transition-opacity hover:opacity-90 disabled:opacity-60 sm:w-auto sm:self-start"
+            className="flex min-h-[44px] w-full items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-[var(--color-background)] transition-opacity hover:opacity-90 disabled:opacity-60 sm:inline-flex sm:w-auto sm:self-start"
           >
             {status === 'loading' ? 'Submitting…' : 'Stay in the loop'}
           </button>

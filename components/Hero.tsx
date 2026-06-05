@@ -32,14 +32,14 @@ export default function Hero() {
         <div className="hero-glow absolute inset-x-0 top-0 h-[520px]" />
       </div>
 
-      {/* Hero copy — above background, below nav (z-50) */}
+      {/* Hero — fixed overlay on mobile; in-flow on desktop so the page can scroll */}
       <section
-        className="pointer-events-none fixed inset-0 z-0 flex flex-col pb-6"
+        className="pointer-events-none z-0 flex flex-col pb-6 max-lg:fixed max-lg:inset-0 lg:relative lg:min-h-[calc(100svh-var(--nav-height))]"
         style={{ paddingTop: 'var(--hero-offset-top)' }}
       >
-        <div className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain">
+        <div className="flex min-h-0 flex-1 flex-col max-lg:overflow-y-auto max-lg:overscroll-y-auto lg:overflow-visible">
           <div
-            className="pointer-events-auto mx-auto my-auto w-full max-w-7xl px-8 lg:px-10"
+            className="pointer-events-auto mx-auto my-auto w-full min-w-0 max-w-7xl px-4 sm:px-6 lg:px-10"
             style={{
               transform: `scale(${scale})`,
               filter: `blur(${blur}px)`,
@@ -47,9 +47,9 @@ export default function Hero() {
               willChange: 'transform, filter, opacity',
             }}
           >
-            <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-12">
+            <div className="grid min-w-0 items-center gap-6 sm:gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-12">
               {/* Left: copy */}
-              <div className="text-left">
+              <div className="min-w-0 text-left">
                 <p className="mb-6 inline-flex max-w-full rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-[10px] font-medium uppercase leading-snug tracking-wide text-accent sm:py-1.5 sm:text-xs sm:tracking-widest">
                   The Real Estate Agent Middle Office
                 </p>
@@ -73,27 +73,36 @@ export default function Hero() {
                   </p>
                 </div>
 
-                <div className="mt-10">
+                <div className="mt-8 hidden sm:mt-10 lg:block">
                   <a
                     href="#pricing"
-                    className="inline-block rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-opacity hover:opacity-90"
+                    className="flex min-h-[44px] w-full items-center justify-center rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-opacity hover:opacity-90 sm:inline-flex sm:w-auto"
                   >
                     Get Started
                   </a>
                 </div>
               </div>
 
-              {/* Right: header video — native aspect ratio */}
-              <div className="relative w-full overflow-hidden rounded-2xl border border-accent bg-[var(--color-surface)]">
+              {/* Header video — above CTA on mobile; right column on desktop */}
+              <div className="relative order-2 min-w-0 w-full max-w-full overflow-hidden rounded-2xl border border-accent bg-[var(--color-surface)] lg:order-none lg:col-start-2 lg:row-start-1">
                 <video
                   autoPlay
                   muted
                   loop
                   playsInline
                   src={HERO_VIDEO_SRC}
-                  className="block h-auto w-full"
+                  className="block h-auto max-h-[50vh] w-full object-contain sm:max-h-none"
                   aria-label="Product demo video"
                 />
+              </div>
+
+              <div className="order-3 mt-2 lg:hidden">
+                <a
+                  href="#pricing"
+                  className="flex min-h-[44px] w-full items-center justify-center rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-opacity hover:opacity-90"
+                >
+                  Get Started
+                </a>
               </div>
             </div>
           </div>

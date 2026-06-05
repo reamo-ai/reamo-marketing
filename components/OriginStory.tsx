@@ -1,6 +1,6 @@
 export default function OriginStory() {
   return (
-    <section className="relative z-10 bg-[var(--color-background)] px-10 py-24 sm:px-16 lg:px-24 lg:py-32">
+    <section className="relative z-10 bg-[var(--color-background)] px-4 py-16 sm:px-16 sm:py-24 lg:px-24 lg:py-32">
       {/* Top divider */}
       <div
         aria-hidden

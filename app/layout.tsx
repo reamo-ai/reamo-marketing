@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable} ${dmSans.variable}`}>
-      <body>
+      <body className="max-lg:pt-[var(--nav-height)]">
         <Nav />
         {children}
         <Footer />

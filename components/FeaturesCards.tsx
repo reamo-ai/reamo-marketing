@@ -93,7 +93,7 @@ const features = [
 
 export default function FeaturesCards() {
   return (
-    <section className="relative z-10 bg-[var(--color-background)] px-10 pb-16 sm:px-16 lg:px-24 lg:pb-20">
+    <section className="relative z-10 bg-[var(--color-background)] px-4 pb-12 sm:px-16 sm:pb-16 lg:px-24 lg:pb-20">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (

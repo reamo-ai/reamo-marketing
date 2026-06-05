@@ -46,7 +46,7 @@ function StatDivider() {
 
 export default function Stats() {
   return (
-    <section className="relative z-10 bg-[var(--color-background)] px-10 py-16 sm:px-16 lg:px-24 lg:py-20">
+    <section className="relative z-10 bg-[var(--color-background)] px-4 py-12 sm:px-16 sm:py-16 lg:px-24 lg:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px"
@@ -54,10 +54,10 @@ export default function Stats() {
       />
 
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-10 max-w-2xl text-left text-4xl font-bold leading-tight tracking-tight text-primary sm:text-5xl lg:text-6xl">
-          <span className="whitespace-nowrap">Numbers</span>
+        <h2 className="mb-8 max-w-2xl text-left text-3xl font-bold leading-tight tracking-tight text-primary sm:mb-10 sm:text-5xl lg:text-6xl">
+          <span className="sm:whitespace-nowrap">Numbers</span>
           <br />
-          <span className="whitespace-nowrap">
+          <span className="sm:whitespace-nowrap">
             Don&apos;t Lie<span className="text-accent">.</span>
           </span>
         </h2>
@@ -72,7 +72,7 @@ export default function Stats() {
                 }`}
               >
                 <p
-                  className="text-5xl font-bold leading-none tracking-tight text-accent lg:text-6xl"
+                  className="text-4xl font-bold leading-none tracking-tight text-accent sm:text-5xl lg:text-6xl"
                   style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
                 >
                   {stat.value}

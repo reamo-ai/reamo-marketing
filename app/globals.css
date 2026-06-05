@@ -24,10 +24,16 @@
   --border-green: rgba(0, 212, 160, 0.35);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
   font-family: var(--font-inter);
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 @keyframes heroGlow {
@@ -266,7 +272,9 @@ body {
 
 @media (max-width: 768px) {
   .pricing-grid { grid-template-columns: 1fr; gap: 16px; }
-  .plan-card { height: auto; width: 100%; }
-  .toggle-row { column-gap: 8px; margin-bottom: 16px; }
-  .toggle-row .save-tag { font-size: 9px; white-space: normal; max-width: 280px; }
+  .plan-card { height: auto; width: 100%; max-width: 100%; }
+  .pricing-wrapper { width: 100%; min-width: 0; }
+  .toggle-row { column-gap: 8px; margin-bottom: 16px; max-width: 100%; }
+  .toggle-row .save-tag { font-size: 9px; white-space: normal; max-width: min(280px, 100%); }
+  .plan-cta { min-height: 44px; display: flex; align-items: center; justify-content: center; }
 }

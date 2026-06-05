@@ -4,7 +4,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 const inputClass =
-  'w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-input)] px-4 py-3 text-sm text-primary placeholder-[var(--color-text-secondary)] outline-none transition-colors focus:border-accent focus:ring-0';
+  'w-full min-w-0 rounded-lg border border-[var(--color-border)] bg-[var(--color-input)] px-4 py-3 text-base text-primary placeholder-[var(--color-text-secondary)] outline-none transition-colors focus:border-accent focus:ring-0 sm:text-sm';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
@@ -93,7 +93,7 @@ export default function UnsubscribeForm() {
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-3 text-sm font-semibold text-primary transition-colors hover:border-accent hover:text-accent disabled:opacity-60"
+            className="flex min-h-[44px] w-full items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-3 text-sm font-semibold text-primary transition-colors hover:border-accent hover:text-accent disabled:opacity-60 sm:inline-flex sm:w-auto"
           >
             {status === 'loading' ? 'Unsubscribing…' : 'Unsubscribe'}
           </button>

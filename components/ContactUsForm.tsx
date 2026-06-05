@@ -1,7 +1,7 @@
 'use client';
 
 const inputClass =
-  'rounded-lg border border-[var(--color-border)] bg-[var(--color-input)] px-4 py-3 text-sm text-primary placeholder-[var(--color-text-secondary)] outline-none transition-colors focus:border-accent focus:ring-0';
+  'w-full min-w-0 rounded-lg border border-[var(--color-border)] bg-[var(--color-input)] px-4 py-3 text-base text-primary placeholder-[var(--color-text-secondary)] outline-none transition-colors focus:border-accent focus:ring-0 sm:text-sm';
 
 export default function ContactUsForm() {
   return (
@@ -87,7 +87,7 @@ export default function ContactUsForm() {
 
       <button
         type="submit"
-        className="w-full rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-[var(--color-background)] transition-opacity hover:opacity-90 sm:w-auto"
+        className="flex min-h-[44px] w-full items-center justify-center rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-[var(--color-background)] transition-opacity hover:opacity-90 sm:inline-flex sm:w-auto"
       >
         Send message
       </button>
