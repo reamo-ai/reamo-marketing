@@ -13,7 +13,7 @@ export default function Hero() {
       {/* Locked hero overlay — content below scrolls over it */}
       <section className="pointer-events-none fixed inset-0 z-0 flex flex-col overflow-hidden pb-6 pt-[var(--hero-offset-top)]">
         <div className="flex min-h-0 flex-1 flex-col justify-start overflow-y-auto overscroll-y-auto lg:justify-center lg:overflow-visible">
-          <div className="pointer-events-auto mx-auto my-auto w-full min-w-0 max-w-7xl px-4 sm:px-6 lg:px-10">
+          <div className="pointer-events-auto mx-auto my-auto w-full min-w-0 max-w-7xl px-4 sm:px-6 lg:px-12">
             <div className="grid min-w-0 items-center gap-6 sm:gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-12">
               {/* Left: copy */}
               <div className="min-w-0 text-left">
