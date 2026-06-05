@@ -34,8 +34,7 @@ export default function Hero() {
 
       {/* Hero — fixed overlay on mobile; in-flow on desktop so the page can scroll */}
       <section
-        className="pointer-events-none z-0 flex flex-col pb-6 max-lg:fixed max-lg:inset-0 lg:relative lg:min-h-[calc(100svh-var(--nav-height))]"
-        style={{ paddingTop: 'var(--hero-offset-top)' }}
+        className="pointer-events-none z-0 flex flex-col pb-6 pt-[var(--hero-offset-top)] max-lg:fixed max-lg:inset-0 lg:relative lg:min-h-[calc(100svh-var(--nav-height))] lg:pt-[var(--hero-nav-gap)]"
       >
         <div className="flex min-h-0 flex-1 flex-col max-lg:overflow-y-auto max-lg:overscroll-y-auto lg:overflow-visible">
           <div

@@ -84,7 +84,9 @@ export default function Stats() {
         </div>
 
         <p className="mt-8 text-center text-[11px] italic leading-relaxed text-[var(--text-muted)] lg:mt-10">
-          Source: National Association of REALTORS® 2025 Member Profile
+          Source: National Association of REALTORS®
+          <br className="sm:hidden" aria-hidden />
+          {' '}2025 Member Profile
         </p>
       </div>
     </section>
