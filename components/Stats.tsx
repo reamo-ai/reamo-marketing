@@ -17,7 +17,7 @@ const stats: {
   },
   {
     id: 'closings',
-    value: '10+',
+    value: '12+',
     body: 'The number of additional closings an agent could close in a year by putting that time back into their business.',
   },
 ];
