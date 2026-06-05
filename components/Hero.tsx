@@ -1,51 +1,19 @@
-'use client';
-
-import { useEffect, useState } from 'react';
 import { heroVideoSrc } from '@/lib/media-sources';
 
 const HERO_VIDEO_SRC = heroVideoSrc;
 
 export default function Hero() {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => {
-      // Start at 25% scrolled, finish by 95%
-      const start = window.innerHeight * 0.25;
-      const end   = window.innerHeight * 0.95;
-      const p = Math.min(Math.max((window.scrollY - start) / (end - start), 0), 1);
-      setProgress(p);
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  const scale   = 1 - progress * 0.35;
-  const blur    = progress * 24;
-  const opacity = 1 - progress;
-
   return (
     <>
-      {/* Background only — stays behind page content */}
+      {/* Background — static, no scroll animation */}
       <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
         <div className="hero-glow absolute inset-x-0 top-0 h-[520px]" />
       </div>
 
-      {/* Hero — fixed overlay on mobile; in-flow on desktop so the page can scroll */}
-      <section
-        className="pointer-events-none z-0 flex flex-col pb-6 pt-[var(--hero-offset-top)] max-lg:fixed max-lg:inset-0 lg:relative lg:min-h-[calc(100svh-var(--nav-height))] lg:pt-[var(--hero-nav-gap)]"
-      >
-        <div className="flex min-h-0 flex-1 flex-col max-lg:overflow-y-auto max-lg:overscroll-y-auto lg:overflow-visible">
-          <div
-            className="pointer-events-auto mx-auto my-auto w-full min-w-0 max-w-7xl px-4 sm:px-6 lg:px-10"
-            style={{
-              transform: `scale(${scale})`,
-              filter: `blur(${blur}px)`,
-              opacity,
-              willChange: 'transform, filter, opacity',
-            }}
-          >
+      {/* Locked hero overlay — content below scrolls over it */}
+      <section className="pointer-events-none fixed inset-0 z-0 flex flex-col overflow-hidden pb-6 pt-[var(--hero-offset-top)]">
+        <div className="flex min-h-0 flex-1 flex-col justify-start overflow-y-auto overscroll-y-auto lg:justify-center lg:overflow-visible">
+          <div className="pointer-events-auto mx-auto my-auto w-full min-w-0 max-w-7xl px-4 sm:px-6 lg:px-10">
             <div className="grid min-w-0 items-center gap-6 sm:gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-12">
               {/* Left: copy */}
               <div className="min-w-0 text-left">

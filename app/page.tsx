@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <div aria-hidden className="h-[100svh] sm:h-screen lg:hidden" />
+      <div aria-hidden className="h-[100svh] sm:h-screen" />
       <Stats />
       <FeaturesHeadline />
       <FeaturesCards />
