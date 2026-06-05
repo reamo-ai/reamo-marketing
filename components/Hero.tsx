@@ -21,25 +21,25 @@ export default function Hero() {
                   The Real Estate Agent Middle Office
                 </p>
 
-                <h1 className="w-full max-w-xl text-[2rem] font-bold leading-tight tracking-tight text-primary sm:text-5xl lg:text-6xl">
+                <h1 className="w-full max-w-xl text-4xl font-bold leading-tight tracking-tight text-primary sm:text-5xl lg:text-6xl">
                   Admin handled<br />
                   while you talk<span className="text-accent">.</span>
                 </h1>
 
                 <div className="mt-4 max-w-xl space-y-3 text-xs leading-snug text-secondary sm:mt-6 sm:space-y-4 sm:text-sm sm:leading-relaxed">
                   <p>
-                    Built for real estate agents who want to focus on clients —<br className="hidden sm:block" />
+                    Built for real estate agents who want to focus on clients —<br />
                     not admin.
                   </p>
                   <p>
-                    Reamo is the only tool that turns your phone calls into real estate-specific notes, creates loops in Dotloop, manages your Google Calendar, flags client life events, and builds real-time CRM sheets — automatically while you talk.
+                    Reamo is the only tool that turns your phone calls into real estate-specific notes, creates loops in Dotloop, manages your Google Calendar, flags client life events, and builds real-time CRM sheets automatically while you talk.
                   </p>
                 </div>
 
-                <div className="mt-8 hidden sm:mt-10 lg:block">
+                <div className="mt-8 hidden lg:block lg:mt-10">
                   <a
                     href="#pricing"
-                    className="flex min-h-[44px] w-full items-center justify-center rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-opacity hover:opacity-90 sm:inline-flex sm:w-auto"
+                    className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-opacity hover:opacity-90"
                   >
                     Get Started
                   </a>
@@ -59,14 +59,6 @@ export default function Hero() {
                 />
               </div>
 
-              <div className="order-3 mt-2 lg:hidden">
-                <a
-                  href="#pricing"
-                  className="flex min-h-[44px] w-full items-center justify-center rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-opacity hover:opacity-90"
-                >
-                  Get Started
-                </a>
-              </div>
             </div>
           </div>
         </div>

@@ -8,14 +8,22 @@ export default function Nav() {
           </span>
         </a>
 
-        <a
-          href="https://app.reamo.ai"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-xs font-medium text-primary transition-colors hover:border-accent hover:text-accent sm:px-4 sm:py-2 sm:text-sm"
-        >
-          Login
-        </a>
+        <div className="flex shrink-0 items-center gap-2">
+          <a
+            href="#pricing"
+            className="inline-flex shrink-0 items-center justify-center rounded-lg border border-accent bg-accent px-3 py-1.5 text-xs font-medium text-[#0a0a0f] transition-opacity hover:opacity-90 sm:px-4 sm:py-2 sm:text-sm lg:hidden"
+          >
+            Get Started
+          </a>
+          <a
+            href="https://app.reamo.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-xs font-medium text-primary transition-colors hover:border-accent hover:text-accent sm:px-4 sm:py-2 sm:text-sm"
+          >
+            Login
+          </a>
+        </div>
       </div>
     </header>
   );
