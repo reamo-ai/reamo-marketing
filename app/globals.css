@@ -4,7 +4,7 @@
 
 :root {
   --nav-height: 4rem;
-  --hero-nav-gap: 1.75rem;
+  --hero-nav-gap: 2.25rem;
   --hero-offset-top: calc(var(--nav-height) + var(--hero-nav-gap));
 
   --color-background: #0a0a0f;

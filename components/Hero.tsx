@@ -59,6 +59,14 @@ export default function Hero() {
                 />
               </div>
 
+              <div className="order-3 mt-2 lg:hidden">
+                <a
+                  href="#pricing"
+                  className="flex min-h-[44px] w-full items-center justify-center rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-opacity hover:opacity-90"
+                >
+                  Get Started
+                </a>
+              </div>
             </div>
           </div>
         </div>
