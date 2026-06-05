@@ -72,7 +72,7 @@ export default function Stats() {
                 }`}
               >
                 <p
-                  className="text-4xl font-bold leading-none tracking-tight text-accent sm:text-5xl lg:text-6xl"
+                  className="text-[2.5rem] font-bold leading-none tracking-tight text-accent sm:text-5xl lg:text-6xl"
                   style={{ fontFamily: 'var(--font-montserrat), Montserrat, sans-serif' }}
                 >
                   {stat.value}
