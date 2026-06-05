@@ -54,7 +54,7 @@ export default function Stats() {
       />
 
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-8 max-w-2xl text-left text-3xl font-bold leading-tight tracking-tight text-primary sm:mb-10 sm:text-5xl lg:text-6xl">
+        <h2 className="mb-8 max-w-2xl text-left text-4xl font-bold leading-tight tracking-tight text-primary sm:mb-10 sm:text-5xl lg:text-6xl">
           <span className="sm:whitespace-nowrap">Numbers</span>
           <br />
           <span className="sm:whitespace-nowrap">

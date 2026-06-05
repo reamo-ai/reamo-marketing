@@ -21,12 +21,12 @@ export default function Hero() {
                   The Real Estate Agent Middle Office
                 </p>
 
-                <h1 className="w-full max-w-xl text-4xl font-bold leading-tight tracking-tight text-primary sm:text-5xl lg:text-6xl">
+                <h1 className="w-full max-w-xl text-5xl font-bold leading-tight tracking-tight text-primary sm:text-5xl lg:text-6xl">
                   Admin handled<br />
                   while you talk<span className="text-accent">.</span>
                 </h1>
 
-                <div className="mt-6 max-w-xl space-y-4 text-xs leading-relaxed text-secondary sm:text-sm">
+                <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-secondary sm:text-sm">
                   <p>
                     Built for real estate agents who want to focus on clients —<br />
                     not admin.

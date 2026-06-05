@@ -34,7 +34,7 @@ export default function SeeReamoInAction() {
 
       <div className="mx-auto max-w-7xl">
         <h2 className="mb-8 max-w-2xl text-left text-3xl font-bold leading-tight tracking-tight text-primary sm:mb-10 sm:text-5xl lg:text-6xl">
-          See Reamo in Action
+          See How Reamo Works
         </h2>
 
         <div className="grid grid-cols-1 items-start gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
@@ -65,7 +65,7 @@ export default function SeeReamoInAction() {
               </div>
 
               <div className="w-full min-w-0 text-left">
-                <p className="text-sm font-medium uppercase tracking-widest text-accent">
+                <p className="text-sm font-medium uppercase tracking-widest text-primary">
                   {demo.label}
                 </p>
                 <p className="mt-2 text-xs leading-relaxed text-primary sm:text-sm">

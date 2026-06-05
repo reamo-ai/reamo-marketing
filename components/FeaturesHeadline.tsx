@@ -12,7 +12,7 @@ export default function FeaturesHeadline() {
       <div className="mx-auto max-w-7xl">
         <h2
           id="features-headline"
-          className="max-w-2xl text-left text-3xl font-bold leading-tight tracking-tight text-primary sm:text-5xl lg:text-6xl"
+          className="max-w-2xl text-left text-4xl font-bold leading-tight tracking-tight text-primary sm:text-5xl lg:text-6xl"
         >
           <span className="sm:whitespace-nowrap">Reamo handles the admin</span>
           <br />
