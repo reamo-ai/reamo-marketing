@@ -36,6 +36,12 @@
   }
 }
 
+@media (min-width: 1024px) {
+  :root {
+    --hero-nav-gap: 1.25rem;
+  }
+}
+
 html {
   overflow-x: hidden;
 }

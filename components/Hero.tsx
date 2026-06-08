@@ -13,7 +13,7 @@ export default function Hero() {
       {/* Locked hero overlay — content below scrolls over it */}
       <section className="pointer-events-none fixed inset-0 z-0 flex flex-col overflow-hidden pb-6 pt-[var(--hero-offset-top)]">
         <div className="flex min-h-0 flex-1 flex-col justify-start overflow-y-auto overscroll-y-auto md:justify-center md:overflow-visible">
-          <div className="pointer-events-auto mx-auto w-full min-w-0 max-w-7xl px-4 sm:px-6 md:my-auto lg:px-12">
+          <div className="pointer-events-auto mx-auto w-full min-w-0 max-w-7xl px-4 sm:px-6 md:my-auto lg:-translate-y-6 lg:px-12">
             <p className="mb-4 text-[10px] font-medium uppercase leading-snug tracking-wide text-accent sm:mb-6 sm:text-xs sm:tracking-widest">
               The Real Estate Agent Middle Office
             </p>
@@ -22,7 +22,7 @@ export default function Hero() {
               {/* Left: headline + copy */}
               <div className="min-w-0 text-left">
                 <h1 className="w-full max-w-xl text-4xl font-bold leading-tight tracking-tight text-primary sm:text-5xl lg:text-6xl">
-                  Admin handled<br />
+                  Admin done<br />
                   while you talk<span className="text-accent">.</span>
                 </h1>
 
