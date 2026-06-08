@@ -32,12 +32,12 @@ function StatDivider() {
     <>
       <div
         aria-hidden
-        className="my-10 h-px w-full max-w-xs justify-self-center sm:max-w-sm lg:hidden"
+        className="my-10 h-px w-full max-w-xs justify-self-center sm:max-w-sm md:hidden"
         style={{ background: horizontalLine }}
       />
       <div
         aria-hidden
-        className="hidden w-px shrink-0 self-stretch lg:block"
+        className="hidden w-px shrink-0 self-stretch md:block"
         style={{ background: verticalLine, minHeight: '12rem' }}
       />
     </>
@@ -62,13 +62,13 @@ export default function Stats() {
           </span>
         </h2>
 
-        <div className="flex flex-col lg:flex-row lg:items-stretch">
+        <div className="flex flex-col md:flex-row md:items-stretch">
           {stats.map((stat, index) => (
             <Fragment key={stat.id}>
               {index > 0 && <StatDivider />}
               <div
                 className={`flex min-w-0 flex-1 flex-col gap-3 ${
-                  index === 0 ? 'lg:pr-10' : index === stats.length - 1 ? 'lg:pl-10' : 'lg:px-10'
+                  index === 0 ? 'md:pr-10' : index === stats.length - 1 ? 'md:pl-10' : 'md:px-10'
                 }`}
               >
                 <p
