@@ -17,7 +17,7 @@ export default function Hero() {
             <div className="grid min-w-0 items-center gap-4 sm:gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-12">
               {/* Left: copy */}
               <div className="min-w-0 text-left">
-                <p className="mb-4 inline-flex max-w-full rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-[10px] font-medium uppercase leading-snug tracking-wide text-accent sm:mb-6 sm:py-1.5 sm:text-xs sm:tracking-widest">
+                <p className="mb-4 text-[10px] font-medium uppercase leading-snug tracking-wide text-accent sm:mb-6 sm:text-xs sm:tracking-widest">
                   The Real Estate Agent Middle Office
                 </p>
 
