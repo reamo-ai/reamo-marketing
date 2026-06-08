@@ -23,16 +23,6 @@ function GreenCheck() {
   );
 }
 
-function PurpleCheck() {
-  return (
-    <span className="feature-check purple-check">
-      <svg viewBox="0 0 10 10">
-        <path d="M2 5l2.5 2.5L8 3" stroke="#a78bfa" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-      </svg>
-    </span>
-  );
-}
-
 function PricingTable() {
   const [isAnnual, setIsAnnual] = useState(false);
 
@@ -153,36 +143,14 @@ function PricingTable() {
             <a href={ctaHref(ctaBases.brokerage)} className="plan-cta cta-secondary">Get started</a>
           </div>
 
-          {/* Enterprise */}
-          <div className="plan-card enterprise">
-            <div className="plan-card-head">
-              <span className="plan-badge badge-placeholder" aria-hidden="true">·</span>
-              <p className="plan-name">Enterprise</p>
-              <p className="plan-target">500+ agents</p>
-              <div className="plan-price-block">
-                <span className="price-contact">Let&apos;s talk.</span>
-              </div>
-              <p className="price-billing">Custom annual contract</p>
-              <p className="price-annual-note">Upfront · Named account contact</p>
-            </div>
-            <hr className="plan-divider" />
-            <ul className="feature-list">
-              <li className="feature-item"><PurpleCheck />Everything in Brokerage</li>
-              <li className="feature-item"><PurpleCheck />Unlimited SMS (fair use)</li>
-              <li className="feature-item"><PurpleCheck />Custom SLA</li>
-              <li className="feature-item"><PurpleCheck />Quarterly business review</li>
-              <li className="feature-item"><PurpleCheck />Agent data portability</li>
-              <li className="feature-item"><PurpleCheck />Dedicated success manager</li>
-              <li className="feature-item"><PurpleCheck />White-glove onboarding</li>
-            </ul>
-            <a href="mailto:sales@reamo.ai" className="plan-cta cta-enterprise">Contact sales</a>
-          </div>
-
         </div>
 
         <div className="pricing-footer">
-          All plans include a 30-day grace period for data portability. SMS overages billed at $0.08/message.<br />
-          Questions? <a href="mailto:sales@reamo.ai">sales@reamo.ai</a>
+          All plans include a 30-day grace period for data portability.<br />
+          All plans include 1,000 monthly calls. Call overages billed at $0.25/call.<br />
+          SMS overages billed at $0.08/message.<br />
+          For enterprise pricing, please contact us at{' '}
+          <a href="mailto:sales@reamo.ai">sales@reamo.ai</a>.
         </div>
 
     </div>
