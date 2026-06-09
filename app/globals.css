@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --nav-height: 4rem;
-  --hero-nav-gap: 2.75rem;
+  --nav-height: 3.75rem;
+  --nav-gutter: 1.25rem;
+  --page-gutter: 1.25rem;
+  --hero-nav-gap: 1.75rem;
   --hero-offset-top: calc(var(--nav-height) + var(--hero-nav-gap));
 
   --color-background: #0a0a0f;
@@ -26,19 +28,33 @@
 
 @media (min-width: 640px) {
   :root {
-    --hero-nav-gap: 2.5rem;
+    --nav-gutter: 1.5rem;
+    --page-gutter: 1.5rem;
+    --hero-nav-gap: 2.25rem;
   }
 }
 
 @media (min-width: 768px) {
   :root {
-    --hero-nav-gap: 3rem;
+    --nav-height: 4rem;
+    --nav-gutter: 2rem;
+    --page-gutter: 2.5rem;
+    --hero-nav-gap: 3.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   :root {
-    --hero-nav-gap: 1.25rem;
+    --nav-gutter: 2.5rem;
+    --page-gutter: 3.5rem;
+    --hero-nav-gap: 5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --page-gutter: 4rem;
+    --hero-nav-gap: 6rem;
   }
 }
 

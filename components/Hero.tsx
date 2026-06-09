@@ -12,21 +12,24 @@ export default function Hero() {
 
       {/* Locked hero overlay — content below scrolls over it */}
       <section className="pointer-events-none fixed inset-0 z-0 flex flex-col overflow-hidden pb-6 pt-[var(--hero-offset-top)]">
-        <div className="flex min-h-0 flex-1 flex-col justify-start overflow-y-auto overscroll-y-auto md:justify-center md:overflow-visible">
-          <div className="pointer-events-auto mx-auto w-full min-w-0 max-w-7xl px-4 sm:px-6 md:my-auto lg:-translate-y-6 lg:px-12">
+        <div className="flex min-h-0 flex-1 flex-col justify-start overflow-y-auto overscroll-y-auto md:overflow-visible">
+          <div className="pointer-events-auto mx-auto w-full min-w-0 max-w-7xl px-[var(--page-gutter)]">
             <p className="mb-4 text-[10px] font-medium uppercase leading-snug tracking-wide text-accent sm:mb-6 sm:text-xs sm:tracking-widest">
               The Real Estate Agent Middle Office
             </p>
 
-            <div className="grid min-w-0 items-start gap-4 md:grid-cols-[1fr_1.3fr] md:gap-10 lg:gap-12">
+            <div className="grid min-w-0 items-start gap-6 md:grid-cols-[minmax(0,1fr)_1.35fr] md:gap-8 lg:gap-12">
               {/* Left: headline + copy */}
               <div className="min-w-0 text-left">
-                <h1 className="w-full max-w-xl text-4xl font-bold leading-tight tracking-tight text-primary sm:text-5xl lg:text-6xl">
-                  Admin done<br />
-                  while you talk<span className="text-accent">.</span>
+                <h1 className="text-[calc(1.75rem+5px)] font-bold leading-tight tracking-tight text-primary md:text-[clamp(1.75rem,5vw,3.75rem)]">
+                  <span className="block whitespace-nowrap">Hours of admin</span>
+                  <span className="block whitespace-nowrap">handled by</span>
+                  <span className="block whitespace-nowrap">
+                    every call<span className="text-accent">.</span>
+                  </span>
                 </h1>
 
-                <div className="mt-4 max-w-xl space-y-3 text-xs leading-snug text-secondary sm:mt-6 sm:space-y-4 sm:text-sm sm:leading-relaxed">
+                <div className="mt-4 max-w-sm space-y-3 text-xs leading-snug text-secondary sm:mt-6 sm:max-w-md sm:space-y-4 sm:text-sm sm:leading-relaxed">
                   <p>
                     Built for real estate agents who want to focus on clients — not admin.
                   </p>
@@ -46,14 +49,14 @@ export default function Hero() {
               </div>
 
               {/* Header video — top-aligned with headline from tablet up */}
-              <div className="relative order-2 w-fit max-w-full justify-self-start overflow-hidden rounded-2xl border border-accent md:order-none md:col-start-2 md:row-start-1 md:w-full">
+              <div className="relative order-2 w-full overflow-hidden rounded-2xl border border-accent md:order-none md:col-start-2 md:row-start-1 md:self-start">
                 <video
                   autoPlay
                   muted
                   loop
                   playsInline
                   src={HERO_VIDEO_SRC}
-                  className="block h-auto w-auto max-w-full max-h-[32vh] md:w-full md:max-h-none"
+                  className="block h-auto w-full"
                   aria-label="Product demo video"
                 />
               </div>
