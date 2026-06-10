@@ -27,6 +27,10 @@ export const metadata: Metadata = {
     description:
       "Reamo connects to your existing business phone system and creates real estate-specific notes, calendar updates, and CRM-ready sheets — automatically while you talk.",
   },
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png", sizes: "32x32" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+  },
 };
 
 export default function RootLayout({

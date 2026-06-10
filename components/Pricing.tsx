@@ -177,8 +177,10 @@ export default function Pricing() {
         Pricing
       </p>
 
-      <p className="mb-10 text-center text-[22px] font-normal leading-tight tracking-tight text-primary sm:mb-12 sm:text-[34px] lg:mb-14 lg:text-[46px]">
-        Try Reamo for free
+      <p className="mb-10 text-center text-[17px] font-normal leading-snug tracking-tight text-primary sm:mb-12 sm:text-[29px] lg:mb-14 lg:text-[41px]">
+        Try Reamo for free.
+        <br />
+        No credit card required.
       </p>
 
       <PricingTable />

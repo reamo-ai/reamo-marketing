@@ -13,7 +13,7 @@ export default function Hero() {
       {/* Locked hero overlay — content below scrolls over it */}
       <section className="pointer-events-none fixed inset-0 z-0 flex h-[100dvh] flex-col overflow-hidden pb-4 pt-[var(--hero-offset-top)] sm:pb-6">
         <div className="pointer-events-auto flex min-h-0 flex-1 flex-col justify-start overflow-y-auto [-webkit-overflow-scrolling:touch]">
-          <div className="mx-auto w-full min-w-0 max-w-7xl px-[var(--page-gutter)] pb-4 pt-[var(--hero-nav-gap)] sm:pb-6 md:pt-0">
+          <div className="mx-auto w-full min-w-0 max-w-7xl px-[var(--page-gutter)] pb-4 pt-[var(--hero-nav-gap)] sm:pb-6">
             <p className="mb-4 text-[10px] font-medium uppercase leading-snug tracking-wide text-accent sm:mb-6 sm:text-xs sm:tracking-widest">
               The Real Estate Agent Middle Office
             </p>
