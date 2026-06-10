@@ -13,7 +13,7 @@ export default function ContactUs() {
             Get in touch with the Reamo team
           </h1>
           <p className="mt-4 text-base leading-relaxed text-secondary">
-            Have questions about our beta, interested in partnerships, or need technical support?
+            Have questions about Reamo, interested in partnerships, or need technical support?
             Send us a message and our team will get back to you shortly.
           </p>
           <div
