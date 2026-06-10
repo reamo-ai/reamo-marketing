@@ -11,14 +11,14 @@ export default function Hero() {
       </div>
 
       {/* Locked hero overlay — content below scrolls over it */}
-      <section className="pointer-events-none fixed inset-0 z-0 flex flex-col overflow-hidden pb-6 pt-[var(--hero-offset-top)]">
-        <div className="flex min-h-0 flex-1 flex-col justify-start overflow-y-auto overscroll-y-auto md:overflow-visible">
-          <div className="pointer-events-auto mx-auto w-full min-w-0 max-w-7xl px-[var(--page-gutter)]">
+      <section className="pointer-events-none fixed inset-0 z-0 flex h-[100dvh] flex-col overflow-hidden pb-4 pt-[var(--hero-offset-top)] sm:pb-6">
+        <div className="pointer-events-auto flex min-h-0 flex-1 flex-col justify-start overflow-y-auto [-webkit-overflow-scrolling:touch]">
+          <div className="mx-auto w-full min-w-0 max-w-7xl px-[var(--page-gutter)] pb-4 sm:pb-6">
             <p className="mb-4 text-[10px] font-medium uppercase leading-snug tracking-wide text-accent sm:mb-6 sm:text-xs sm:tracking-widest">
               The Real Estate Agent Middle Office
             </p>
 
-            <div className="grid min-w-0 items-start gap-6 md:grid-cols-[minmax(0,1fr)_1.35fr] md:gap-8 lg:gap-12">
+            <div className="grid min-w-0 items-start gap-4 sm:gap-6 md:grid-cols-[minmax(0,1fr)_1.35fr] md:gap-8 lg:gap-12">
               {/* Left: headline + copy */}
               <div className="min-w-0 text-left">
                 <h1 className="text-[calc(1.75rem+5px)] font-bold leading-tight tracking-tight text-primary md:text-[clamp(1.75rem,5vw,3.75rem)]">
@@ -38,7 +38,7 @@ export default function Hero() {
                   </p>
                 </div>
 
-                <div className="mt-8 hidden md:mt-10 md:block">
+                <div className="mt-6 hidden md:mt-8 md:block lg:mt-10">
                   <a
                     href="#pricing"
                     className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-opacity hover:opacity-90"
@@ -61,7 +61,7 @@ export default function Hero() {
                 />
               </div>
 
-              <div className="order-3 mt-2 w-full md:hidden">
+              <div className="order-3 mt-1 w-full sm:mt-2 md:hidden">
                 <a
                   href="#pricing"
                   className="flex min-h-[44px] w-full items-center justify-center rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-opacity hover:opacity-90"

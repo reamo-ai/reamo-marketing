@@ -8,7 +8,7 @@ const prices = {
 };
 
 const ctaBases = {
-  agent:     'https://app.reamo.ai/checkout/agent',
+  agent:     'https://app.reamo.ai/signup/agent',
   team:      'https://app.reamo.ai/signup/team',
   brokerage: 'https://app.reamo.ai/signup/team',
 };
@@ -178,6 +178,15 @@ export default function Pricing() {
       </p>
 
       <PricingTable />
+
+      <div className="mt-12 flex justify-center sm:mt-16">
+        <a
+          href="https://app.reamo.ai/signup/agent"
+          className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-opacity hover:opacity-90"
+        >
+          Try Reamo for free
+        </a>
+      </div>
     </section>
   );
 }
