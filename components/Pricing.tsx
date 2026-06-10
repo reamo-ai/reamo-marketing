@@ -173,20 +173,15 @@ export default function Pricing() {
         }}
       />
 
-      <p className="mb-8 text-center text-2xl font-bold leading-tight tracking-tight text-primary sm:mb-10 sm:text-4xl lg:text-5xl">
+      <p className="mb-3 text-center text-2xl font-bold leading-tight tracking-tight text-primary sm:mb-4 sm:text-4xl lg:text-5xl">
         Pricing
       </p>
 
-      <PricingTable />
+      <p className="mb-10 text-center text-[22px] font-normal leading-tight tracking-tight text-primary sm:mb-12 sm:text-[34px] lg:mb-14 lg:text-[46px]">
+        Try Reamo for free
+      </p>
 
-      <div className="mt-12 flex justify-center sm:mt-16">
-        <a
-          href="https://app.reamo.ai/signup/agent"
-          className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-opacity hover:opacity-90"
-        >
-          Try Reamo for free
-        </a>
-      </div>
+      <PricingTable />
     </section>
   );
 }
