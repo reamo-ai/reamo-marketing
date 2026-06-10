@@ -8,7 +8,7 @@ const prices = {
 };
 
 const ctaBases = {
-  agent:     'https://app.reamo.ai/signup/agent',
+  agent:     'https://app.reamo.ai/signup',
   team:      'https://app.reamo.ai/signup/team',
   brokerage: 'https://app.reamo.ai/signup/team',
 };
