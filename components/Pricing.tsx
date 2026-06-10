@@ -8,7 +8,7 @@ const prices = {
 };
 
 const ctaBases = {
-  agent:     'https://app.reamo.ai/signup',
+  agent:     'https://app.reamo.ai/checkout/agent',
   team:      'https://app.reamo.ai/signup/team',
   brokerage: 'https://app.reamo.ai/signup/team',
 };
@@ -90,7 +90,7 @@ function PricingTable() {
               <li className="feature-item"><GreenCheck />SMS AI agent <span className="cap-tag">100 msg/mo</span></li>
               <li className="feature-item"><GreenCheck />30-day data portability</li>
             </ul>
-            <a href={ctaHref(ctaBases.agent)} className="plan-cta cta-secondary">Get started</a>
+            <a href={ctaHref(ctaBases.agent)} className="plan-cta cta-secondary">Start for Free</a>
           </div>
 
           {/* Team */}
@@ -115,7 +115,7 @@ function PricingTable() {
               <li className="feature-item"><GreenCheck />Single invoice</li>
               <li className="feature-item"><GreenCheck />Email support</li>
             </ul>
-            <a href={ctaHref(ctaBases.team)} className="plan-cta cta-secondary">Get started</a>
+            <a href={ctaHref(ctaBases.team)} className="plan-cta cta-secondary">Start for Free</a>
           </div>
 
           {/* Brokerage */}
@@ -140,7 +140,7 @@ function PricingTable() {
               <li className="feature-item"><GreenCheck />Dedicated onboarding</li>
               <li className="feature-item"><GreenCheck />Priority support</li>
             </ul>
-            <a href={ctaHref(ctaBases.brokerage)} className="plan-cta cta-secondary">Get started</a>
+            <a href={ctaHref(ctaBases.brokerage)} className="plan-cta cta-secondary">Start for Free</a>
           </div>
 
         </div>

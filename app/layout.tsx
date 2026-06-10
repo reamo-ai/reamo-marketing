@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, DM_Sans } from "next/font/google";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
+import RootLayoutClient from "./RootLayoutClient";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -38,9 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable} ${dmSans.variable}`}>
       <body className="pt-[var(--nav-height)]">
-        <Nav />
-        {children}
-        <Footer />
+        <RootLayoutClient>{children}</RootLayoutClient>
       </body>
     </html>
   );
