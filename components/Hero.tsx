@@ -11,9 +11,10 @@ export default function Hero() {
       </div>
 
       {/* Locked hero overlay — content below scrolls over it */}
-      <section className="pointer-events-none fixed inset-0 z-0 flex h-[100dvh] flex-col overflow-hidden pb-4 pt-[var(--hero-offset-top)] sm:pb-6">
+      <section className="pointer-events-none fixed inset-0 z-0 flex h-[100dvh] flex-col overflow-hidden">
         <div className="pointer-events-auto flex min-h-0 flex-1 flex-col justify-start overflow-y-auto [-webkit-overflow-scrolling:touch]">
-          <div className="mx-auto w-full min-w-0 max-w-7xl px-[var(--page-gutter)] pb-4 sm:pb-6">
+          <div className="min-h-full bg-[var(--color-background)] pb-4 pt-[var(--hero-offset-top)] sm:pb-6">
+            <div className="mx-auto w-full min-w-0 max-w-7xl px-[var(--page-gutter)]">
             <p className="mb-4 text-[10px] font-medium uppercase leading-snug tracking-wide text-accent sm:mb-6 sm:text-xs sm:tracking-widest">
               The Real Estate Agent Middle Office
             </p>
@@ -42,7 +43,7 @@ export default function Hero() {
                     href="#pricing"
                     className="inline-flex min-h-[44px] items-center justify-center rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-opacity hover:opacity-90"
                   >
-                    Get Started
+                    Start Free Trial
                   </a>
                 </div>
               </div>
@@ -65,9 +66,10 @@ export default function Hero() {
                   href="#pricing"
                   className="flex min-h-[44px] w-full items-center justify-center rounded-lg bg-accent px-8 py-3.5 text-sm font-semibold text-[#0a0a0f] transition-opacity hover:opacity-90"
                 >
-                  Get Started
+                  Start Free Trial
                 </a>
               </div>
+            </div>
             </div>
           </div>
         </div>
