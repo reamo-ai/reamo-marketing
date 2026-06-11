@@ -13,7 +13,7 @@ export default function Hero() {
       {/* Locked hero overlay — content below scrolls over it */}
       <section className="pointer-events-none fixed inset-0 z-0 flex h-[100dvh] flex-col overflow-hidden pb-4 pt-[var(--hero-offset-top)] sm:pb-6">
         <div className="pointer-events-auto flex min-h-0 flex-1 flex-col justify-start overflow-y-auto [-webkit-overflow-scrolling:touch]">
-          <div className="mx-auto w-full min-w-0 max-w-7xl px-[var(--page-gutter)] pb-4 pt-[var(--hero-nav-gap)] sm:pb-6">
+          <div className="mx-auto w-full min-w-0 max-w-7xl px-[var(--page-gutter)] pb-4 sm:pb-6">
             <p className="mb-4 text-[10px] font-medium uppercase leading-snug tracking-wide text-accent sm:mb-6 sm:text-xs sm:tracking-widest">
               The Real Estate Agent Middle Office
             </p>
@@ -22,10 +22,9 @@ export default function Hero() {
               {/* Left: headline + copy */}
               <div className="min-w-0 text-left">
                 <h1 className="text-[calc(1.75rem+5px)] font-bold leading-tight tracking-tight text-primary md:text-[clamp(1.75rem,5vw,3.75rem)]">
-                  <span className="block whitespace-nowrap">Hours of admin</span>
-                  <span className="block whitespace-nowrap">handled by</span>
+                  <span className="block whitespace-nowrap">Stop losing deals</span>
                   <span className="block whitespace-nowrap">
-                    every call<span className="text-accent">.</span>
+                    to paperwork<span className="text-accent">.</span>
                   </span>
                 </h1>
 
