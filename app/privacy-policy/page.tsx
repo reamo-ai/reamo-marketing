@@ -132,12 +132,61 @@ export default function PrivacyPolicy() {
         </LegalP>
       </LegalSection>
 
-      <LegalSection heading="6. Data Retention">
-        <LegalP>
-          We retain your information for as long as your Account is active. Account data is typically
-          retained for the duration of your subscription plus 30 days. Billing records are retained
-          for 7 years for compliance.
-        </LegalP>
+      <LegalSection heading="6. Data Retention and Deletion">
+        <LegalSubSection heading="Data We Retain">
+          <LegalP>
+            Reamo retains call recordings, transcripts, AI-generated summaries, and contact
+            information for as long as your account is active, subject to the retention and deletion
+            rules below.
+          </LegalP>
+        </LegalSubSection>
+        <LegalSubSection heading="Automatic Vault Purge">
+          <LegalP>
+            Calls automatically identified by Reamo as personal or non-business in nature are moved to
+            a private vault, hidden from your main activity feed. Vaulted calls are permanently
+            deleted after 7 days. This process is automatic and requires no action from you.
+          </LegalP>
+        </LegalSubSection>
+        <LegalSubSection heading="Deleting Individual Calls">
+          <LegalP>
+            You may permanently delete individual calls at any time from your account. If a call is
+            linked to an active transaction in a connected transaction management platform, that call
+            will remain available until the transaction closes, or until 365 days have passed,
+            whichever comes first — after which it may be deleted regardless of transaction status.
+          </LegalP>
+        </LegalSubSection>
+        <LegalSubSection heading="Deleting Your Account">
+          <LegalP>
+            You may request deletion of your Reamo account at any time from Settings.
+          </LegalP>
+          <LegalP>
+            Upon request, your account enters a 14-day grace period, during which your account is
+            deactivated but your data is retained. If you log in and reverse the request during this
+            window, your account and data will be restored.
+          </LegalP>
+          <LegalP>
+            After 14 days, Reamo will permanently delete your account and all associated data —
+            including calls, transcripts, summaries, contact records, and calendar event history —
+            regardless of whether any linked transactions are still open. The transaction-lock
+            described above does not apply to full account deletion.
+          </LegalP>
+          <LegalP>
+            Any active subscription will be cancelled immediately upon your deletion request. You will
+            not be billed for any period following your request, and no prorated refund will be issued
+            for the remainder of a paid term.
+          </LegalP>
+        </LegalSubSection>
+        <LegalSubSection heading="Data in Third-Party Systems">
+          <LegalP>
+            Reamo connects to third-party services you authorize, including but not limited to your
+            calendar provider, transaction management platform(s), and phone/VoIP carrier. Reamo
+            processes data from these services to provide its features but does not control or store
+            the primary copy of this data. Deleting your Reamo account removes Reamo&apos;s copies of
+            your data (including AI-generated summaries and extracted information) but does not delete
+            or modify data held in these third-party systems. To remove your data from those services,
+            please contact the relevant provider directly.
+          </LegalP>
+        </LegalSubSection>
       </LegalSection>
 
       <LegalSection heading="7. Data Security">
@@ -192,7 +241,7 @@ export default function PrivacyPolicy() {
         ]} />
       </LegalSection>
 
-      <div className="border-t border-[var(--color-border)] pt-6 text-xs text-secondary">
+      <div className="border-t border-[var(--color-border)] pt-6 text-xs text-primary">
         © 2026 Reamo LLC. All rights reserved. Privacy Policy. Updated May 15, 2026.
       </div>
 

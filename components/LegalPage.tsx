@@ -14,7 +14,7 @@ export default function LegalPage({ title, effectiveDate, children }: LegalPageP
           <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             {title}
           </h1>
-          <p className="mt-3 text-sm text-secondary">Effective Date: {effectiveDate}</p>
+          <p className="mt-3 text-sm text-primary">Effective Date: {effectiveDate}</p>
           <div
             className="mt-6 h-px w-full"
             style={{
@@ -22,7 +22,9 @@ export default function LegalPage({ title, effectiveDate, children }: LegalPageP
             }}
           />
         </div>
-        <div className="legal-body space-y-8 text-secondary">{children}</div>
+        <div className="legal-body space-y-8 text-primary [&_a]:text-accent [&_a:hover]:underline">
+          {children}
+        </div>
       </div>
     </div>
   );
@@ -31,7 +33,7 @@ export default function LegalPage({ title, effectiveDate, children }: LegalPageP
 export function LegalSection({ heading, children }: { heading: string; children: ReactNode }) {
   return (
     <section className="space-y-3">
-      <h2 className="text-base font-semibold uppercase tracking-wide text-accent">{heading}</h2>
+      <h2 className="text-base font-semibold uppercase tracking-wide text-primary">{heading}</h2>
       <div className="space-y-3">{children}</div>
     </section>
   );
@@ -51,7 +53,7 @@ export function LegalList({ items }: { items: string[] }) {
     <ul className="space-y-1.5 pl-4">
       {items.map((item, i) => (
         <li key={i} className="flex items-start gap-2 text-sm leading-relaxed">
-          <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+          <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
           {item}
         </li>
       ))}

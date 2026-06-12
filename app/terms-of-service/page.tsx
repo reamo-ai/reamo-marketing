@@ -781,7 +781,7 @@ export default function TermsOfService() {
         ]} />
       </LegalSection>
 
-      <div className="border-t border-[var(--color-border)] pt-6 text-xs text-secondary">
+      <div className="border-t border-[var(--color-border)] pt-6 text-xs text-primary">
         © 2026 Reamo, LLC. All rights reserved. Terms of Service. Effective May 9, 2026.
       </div>
 
