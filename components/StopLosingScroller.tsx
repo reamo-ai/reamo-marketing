@@ -44,7 +44,7 @@ export default function StopLosingScroller() {
     let currentOffset = 0;
     let lineHeight = 0;
     let busy = false;
-    let autoInterval: ReturnType<typeof setInterval> | null = null;
+    let autoInterval: number | null = null;
 
     const itemH = () => parseFloat(getComputedStyle(drum).fontSize) * ITEM_H_EM;
 
