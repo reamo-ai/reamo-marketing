@@ -25,7 +25,7 @@ export default function Hero() {
                 <h1 className="text-[calc(1.75rem+5px)] font-bold leading-tight tracking-tight text-primary md:text-[clamp(1.75rem,5vw,3.75rem)]">
                   <span className="block whitespace-nowrap">Stop losing deals</span>
                   <span className="block whitespace-nowrap">
-                    to paperwork<span className="text-accent">.</span>
+                    to admin<span className="text-accent">.</span>
                   </span>
                 </h1>
 
