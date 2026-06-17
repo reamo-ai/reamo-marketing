@@ -19,13 +19,14 @@ export default function Hero() {
               The Real Estate Agent Middle Office
             </p>
 
-            <div className="grid min-w-0 items-start gap-4 sm:gap-6 md:grid-cols-[minmax(0,1fr)_1.35fr] md:gap-8 lg:gap-12">
+            <div className="grid min-w-0 items-start gap-4 sm:gap-6 md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] md:gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-12">
               {/* Left: headline + copy */}
-              <div className="min-w-0 text-left">
-                <h1 className="text-[calc(1.75rem+5px)] font-bold leading-tight tracking-tight text-primary md:text-[clamp(1.75rem,5vw,3.75rem)]">
+              <div className="relative z-10 min-w-0 text-left">
+                <h1 className="text-[calc(1.75rem+5px)] font-bold leading-tight tracking-tight text-primary md:text-[clamp(1.75rem,4.2vw,3.75rem)]">
                   <span className="block whitespace-nowrap">This is how AI</span>
+                  <span className="block whitespace-nowrap">changes</span>
                   <span className="block whitespace-nowrap">
-                    changes real estate<span className="text-accent">.</span>
+                    real estate<span className="text-accent">.</span>
                   </span>
                 </h1>
 
@@ -49,14 +50,14 @@ export default function Hero() {
               </div>
 
               {/* Header video — top-aligned with headline from tablet up */}
-              <div className="relative order-2 w-full overflow-hidden rounded-2xl border border-accent md:order-none md:col-start-2 md:row-start-1 md:self-start">
+              <div className="relative order-2 z-0 w-full max-w-full justify-self-center overflow-hidden rounded-2xl border border-accent md:order-none md:col-start-2 md:row-start-1 md:max-w-md md:justify-self-end lg:max-w-lg xl:max-w-xl">
                 <video
                   autoPlay
                   muted
                   loop
                   playsInline
                   src={HERO_VIDEO_SRC}
-                  className="block h-auto w-full"
+                  className="block h-auto max-h-[min(50vh,480px)] w-full object-contain md:max-h-[min(55vh,520px)]"
                   aria-label="Product demo video"
                 />
               </div>
