@@ -23,9 +23,9 @@ export default function Hero() {
               {/* Left: headline + copy */}
               <div className="min-w-0 text-left">
                 <h1 className="text-[calc(1.75rem+5px)] font-bold leading-tight tracking-tight text-primary md:text-[clamp(1.75rem,5vw,3.75rem)]">
-                  <span className="block whitespace-nowrap">Stop losing deals</span>
+                  <span className="block whitespace-nowrap">This is how AI</span>
                   <span className="block whitespace-nowrap">
-                    to admin<span className="text-accent">.</span>
+                    changes real estate<span className="text-accent">.</span>
                   </span>
                 </h1>
 
