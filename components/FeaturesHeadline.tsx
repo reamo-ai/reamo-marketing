@@ -14,10 +14,10 @@ export default function FeaturesHeadline() {
           id="features-headline"
           className="max-w-2xl text-left text-4xl font-bold leading-tight tracking-tight text-primary sm:text-5xl lg:text-6xl"
         >
-          <span className="sm:whitespace-nowrap">Reamo gives you back</span>
+          <span className="sm:whitespace-nowrap">Reamo gives agents back</span>
           <br />
           <span className="sm:whitespace-nowrap">
-            70% of your time<span className="text-accent">.</span>
+            70% of their time<span className="text-accent">.</span>
           </span>
         </h2>
       </div>

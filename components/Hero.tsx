@@ -22,7 +22,7 @@ export default function Hero() {
             <div className="grid min-w-0 items-start gap-4 sm:gap-6 md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] md:gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-12">
               {/* Left: headline + copy */}
               <div className="relative z-10 min-w-0 text-left">
-                <h1 className="text-[calc(1.75rem+5px)] font-bold leading-tight tracking-tight text-primary md:text-[clamp(1.75rem,4.2vw,3.75rem)]">
+                <h1 className="text-4xl font-bold leading-tight tracking-tight text-primary sm:text-5xl lg:text-6xl">
                   <span className="block whitespace-nowrap">This is how AI</span>
                   <span className="block whitespace-nowrap">changes</span>
                   <span className="block whitespace-nowrap">
