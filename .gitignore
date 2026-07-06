@@ -37,6 +37,9 @@ public/videos/*.MP4
 # cursor
 .cursor/
 
+# claude
+.claude/
+
 # vercel
 .vercel
 
