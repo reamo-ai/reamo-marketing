@@ -103,13 +103,13 @@ export default function KeepInTouch() {
 
       <form
         onSubmit={handleSubmit}
-        className="mx-auto flex w-full min-w-0 max-w-7xl flex-col items-start gap-8 px-4 sm:px-16 lg:gap-10 lg:px-24"
+        className="mx-auto flex w-full min-w-0 max-w-7xl flex-col items-start gap-8 px-page lg:gap-10"
       >
         <div className="max-w-md text-left">
           <p className="text-xs font-medium uppercase tracking-widest text-accent">
             Keep in touch
           </p>
-          <p className="mt-2 space-y-2 text-pretty text-sm font-normal leading-relaxed text-primary sm:text-base">
+          <p className="mt-2 space-y-2 text-pretty text-sm font-normal leading-[1.55] text-primary sm:text-base">
             <span className="block">We&apos;re moving fast!</span>
             <span className="block">
               Get instant updates about new
@@ -171,7 +171,7 @@ export default function KeepInTouch() {
             {status === 'loading' ? 'Submitting…' : 'Stay in the loop'}
           </button>
 
-          <p className="text-xs font-normal leading-relaxed text-secondary">
+          <p className="text-xs font-normal leading-[1.55] text-secondary">
             By subscribing you agree to receive product updates from Reamo.{' '}
             <Link href="/privacy-policy" className="text-accent hover:underline">
               Privacy Policy

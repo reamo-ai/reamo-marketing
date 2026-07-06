@@ -6,13 +6,13 @@ export const metadata = {
 
 export default function ContactUs() {
   return (
-    <div className="min-h-screen px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+    <div className="min-h-screen px-page py-12 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-2xl">
         <div className="mb-12">
-          <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          <h1 className="section-headline text-primary">
             Get in touch with the Reamo team
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-secondary">
+          <p className="mt-4 text-base leading-[1.55] text-secondary">
             Have questions about Reamo, interested in partnerships, or need technical support?
             Send us a message and our team will get back to you shortly.
           </p>

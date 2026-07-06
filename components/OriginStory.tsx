@@ -1,6 +1,6 @@
 export default function OriginStory() {
   return (
-    <section className="relative z-10 bg-[var(--color-background)] px-4 py-16 sm:px-16 sm:py-24 lg:px-24 lg:py-32">
+    <section className="relative z-10 bg-[var(--color-background)] px-page py-16 sm:py-24 lg:py-32">
       {/* Top divider */}
       <div
         aria-hidden
@@ -23,17 +23,17 @@ export default function OriginStory() {
 
       <div className="mx-auto max-w-2xl">
         {/* Section label */}
-        <p className="mb-6 text-center text-xs font-medium uppercase tracking-widest text-accent">
+        <p className="mb-7 text-center text-xs font-medium uppercase tracking-widest text-accent">
           Why we built Reamo
         </p>
 
         {/* H2 */}
-        <h2 className="mb-8 text-center text-3xl font-bold leading-snug tracking-tight text-primary sm:text-4xl">
+        <h2 className="section-headline mb-8 text-center text-primary">
           From Bespoke to Breakthrough
         </h2>
 
         {/* Body */}
-        <p className="text-sm leading-relaxed text-secondary sm:text-base">
+        <p className="text-sm leading-[1.55] text-secondary sm:text-base">
           Reamo was built by{' '}
           <a
             href="https://beranguard.com"

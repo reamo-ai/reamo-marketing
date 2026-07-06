@@ -196,7 +196,7 @@ export default function ContactUsForm() {
             >
               Thank you!
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-secondary">
+            <p className="mt-3 text-base leading-[1.55] text-secondary">
               We&apos;ll be in touch shortly.
             </p>
             <button

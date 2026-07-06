@@ -1,6 +1,6 @@
 export default function FeaturesHeadline() {
   return (
-    <section className="relative z-10 w-full min-w-0 bg-[var(--color-background)] px-4 pt-12 pb-6 sm:px-16 sm:pt-16 sm:pb-8 lg:px-24 lg:pt-20 lg:pb-10">
+    <section className="relative z-10 w-full min-w-0 bg-[var(--color-background)] px-page pt-12 pb-6 sm:pt-16 sm:pb-8 lg:pt-20 lg:pb-10">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-px"
@@ -12,7 +12,7 @@ export default function FeaturesHeadline() {
       <div className="mx-auto max-w-7xl">
         <h2
           id="features-headline"
-          className="max-w-2xl text-left text-4xl font-bold leading-tight tracking-tight text-primary sm:text-5xl lg:text-6xl"
+          className="section-headline max-w-2xl text-left text-primary"
         >
           <span className="sm:whitespace-nowrap">Reamo gives agents back</span>
           <br />

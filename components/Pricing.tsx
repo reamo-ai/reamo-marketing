@@ -159,7 +159,7 @@ function PricingTable() {
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="relative z-10 overflow-hidden bg-[var(--color-background)] px-4 pt-12 pb-12 sm:px-8 sm:pt-20 sm:pb-14 lg:px-12 lg:pt-24 lg:pb-20">
+    <section id="pricing" className="relative z-10 overflow-hidden bg-[var(--color-background)] px-page pt-12 pb-12 sm:pt-20 sm:pb-14 lg:pt-24 lg:pb-20">
       <div
         aria-hidden
         className="hero-glow pointer-events-none absolute inset-0 -z-10"
@@ -173,7 +173,7 @@ export default function Pricing() {
         }}
       />
 
-      <p className="mb-3 text-center text-2xl font-bold leading-tight tracking-tight text-primary sm:mb-4 sm:text-4xl lg:text-5xl">
+      <p className="section-headline mb-3 text-center text-primary sm:mb-4">
         Pricing
       </p>
 

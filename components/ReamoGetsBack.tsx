@@ -10,8 +10,8 @@ export default function ReamoGetsBack() {
         }}
       />
 
-      <div className="mx-auto flex w-full min-w-0 max-w-7xl justify-center px-4 sm:px-16 lg:px-24">
-        <h2 className="flex w-full min-w-0 max-w-full flex-col items-center px-2 text-center text-[clamp(1.75rem,8vw,7rem)] font-bold leading-[0.95] tracking-tight text-primary sm:px-0">
+      <div className="mx-auto flex w-full min-w-0 max-w-7xl justify-center px-page">
+        <h2 className="section-headline flex w-full min-w-0 max-w-full flex-col items-center px-2 text-center text-primary sm:px-0">
           <span className="max-w-full sm:whitespace-nowrap">Get your time back</span>
           <span className="max-w-full sm:whitespace-nowrap">
             with Reamo<span className="text-accent">.</span>

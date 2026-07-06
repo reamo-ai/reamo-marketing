@@ -70,7 +70,7 @@ export default function PlanLandingPage({ plan }: { plan: PlanId }) {
   const ctaHref = isAnnual ? `${config.ctaBase}?interval=annual` : config.ctaBase;
 
   return (
-    <section className="relative z-10 min-h-screen bg-[var(--color-background)] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+    <section className="relative z-10 min-h-screen bg-[var(--color-background)] px-page py-12 sm:py-16 lg:py-24">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-px"
@@ -81,16 +81,16 @@ export default function PlanLandingPage({ plan }: { plan: PlanId }) {
       />
 
       <div className="mx-auto max-w-4xl">
-        <p className="mb-3 text-xs font-medium uppercase tracking-widest text-accent">
+        <p className="mb-4 text-xs font-medium uppercase tracking-widest text-accent">
           {config.eyebrow}
         </p>
 
-        <h1 className="text-2xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl">
+        <h1 className="section-headline text-primary">
           {config.title}
           <span className="text-accent">.</span>
         </h1>
 
-        <p className="mt-4 text-base leading-relaxed text-secondary">
+        <p className="mt-4 text-base leading-[1.55] text-secondary">
           {config.description}
         </p>
 

@@ -49,13 +49,13 @@ const steps = [
 ];
 
 const stepHeadingClass =
-  'text-3xl font-bold leading-tight tracking-tight text-primary sm:text-4xl lg:text-5xl';
+  'section-headline text-primary';
 
 export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="relative z-10 bg-[var(--color-background)] px-4 pt-12 pb-10 sm:px-16 sm:pt-16 sm:pb-14 lg:px-24 lg:pt-20 lg:pb-16"
+      className="relative z-10 bg-[var(--color-background)] px-page pt-12 pb-10 sm:pt-16 sm:pb-14 lg:pt-20 lg:pb-16"
     >
       <div
         aria-hidden
@@ -77,7 +77,7 @@ export default function HowItWorks() {
       />
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        <p className="mb-3 text-left text-sm font-medium uppercase tracking-widest text-accent">
+        <p className="mb-4 text-left text-sm font-medium uppercase tracking-widest text-accent">
           How it works
         </p>
 
@@ -87,7 +87,7 @@ export default function HowItWorks() {
               <span className={`shrink-0 ${stepHeadingClass}`}>{step.number}</span>
               <div className="min-w-0 max-w-2xl flex-1">
                 <h2 className={`max-w-xl ${stepHeadingClass}`}>{step.title}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-secondary sm:text-base">
+                <p className="mt-3 text-sm leading-[1.55] text-secondary sm:text-base">
                   {step.body}
                 </p>
               </div>

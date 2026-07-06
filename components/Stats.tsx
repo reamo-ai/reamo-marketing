@@ -46,7 +46,7 @@ function StatDivider() {
 
 export default function Stats() {
   return (
-    <section className="relative z-10 bg-[var(--color-background)] px-4 py-12 sm:px-16 sm:py-16 lg:px-24 lg:py-20">
+    <section className="relative z-10 bg-[var(--color-background)] px-page py-12 sm:py-16 lg:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px"
@@ -54,7 +54,7 @@ export default function Stats() {
       />
 
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-8 max-w-2xl text-left text-4xl font-bold leading-tight tracking-tight text-primary sm:mb-10 sm:text-5xl lg:text-6xl">
+        <h2 className="section-headline mb-8 max-w-2xl text-left text-primary sm:mb-10">
           <span className="sm:whitespace-nowrap">Numbers</span>
           <br />
           <span className="sm:whitespace-nowrap">
@@ -77,13 +77,13 @@ export default function Stats() {
                 >
                   {stat.value}
                 </p>
-                <p className="text-sm leading-relaxed text-primary">{stat.body}</p>
+                <p className="text-sm leading-[1.55] text-primary">{stat.body}</p>
               </div>
             </Fragment>
           ))}
         </div>
 
-        <p className="mt-8 text-center text-[11px] italic leading-relaxed text-[var(--text-muted)] lg:mt-10">
+        <p className="mt-8 text-center text-[11px] italic leading-[1.55] text-[var(--text-muted)] lg:mt-10">
           Source: National Association of REALTORS®
           <br className="sm:hidden" aria-hidden />
           {' '}2025 Member Profile

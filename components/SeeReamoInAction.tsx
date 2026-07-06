@@ -25,7 +25,7 @@ const topLine =
 
 export default function SeeReamoInAction() {
   return (
-    <section className="relative z-10 bg-[var(--color-background)] px-4 py-12 sm:px-16 sm:py-16 lg:px-24 lg:py-20">
+    <section className="relative z-10 bg-[var(--color-background)] px-page py-12 sm:py-16 lg:py-20">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px"
@@ -33,7 +33,7 @@ export default function SeeReamoInAction() {
       />
 
       <div className="mx-auto max-w-7xl">
-        <h2 className="mb-8 max-w-2xl text-left text-3xl font-bold leading-tight tracking-tight text-primary sm:mb-10 sm:text-5xl lg:text-6xl">
+        <h2 className="section-headline mb-8 max-w-2xl text-left text-primary sm:mb-10">
           See How Reamo Works
         </h2>
 
@@ -68,7 +68,7 @@ export default function SeeReamoInAction() {
                 <p className="text-sm font-medium uppercase tracking-widest text-primary">
                   {demo.label}
                 </p>
-                <p className="mt-2 text-xs leading-relaxed text-primary sm:text-sm">
+                <p className="mt-2 text-xs leading-[1.55] text-primary sm:text-sm">
                   {demo.body}
                 </p>
                 <p className="mt-4 text-sm font-semibold text-accent transition-colors group-hover:underline">

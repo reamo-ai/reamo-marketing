@@ -51,10 +51,10 @@ export default function UnsubscribeForm() {
 
   return (
     <div className="mx-auto max-w-md">
-      <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+      <h1 className="section-headline text-primary">
         Unsubscribe
       </h1>
-      <p className="mt-4 text-sm leading-relaxed text-secondary sm:text-base">
+      <p className="mt-4 text-sm leading-[1.55] text-secondary sm:text-base">
         Enter your email to stop receiving product updates from Reamo.
       </p>
 
@@ -66,7 +66,7 @@ export default function UnsubscribeForm() {
       />
 
       {status === 'success' ? (
-        <p className="mt-8 text-sm leading-relaxed text-primary">{message}</p>
+        <p className="mt-8 text-sm leading-[1.55] text-primary">{message}</p>
       ) : (
         <form onSubmit={handleSubmit} className="mt-8 space-y-4">
           <div className="flex flex-col gap-2">
