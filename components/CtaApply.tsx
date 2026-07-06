@@ -20,7 +20,7 @@ export default function CtaApply() {
         </h2>
       </SectionRevealItem>
       <SectionRevealItem>
-        <p className="mx-auto mb-12 max-w-[400px] font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(14px,1.5vw,17px)] font-normal leading-[1.3] text-black/[0.34]">
+        <p className="mx-auto mb-12 max-w-[400px] font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(19.4px,1.5vw,22.4px)] font-medium leading-[1.3] text-black/[0.34]">
           We&apos;re accepting a limited number of teams serious about what comes next.
         </p>
       </SectionRevealItem>

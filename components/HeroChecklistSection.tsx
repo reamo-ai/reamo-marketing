@@ -23,7 +23,7 @@ const CHECKLIST_HEADLINE_CLASS = [
 ].join(' ');
 
 const CHECKLIST_BODY_CLASS =
-  'mt-4 flex w-full max-w-2xl min-w-0 flex-col gap-4 font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(15px,3.8vw,18px)] font-normal leading-[1.55] text-neutral-400 max-[899px]:mt-3 max-[899px]:gap-3';
+  'mt-4 flex w-full max-w-2xl min-w-0 flex-col gap-4 font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(20.4px,3.8vw,23.4px)] font-medium leading-[1.55] text-neutral-400 max-[899px]:mt-3 max-[899px]:gap-3';
 
 export default function HeroChecklistSection() {
   const revealRef = useScrollReveal<HTMLDivElement>({

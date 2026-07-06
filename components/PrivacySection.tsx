@@ -65,7 +65,7 @@ const cards = [
 ];
 
 const DESCRIPTOR_CLASS =
-  'm-0 font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(14px,1.5vw,17px)] font-normal leading-[1.55] text-neutral-400';
+  'm-0 font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(19.4px,1.5vw,22.4px)] font-medium leading-[1.55] text-neutral-400';
 
 const SUBHEADER_CLASS =
   'font-montserrat [font-size:var(--paragraph-header-size)] font-bold leading-[1.3] text-white';
@@ -95,7 +95,7 @@ export default function PrivacySection() {
             {cards.map((card) => (
               <div
                 key={card.title}
-                className="p-10 max-md:p-7"
+                className="px-10 py-6 max-md:p-7"
               >
                 <div className="mb-[18px]">{card.icon}</div>
                 <h3 className={`mb-2.5 ${SUBHEADER_CLASS}`}>

@@ -1,5 +1,5 @@
 const SUBHEADER_CLASS =
-  'max-w-2xl font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(14px,1.5vw,17px)] font-normal leading-[1.55] text-neutral-400 max-lg:mx-auto';
+  'max-w-2xl font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(19.4px,1.5vw,22.4px)] font-medium leading-[1.55] text-neutral-400 max-lg:mx-auto';
 
 export default function JustAiEnoughSection() {
   return (

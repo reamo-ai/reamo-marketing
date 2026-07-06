@@ -16,8 +16,12 @@
   --bg: #f5f5f7;
   --section-gutter: var(--page-surface);
   --hero-bg: var(--page-surface);
-  --section-pad-y: 100px;
-  --section-pad-y-top-mobile: 24px;
+  /* Responsive vertical section rhythm. Stepped so top == bottom within a
+     section and the gap between sections scales with the viewport. The
+     1024–1439 desktop band is kept at 100px to match the prior design.
+     --section-pad-y-top-mobile is retained as an alias (now symmetric). */
+  --section-pad-y: 64px;
+  --section-pad-y-top-mobile: var(--section-pad-y);
   --body-leading: 1.55;
   --paragraph-header-size: clamp(calc(14px + 2pt), calc(1.5vw + 2pt), calc(17px + 2pt));
   --hero-offset-top: 12rem;
@@ -58,6 +62,25 @@
   --border-purple: rgba(124, 58, 237, 0.35);
   --reamo-green-dim: rgba(0, 212, 160, 0.12);
   --border-green: rgba(0, 212, 160, 0.35);
+}
+
+/* Section vertical rhythm steps — see --section-pad-y above. */
+@media (min-width: 640px) {
+  :root {
+    --section-pad-y: 80px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --section-pad-y: 100px;
+    --page-gutter: 4rem;
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+    --section-pad-y: 120px;
+    --page-gutter: 5rem;
+  }
 }
 
 html {
@@ -214,7 +237,7 @@ body.no-nav-pad {
   .section-headline {
     font-family: var(--font-montserrat), sans-serif;
     font-size: clamp(23px, 6vw, 74px);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 0.98;
     letter-spacing: -0.04em;
   }
@@ -238,14 +261,8 @@ body.no-nav-pad {
   }
 
   .section-y {
+    padding-top: var(--section-pad-y);
     padding-bottom: var(--section-pad-y);
-    padding-top: var(--section-pad-y-top-mobile);
-  }
-
-  @media (min-width: 768px) {
-    .section-y {
-      padding-top: var(--section-pad-y);
-    }
   }
 
   p {
@@ -359,30 +376,19 @@ body.no-nav-pad {
 
 /* ── Checklist pill glow ───────────────────────────────────────────────────── */
 
-@keyframes pill-unified-gradient {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-
 .pill-unified-gradient {
   background-image: linear-gradient(
-    135deg,
+    100deg,
     #ffffff 0%,
-    #eaf4fb 25%,
-    #d6ecf7 50%,
-    #eaf4fb 75%,
-    #ffffff 100%
+    #cfe6f5 20%,
+    #8fbfdd 40%,
+    #ffffff 60%,
+    #8fbfdd 80%,
+    #cfe6f5 100%
   );
-  background-size: 300% 300%;
+  background-size: 640px 320px;
   background-attachment: fixed;
-  animation: pill-unified-gradient 8s ease-in-out infinite;
+  background-position: 0 0;
 }
 
 @keyframes checkmark-pulse {

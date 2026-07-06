@@ -18,13 +18,13 @@ function CheckedItem({ label, index }: { label: string; index: number }) {
   const delay = `-${((PILL_COUNT - index) % PILL_COUNT)}s`;
   return (
     <li className="relative z-[1] list-none">
-      <div className="inline-flex w-max max-w-full items-center gap-[9.23px] rounded-full bg-white px-[15.39px] py-[12.31px] text-left lg:gap-[7px] lg:px-[11px] lg:py-[8px]">
+      <div className="pill-unified-gradient inline-flex w-max max-w-full items-center gap-[8.31px] rounded-full px-[17.45px] py-[16.48px] text-left lg:gap-[6.3px] lg:px-[13.5px] lg:py-[12.6px]">
         <span
           aria-hidden
           style={{ animationDelay: delay }}
-          className="checkmark-pulse flex h-[18.47px] w-[18.47px] shrink-0 items-center justify-center rounded-full bg-brand-blue-light lg:h-[14px] lg:w-[14px]"
+          className="checkmark-pulse flex h-[16.62px] w-[16.62px] shrink-0 items-center justify-center rounded-full bg-brand-blue-light lg:h-[12.6px] lg:w-[12.6px]"
         >
-          <svg viewBox="0 0 10 10" className="h-[7.7px] w-[7.7px] lg:h-[6px] lg:w-[6px]" aria-hidden>
+          <svg viewBox="0 0 10 10" className="h-[6.93px] w-[6.93px] lg:h-[5.4px] lg:w-[5.4px]" aria-hidden>
             <path
               d="M2 5l2.5 2.5L8 3"
               stroke="#ffffff"
@@ -35,7 +35,7 @@ function CheckedItem({ label, index }: { label: string; index: number }) {
             />
           </svg>
         </span>
-        <span className="font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(13.85px,1.077vw,15.39px)] font-normal leading-[1.4] text-black lg:text-[13px]">
+        <span className="font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(12.47px,0.97vw,13.85px)] font-normal leading-[1.4] text-black lg:text-[11.7px]">
           {label}
         </span>
       </div>
@@ -64,23 +64,23 @@ export default function PhoneCallEndsSection() {
   return (
     <section
       ref={rootRef}
-      className="relative flex h-full min-h-0 w-full min-w-0 flex-col items-center justify-center pb-10 pt-4 max-md:pb-8 max-md:pt-3 md:pb-12 md:pt-5"
+      className="relative flex h-full min-h-0 w-full min-w-0 flex-col items-center justify-center pb-10 pt-10 max-md:pb-8 max-md:pt-8 md:pb-12 md:pt-12"
     >
-      <div className="hero-text-reveal hero-text-reveal--header flex w-full flex-col items-center gap-10 sm:gap-12 lg:flex-row lg:items-center lg:justify-center lg:gap-6 xl:gap-16">
-        <div className="w-full max-w-[480px] lg:max-w-none lg:min-w-0 lg:flex-[0_1_500px] lg:-translate-x-8 xl:flex-[0_1_500px] xl:-translate-x-12">
-          <p className="section-eyebrow mb-10 text-center text-[16.5px] text-brand-blue-light lg:translate-y-[10px] lg:text-left">
+      <div className="hero-text-reveal hero-text-reveal--header flex w-full flex-col items-center gap-10 sm:gap-12 lg:flex-row lg:items-center lg:justify-center lg:gap-20 min-[1440px]:gap-24">
+        <div className="w-full max-w-[480px] lg:max-w-none lg:min-w-0 lg:flex-[0_1_500px] lg:-translate-y-[10px] xl:flex-[0_1_500px]">
+          <p className="section-eyebrow mb-[25px] text-center text-[16.5px] text-brand-blue-light lg:text-left">
             The real estate agent middle office
             <sup className="relative top-0 ml-0.5 inline-block -translate-y-[8px] align-baseline text-[0.4em]">TM</sup>
           </p>
-          <h1 className="text-center font-[family-name:var(--font-montserrat),sans-serif] text-[clamp(28px,9vw,46px)] font-semibold leading-[1.1] tracking-[-0.02em] text-white lg:text-left">
-            The call ends.
+          <h1 className="text-center font-[family-name:var(--font-montserrat),sans-serif] text-[clamp(30.7px,9vw,48.7px)] font-bold leading-[1.1] tracking-[-0.02em] text-white lg:whitespace-nowrap lg:text-left">
+            The client hangs up.
             <br />
             Reamo gets to work.
           </h1>
-          <p className="mt-4 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(14px,1.5vw,17px)] font-normal leading-[1.3] text-neutral-400 sm:mt-6 lg:text-left">
-            Reamo listens to your calls, knows what needs to happen next, and does it for you - automatically.
+          <p className="mt-[14px] text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(19.4px,1.5vw,22.4px)] font-medium leading-[1.3] text-neutral-400 lg:text-left">
+            Reamo listens to your client calls, knows what should happen next, and does it for you - automatically.
           </p>
-          <div className="hero-text-reveal mt-8 flex w-full flex-col items-center gap-2 sm:mt-10 sm:gap-[7.7px] lg:items-start lg:gap-2 xl:gap-2.5">
+          <div className="hero-text-reveal mt-7 flex w-full flex-col items-center gap-2 sm:gap-[7.7px] lg:mt-[38px] lg:items-start lg:gap-2 xl:gap-2.5">
             <ul className="flex w-full flex-wrap items-center justify-center gap-2 sm:gap-[7.7px] lg:justify-start lg:gap-2 xl:gap-2.5">
               {topRow.map((item) => (
                 <CheckedItem key={item} label={item} index={CHECKLIST_ITEMS.indexOf(item)} />

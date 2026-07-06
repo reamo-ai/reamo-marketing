@@ -554,7 +554,7 @@ export default function SuperchargedNotesCircles({
               ))}
             </p>
             {eyebrowSubtext ? (
-              <p className={`mt-4 max-w-2xl whitespace-pre-line text-left font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(14px,1.5vw,17px)] font-normal leading-[1.55] ${eyebrowSubtextClassName}`}>
+              <p className={`mt-4 max-w-2xl whitespace-pre-line text-left font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(19.4px,1.5vw,22.4px)] font-medium leading-[1.55] ${eyebrowSubtextClassName}`}>
                 {eyebrowSubtext}
               </p>
             ) : null}

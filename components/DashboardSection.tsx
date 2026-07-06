@@ -2,7 +2,7 @@ import SectionRevealItem from '@/components/SectionRevealItem';
 import Image from 'next/image';
 
 const DESCRIPTOR_CLASS =
-  'mt-4 max-w-2xl font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(14px,1.5vw,17px)] font-normal leading-[1.3] text-neutral-400 max-lg:mx-auto';
+  'mt-4 max-w-2xl font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(19.4px,1.5vw,22.4px)] font-medium leading-[1.3] text-neutral-400 max-lg:mx-auto';
 
 const DASHBOARD_IMAGE_CLASS =
   'block h-auto w-full rounded-2xl border border-white object-top';
@@ -12,7 +12,7 @@ const DETAIL_IMAGE_WIDTH_CLASS =
 
 export default function DashboardSection() {
   return (
-    <section id="dashboard" className="section-y relative w-full" data-no-reveal>
+    <section id="dashboard" className="relative w-full pb-[var(--section-pad-y)]" data-no-reveal>
       <SectionRevealItem className="text-left max-lg:text-center">
         <p className="section-eyebrow mb-3 text-brand-blue-light">Transparency</p>
         <h2 className="section-headline text-white">
