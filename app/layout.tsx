@@ -36,15 +36,16 @@ export const metadata: Metadata = {
     description:
       "Reamo connects to your business phone system and handles call notes, CRM updates, calendar management, and follow-ups automatically — while you talk.",
   },
-  icons: {
-    icon: [{ url: "/icon.png", type: "image/png", sizes: "32x32" }],
-    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
-  },
+  // Favicon (app/icon.png), Apple touch icon (app/apple-icon.png), the social
+  // share card (app/opengraph-image.png / app/twitter-image.png) and the web
+  // manifest (app/manifest.ts) are all wired up automatically via Next.js file
+  // conventions, so no explicit `icons` entry is needed here.
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#071020",
 };
 
 export default function RootLayout({
