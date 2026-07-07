@@ -4,23 +4,6 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useNavSurface } from '@/hooks/useNavSurface';
 
-function NavGlassShine({ inverted }: { inverted: boolean }) {
-  if (inverted) {
-    return (
-      <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]" aria-hidden>
-        <div className="absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-white/80 to-transparent" />
-      </div>
-    );
-  }
-
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]" aria-hidden>
-      <div className="absolute -left-1/4 -top-1/2 h-[120%] w-3/4 rotate-12 bg-gradient-to-br from-white/20 via-white/5 to-transparent" />
-      <div className="absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-white/15 to-transparent" />
-    </div>
-  );
-}
-
 export default function Nav() {
   const onLightSurface = useNavSurface();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -42,7 +25,6 @@ export default function Nav() {
             onLightSurface ? 'nav-glass-on-light' : 'nav-glass'
           }`}
         >
-          <NavGlassShine inverted={onLightSurface} />
           <Link href="/" className="relative z-[1] flex h-full items-center no-underline">
             <span
               className={`font-montserrat text-[19px] font-extrabold leading-none tracking-[0.005em] ${
