@@ -391,6 +391,18 @@ body.no-nav-pad {
   background-position: 0 0;
 }
 
+/* Soft ambient glow behind the hero vignette — a blurred radial blob that
+   fades to fully transparent, no hard box edges. */
+.hero-vignette-glow {
+  background: radial-gradient(
+    ellipse 65% 32% at center,
+    rgba(93, 145, 189, 0.22) 0%,
+    rgba(93, 145, 189, 0) 100%
+  );
+  transform: rotate(-45deg);
+  filter: blur(56px);
+}
+
 @keyframes checkmark-pulse {
   0%      { box-shadow: 0 0 0px 0px rgba(255,255,255,0); }
   8%      { box-shadow: 0 0 9px 4px rgba(255,255,255,0.75); }

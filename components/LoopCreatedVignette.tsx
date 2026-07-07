@@ -113,7 +113,7 @@ const VIGNETTE_HTML = `<!DOCTYPE html>
   .eyebrow {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #6393b4;

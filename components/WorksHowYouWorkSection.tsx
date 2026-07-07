@@ -50,7 +50,7 @@ const SLIDES = [
     id: 'call',
     label: 'Follow-up',
     description:
-      "Reamo remembers everything so you don't have to, and is always available. Text any time with questions about your pipeline. Reamo responds right away.",
+      "Reamo remembers everything so you don't have to. Text any time with questions about your clients and calls. Reamo responds right away.",
   },
 ] as const;
 
@@ -66,7 +66,7 @@ const FEATURE_SQUARES = [
   {
     id: 'feature-1',
     title: 'Connect Reamo',
-    text: 'Tell Reamo which calls to listen to natively on iPhone and Android. For a completely autonomous experience, connect QUO or RingCentral.',
+    text: 'Tell Reamo which calls to listen to on your iPhone or Android. Or connect QUO or RingCentral and Reamo handles everything by itself.',
     image: '/images/works-how-you-work/connect-phone-icons.png',
     imageAlt: 'Apple, Android, Quo, and Reamo integrations',
     imageWidth: 1492,
@@ -165,16 +165,16 @@ export default function WorksHowYouWorkSection({
           </SectionRevealItem>
           <SectionRevealItem className="text-left max-lg:text-center">
             <p className={`${DESCRIPTOR_CLASS} mt-4 max-w-2xl max-lg:mx-auto`}>
-              Like a real assistant, Reamo lives in your phone contacts.
+              Like a human assistant, Reamo lives in your phone contacts.
               <br />
-              Unlike a real assistant, Reamo is always available.
+              Unlike a human assistant, Reamo available 24/7.
             </p>
           </SectionRevealItem>
           <SectionRevealItem className="mt-10 w-full max-md:mt-8">
             <div className={SLIDES_GRID_CLASS}>
               {SLIDES.map((slide) => (
                 <div key={slide.id} className={MEDIA_BOX_CLASS}>
-                  <div className="relative top-[-30px] mx-auto w-full max-w-full origin-bottom scale-[0.9975] max-lg:scale-[0.945] max-md:scale-[0.924] lg:top-[-12px] lg:w-[410px] lg:max-w-[410px]">
+                  <div className="relative top-[-40px] mx-auto w-full max-w-full origin-bottom scale-[0.9975] max-lg:scale-[0.945] max-md:scale-[0.924] lg:top-[-22px] lg:w-[410px] lg:max-w-[410px]">
                     <StoryPhoneGraphic
                       messages={slide.id === 'text' ? UPDATE_MESSAGES : undefined}
                     />

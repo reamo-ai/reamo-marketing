@@ -18,7 +18,7 @@ export default function Home() {
     <main className="w-full min-w-0 bg-near-black text-white">
       <div className="bg-hero-near-black">
         <section className="relative w-full bg-hero-near-black" data-no-reveal>
-          <div className="home-hero-viewport flex w-full items-center justify-center" data-nav-surface="dark">
+          <div className="home-hero-viewport flex w-full items-start justify-center" data-nav-surface="dark">
             <div className="w-full px-page">
               <div className="mx-auto w-full min-w-0 max-w-[1200px]">
                 <PhoneCallEndsSection />

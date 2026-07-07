@@ -14,9 +14,13 @@ export default function QuoteSection() {
         />
       </SectionRevealItem>
       <SectionRevealItem>
-        <blockquote className="mx-auto mb-9 max-w-[760px] font-montserrat text-[clamp(11.5px,3vw,37px)] font-medium leading-[0.98] tracking-[-0.04em] text-brand-blue lg:text-[50px]">
-          &ldquo;I used to spend two hours after every call on admin. Now I&apos;m on the next
-          call.&rdquo;
+        <blockquote className="mx-auto mb-9 max-w-[820px] font-montserrat text-[clamp(11px,1.6vw,17px)] font-medium leading-[1.3] tracking-[-0.02em] text-brand-blue lg:text-[22px]">
+          &ldquo;Reamo is like having a personal assistant with me all the time.
+          I don&apos;t worry about forgetting anymore. I just talk, and Reamo catches every
+          detail and puts it exactly where it needs to go. My Dotloop, CRM, notes, calendar,
+          all of it, so I can stay focused on my clients. I knew I would save hours with Reamo,
+          but I didn&apos;t expect how freeing that would actually feel. It&apos;s a new
+          reality.&rdquo;
         </blockquote>
       </SectionRevealItem>
       <SectionRevealItem>
