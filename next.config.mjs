@@ -12,6 +12,11 @@ const nextConfig = {
         destination: '/waitlist',
         permanent: true,
       },
+      {
+        source: '/calculator',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 };

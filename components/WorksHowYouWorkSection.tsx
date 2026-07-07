@@ -194,9 +194,9 @@ export default function WorksHowYouWorkSection({
           </SectionRevealItem>
           <SectionRevealItem className="text-left max-lg:text-center">
             <p className={`${DESCRIPTOR_CLASS} mt-4 max-w-2xl max-lg:mx-auto`}>
-              Like a human assistant, Reamo lives in your phone contacts.
+              Like a human assistant, Reamo is a contact in your phone.
               <br />
-              Unlike a human assistant, Reamo available 24/7.
+              Unlike a human assistant, Reamo is available 24/7.
             </p>
           </SectionRevealItem>
           <SectionRevealItem className="mt-10 w-full max-md:mt-8">

@@ -15,12 +15,6 @@ export default function LegalPage({ title, effectiveDate, children }: LegalPageP
             {title}
           </h1>
           <p className="mt-3 text-sm text-primary">Effective Date: {effectiveDate}</p>
-          <div
-            className="mt-6 h-px w-full"
-            style={{
-              background: 'linear-gradient(to right, rgba(0,212,160,0.4), transparent)',
-            }}
-          />
         </div>
         <div className="legal-body space-y-8 text-primary [&_a]:text-accent [&_a:hover]:underline">
           {children}

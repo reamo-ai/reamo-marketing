@@ -123,7 +123,7 @@ const VIGNETTE_HTML = `<!DOCTYPE html>
   }
   .line {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: clamp(16px, 5.6vw, 32px);
+    font-size: clamp(calc(16px + 1pt), calc(5.6vw + 1pt), calc(32px + 1pt));
     font-weight: 500;
     color: #ffffff;
     white-space: normal;
