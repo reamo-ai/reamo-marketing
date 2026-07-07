@@ -14,7 +14,7 @@ export default function QuoteSection() {
         />
       </SectionRevealItem>
       <SectionRevealItem>
-        <blockquote className="mx-auto mb-9 max-w-[820px] font-montserrat text-[clamp(11px,1.6vw,17px)] font-medium leading-[1.3] tracking-[-0.02em] text-brand-blue lg:text-[22px]">
+        <blockquote className="mx-auto mb-9 max-w-[960px] font-montserrat text-[clamp(17px,4.2vw,19px)] font-medium leading-[1.3] tracking-[-0.02em] text-brand-blue lg:text-[22px]">
           &ldquo;Reamo is like having a personal assistant with me all the time.
           I don&apos;t worry about forgetting anymore. I just talk, and Reamo catches every
           detail and puts it exactly where it needs to go. My Dotloop, CRM, notes, calendar,

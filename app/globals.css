@@ -236,15 +236,21 @@ body.no-nav-pad {
 
   .section-headline {
     font-family: var(--font-montserrat), sans-serif;
-    font-size: clamp(23px, 6vw, 74px);
+    font-size: clamp(47px, 10.5vw, 74px);
     font-weight: 700;
     line-height: 0.98;
     letter-spacing: -0.04em;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     .section-headline {
       font-size: clamp(23px, calc(6vw - 2pt), calc(74px - 2pt));
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .section-eyebrow {
+      font-weight: 500;
     }
   }
 
@@ -389,6 +395,17 @@ body.no-nav-pad {
   background-size: 640px 320px;
   background-attachment: fixed;
   background-position: 0 0;
+}
+
+/* Mobile/tablet browsers render background-attachment: fixed inconsistently
+   during scroll (visible seams/hard lines). Use a per-element gradient
+   there instead — cross-pill continuity isn't visible anyway since pills
+   stack vertically at this size. */
+@media (max-width: 1023px) {
+  .pill-unified-gradient {
+    background-size: 100% 100%;
+    background-attachment: scroll;
+  }
 }
 
 /* Soft ambient glow behind the hero vignette — a blurred radial blob that

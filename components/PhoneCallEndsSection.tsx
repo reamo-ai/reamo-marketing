@@ -14,6 +14,17 @@ const CHECKLIST_ITEMS = [
 
 const PILL_COUNT = 6;
 
+function VignetteBlock() {
+  return (
+    <div className="relative flex w-full max-w-[560px] flex-col items-center lg:min-w-0">
+      <div className="hero-vignette-glow absolute -inset-16" aria-hidden />
+      <div className="w-full -translate-y-5">
+        <LoopCreatedVignette />
+      </div>
+    </div>
+  );
+}
+
 function CheckedItem({ label, index }: { label: string; index: number }) {
   const delay = `-${((PILL_COUNT - index) % PILL_COUNT)}s`;
   return (
@@ -64,25 +75,37 @@ export default function PhoneCallEndsSection() {
   return (
     <section
       ref={rootRef}
-      className="relative flex h-full min-h-0 w-full min-w-0 flex-col items-center justify-start pb-10 pt-10 max-md:pb-8 max-md:pt-8 md:pb-12 md:pt-12 lg:pt-[93px]"
+      className="relative flex h-full min-h-0 w-full min-w-0 flex-col items-center justify-start pb-10 pt-10 max-md:pb-8 max-md:pt-[52px] md:pb-12 md:pt-[68px] lg:pt-[93px]"
     >
       <div className="hero-text-reveal hero-text-reveal--header flex w-full flex-col items-center gap-10 sm:gap-12 lg:flex-row lg:items-center lg:justify-center lg:gap-20 min-[1440px]:gap-24">
         <div className="w-full max-w-[480px] lg:max-w-none lg:min-w-0 lg:flex-[0_1_54%] lg:-translate-y-[10px]">
           <p className="section-eyebrow mb-[25px] text-center text-[16.5px] text-brand-blue-light lg:text-left">
-            The real estate agent middle office
+            The real estate agent
+            <br className="lg:hidden" />
+            <span className="max-lg:hidden"> </span>
+            middle office
             <sup className="relative top-0 ml-0.5 inline-block -translate-y-[8px] align-baseline text-[0.4em]">TM</sup>
           </p>
-          <h1 className="text-center font-[family-name:var(--font-montserrat),sans-serif] text-[clamp(30.7px,9vw,48.7px)] font-bold leading-[1.1] tracking-[-0.02em] text-white lg:whitespace-nowrap lg:text-left">
-            The client hangs up.
+          <h1 className="text-center font-[family-name:var(--font-montserrat),sans-serif] text-[clamp(44px,11vw,48.7px)] font-bold leading-[1.1] tracking-[-0.02em] text-white lg:whitespace-nowrap lg:text-[clamp(30.7px,9vw,48.7px)] lg:text-left">
+            The client
+            <br className="lg:hidden" />
+            <span className="max-lg:hidden"> </span>
+            hangs up.
             <br />
-            Reamo gets to work.
+            Reamo gets
+            <br className="lg:hidden" />
+            <span className="max-lg:hidden"> </span>
+            to work.
           </h1>
-          <p className="mt-[14px] text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(19.4px,1.5vw,22.4px)] font-medium leading-[1.3] text-neutral-400 lg:text-left">
+          <p className="mt-[14px] px-6 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(19.4px,1.5vw,22.4px)] font-medium leading-[1.3] text-neutral-400 lg:px-0 lg:text-left">
             Reamo listens to your client calls, knows what should happen next, and does it for you - automatically.
           </p>
-          <p className="mt-3 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(19.4px,1.5vw,22.4px)] font-medium leading-[1.3] text-neutral-400 lg:mt-[16px] lg:text-left">
+          <p className="mt-3 px-6 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(19.4px,1.5vw,22.4px)] font-medium leading-[1.3] text-neutral-400 lg:mt-[16px] lg:px-0 lg:text-left">
             No onboarding. Nothing new to learn. Connect and go.
           </p>
+          <div className="mt-8 w-full lg:hidden">
+            <VignetteBlock />
+          </div>
           <div className="hero-text-reveal mt-7 flex w-full flex-col items-center gap-2 sm:gap-[7.7px] lg:mt-[38px] lg:items-start lg:gap-2 xl:gap-2.5">
             <ul className="flex w-full flex-wrap items-center justify-center gap-2 sm:gap-[7.7px] lg:justify-start lg:gap-2 xl:gap-2.5">
               {topRow.map((item) => (
@@ -96,11 +119,8 @@ export default function PhoneCallEndsSection() {
             </ul>
           </div>
         </div>
-        <div className="relative flex w-full max-w-[560px] flex-col items-center lg:min-w-0 lg:flex-[0_1_46%]">
-          <div className="hero-vignette-glow absolute -inset-16" aria-hidden />
-          <div className="w-full -translate-y-5">
-            <LoopCreatedVignette />
-          </div>
+        <div className="hidden lg:flex lg:min-w-0 lg:flex-[0_1_46%]">
+          <VignetteBlock />
         </div>
       </div>
     </section>

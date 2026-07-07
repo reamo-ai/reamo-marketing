@@ -53,7 +53,7 @@ export default function StoryPhoneGraphic({
             {thread.map((message, index) => (
               <div
                 key={`${message.role}-${index}`}
-                className={`${BUBBLE_CLASS} max-w-[82%] lg:max-w-[92%] whitespace-pre-line text-white ${
+                className={`${BUBBLE_CLASS} max-w-[78%] lg:max-w-[92%] whitespace-pre-line text-white ${
                   message.role === 'user'
                     ? `${index === 0 ? 'my-3 ' : ''}self-end bg-[#007AFF]`
                     : 'self-start bg-[#2c2c2e]'

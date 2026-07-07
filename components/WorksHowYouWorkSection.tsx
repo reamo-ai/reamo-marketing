@@ -11,10 +11,10 @@ const DESCRIPTOR_CLASS =
 const SLIDE_LABEL_CLASS =
   'm-0 font-[family-name:var(--font-dm-sans),sans-serif] [font-size:var(--paragraph-header-size)] font-bold leading-snug text-white';
 
-const MEDIA_BOX_WIDTH_CLASS = 'mx-auto w-[92%]';
+const MEDIA_BOX_WIDTH_CLASS = 'mx-auto w-full lg:w-[92%]';
 
 const MEDIA_BOX_CLASS =
-  `relative ${MEDIA_BOX_WIDTH_CLASS} h-[540px] overflow-hidden rounded-2xl bg-white px-[max(0px,calc((100%-28.5rem)/2))] pt-0 max-md:px-[max(0px,calc((100%-22rem)/2))] lg:h-[481px] lg:pt-[38px]`;
+  `relative ${MEDIA_BOX_WIDTH_CLASS} h-auto overflow-hidden rounded-2xl bg-[#1c1c1e] px-[max(0px,calc((100%-28.5rem)/2))] pt-0 max-md:px-[max(0px,calc((100%-22rem)/2))] lg:h-[481px] lg:bg-white lg:pt-[38px]`;
 
 const MEDIA_BOX_CALL_CLASS = MEDIA_BOX_CLASS.replace('overflow-hidden', 'overflow-visible');
 
@@ -38,6 +38,34 @@ Hey! I got your voicemail. Yes, we're good with 3% earnest money. Thanks!`,
     text: 'Done.',
   },
 ];
+
+const CALL_MESSAGES = [
+  {
+    role: 'user' as const,
+    text: "What's the status on J.B. Fletch?",
+  },
+  {
+    role: 'reamo' as const,
+    text: "J.B. is active and moving. She's under contract on 412 Birchwood Lane — Dotloop loop is created. I updated her status in Follow Up Boss and noted that she had her baby. You've got a call with her lender tomorrow at 2pm to confirm the inspection timeline. Inspection is currently scheduled for Thursday morning.",
+  },
+];
+
+function MobileMessageList({ messages }: { messages: readonly { role: 'user' | 'reamo'; text: string }[] }) {
+  return (
+    <div className="flex w-full flex-col justify-start gap-2 p-5">
+      {messages.map((message, index) => (
+        <div
+          key={`${message.role}-${index}`}
+          className={`max-w-[82%] whitespace-pre-line rounded-xl px-3 py-2 font-sans text-[14px] leading-snug ${
+            message.role === 'user' ? 'self-end bg-[#007AFF] text-white' : 'self-start bg-[#3b3b3d] text-white'
+          }`}
+        >
+          {message.text}
+        </div>
+      ))}
+    </div>
+  );
+}
 
 const SLIDES = [
   {
@@ -173,22 +201,21 @@ export default function WorksHowYouWorkSection({
           <SectionRevealItem className="mt-10 w-full max-md:mt-8">
             <div className={SLIDES_GRID_CLASS}>
               {SLIDES.map((slide) => (
-                <div key={slide.id} className={MEDIA_BOX_CLASS}>
-                  <div className="relative top-[-40px] mx-auto w-full max-w-full origin-bottom scale-[0.9975] max-lg:scale-[0.945] max-md:scale-[0.924] lg:top-[-22px] lg:w-[410px] lg:max-w-[410px]">
-                    <StoryPhoneGraphic
-                      messages={slide.id === 'text' ? UPDATE_MESSAGES : undefined}
-                    />
+                <div key={slide.id} className="flex flex-col">
+                  <div className={MEDIA_BOX_CLASS}>
+                    <div className="h-full w-full lg:hidden">
+                      <MobileMessageList messages={slide.id === 'text' ? UPDATE_MESSAGES : CALL_MESSAGES} />
+                    </div>
+                    <div className="relative top-[-40px] mx-auto hidden w-full max-w-full origin-bottom scale-[0.9975] max-lg:scale-[0.945] max-md:scale-[0.924] lg:top-[-22px] lg:block lg:w-[410px] lg:max-w-[410px]">
+                      <StoryPhoneGraphic
+                        messages={slide.id === 'text' ? UPDATE_MESSAGES : CALL_MESSAGES}
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </SectionRevealItem>
-          <SectionRevealItem className="mt-4 w-full md:mt-5">
-            <div className={SLIDES_GRID_CLASS}>
-              {SLIDES.map((slide) => (
-                <div key={`${slide.id}-copy`} className={`flex ${MEDIA_BOX_WIDTH_CLASS} flex-col gap-1`}>
-                  <p className={SLIDE_LABEL_CLASS}>{slide.label}</p>
-                  <p className={DESCRIPTOR_CLASS}>{slide.description}</p>
+                  <div className={`mt-4 flex ${MEDIA_BOX_WIDTH_CLASS} flex-col gap-1 md:mt-5`}>
+                    <p className={SLIDE_LABEL_CLASS}>{slide.label}</p>
+                    <p className={DESCRIPTOR_CLASS}>{slide.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
