@@ -65,7 +65,7 @@ export default function Nav() {
               Login
             </a>
             <Link
-              href="/request-access"
+              href="/waitlist"
               className={
                 onLightSurface
                   ? 'inline-flex items-center rounded-full bg-near-black px-3.5 py-2 text-xs leading-none text-white no-underline transition-opacity hover:opacity-85'
@@ -115,7 +115,7 @@ export default function Nav() {
               Login
             </a>
             <Link
-              href="/request-access"
+              href="/waitlist"
               onClick={() => setMenuOpen(false)}
               className="inline-flex w-full max-w-xs items-center justify-center rounded-full bg-white px-6 py-4 text-base text-black no-underline transition-opacity hover:opacity-85"
             >

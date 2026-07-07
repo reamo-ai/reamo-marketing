@@ -26,7 +26,7 @@ export default function CtaApply() {
       </SectionRevealItem>
       <SectionRevealItem>
         <Link
-          href="/request-access"
+          href="/waitlist"
           className="inline-block rounded-full bg-black px-[30px] py-[13px] text-[15px] text-white no-underline transition-opacity hover:opacity-88"
         >
           Join waitlist

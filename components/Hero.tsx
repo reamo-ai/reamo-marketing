@@ -20,7 +20,7 @@ export default function Hero({ embedded = false }: HeroProps) {
       {SHOW_HERO_BUTTONS ? (
         <div className="mt-12 flex flex-wrap items-center gap-3 max-w-full text-left">
           <Link
-            href="/request-access"
+            href="/waitlist"
             className="inline-block rounded-full bg-black px-[30px] py-[13px] text-[15px] text-white no-underline transition-opacity hover:opacity-80"
           >
             Join waitlist
