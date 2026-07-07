@@ -1,5 +1,6 @@
 'use client';
 
+import { Fragment } from 'react';
 import { INTEGRATIONS_PILL_GAP_PAD } from '@/components/Integrations';
 import SectionRevealItem from '@/components/SectionRevealItem';
 import StoryPhoneGraphic from '@/components/story/StoryPhoneGraphic';
@@ -129,7 +130,7 @@ const FEATURE_BOX_CLASS =
 const FEATURE_GRID_CLASS =
   'mx-auto grid w-full max-w-[1000px] grid-cols-1 justify-items-center gap-12 lg:w-auto lg:max-w-none lg:grid-cols-[repeat(3,max-content)] lg:justify-center lg:gap-8';
 
-const SLIDES_GRID_CLASS = 'grid w-full grid-cols-1 gap-5 max-lg:gap-8 lg:grid-cols-2 lg:gap-5';
+const SLIDES_GRID_CLASS = 'grid w-full grid-cols-1 gap-5 max-md:gap-8 md:grid-cols-2 md:gap-5';
 
 export default function WorksHowYouWorkSection({
   showIntegrationsGap = true,
@@ -200,24 +201,29 @@ export default function WorksHowYouWorkSection({
           </SectionRevealItem>
           <SectionRevealItem className="mt-10 w-full max-md:mt-8">
             <div className={SLIDES_GRID_CLASS}>
-              {SLIDES.map((slide) => (
-                <div key={slide.id} className="flex flex-col">
-                  <div className={MEDIA_BOX_CLASS}>
-                    <div className="h-full w-full lg:hidden">
-                      <MobileMessageList messages={slide.id === 'text' ? UPDATE_MESSAGES : CALL_MESSAGES} />
+              {SLIDES.map((slide, index) => {
+                const colStartClass = index === 0 ? 'md:col-start-1' : 'md:col-start-2';
+                return (
+                  <Fragment key={slide.id}>
+                    <div className={`${MEDIA_BOX_CLASS} md:row-start-1 ${colStartClass}`}>
+                      <div className="h-full w-full lg:hidden">
+                        <MobileMessageList messages={slide.id === 'text' ? UPDATE_MESSAGES : CALL_MESSAGES} />
+                      </div>
+                      <div className="relative top-[-40px] mx-auto hidden w-full max-w-full origin-bottom scale-[0.9975] max-lg:scale-[0.945] max-md:scale-[0.924] lg:top-[-22px] lg:block lg:w-[410px] lg:max-w-[410px]">
+                        <StoryPhoneGraphic
+                          messages={slide.id === 'text' ? UPDATE_MESSAGES : CALL_MESSAGES}
+                        />
+                      </div>
                     </div>
-                    <div className="relative top-[-40px] mx-auto hidden w-full max-w-full origin-bottom scale-[0.9975] max-lg:scale-[0.945] max-md:scale-[0.924] lg:top-[-22px] lg:block lg:w-[410px] lg:max-w-[410px]">
-                      <StoryPhoneGraphic
-                        messages={slide.id === 'text' ? UPDATE_MESSAGES : CALL_MESSAGES}
-                      />
+                    <div
+                      className={`mt-4 flex ${MEDIA_BOX_WIDTH_CLASS} flex-col gap-1 md:mt-5 md:row-start-2 ${colStartClass}`}
+                    >
+                      <p className={SLIDE_LABEL_CLASS}>{slide.label}</p>
+                      <p className={DESCRIPTOR_CLASS}>{slide.description}</p>
                     </div>
-                  </div>
-                  <div className={`mt-4 flex ${MEDIA_BOX_WIDTH_CLASS} flex-col gap-1 md:mt-5`}>
-                    <p className={SLIDE_LABEL_CLASS}>{slide.label}</p>
-                    <p className={DESCRIPTOR_CLASS}>{slide.description}</p>
-                  </div>
-                </div>
-              ))}
+                  </Fragment>
+                );
+              })}
             </div>
           </SectionRevealItem>
         </div>

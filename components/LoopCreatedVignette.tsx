@@ -62,7 +62,7 @@ const VIGNETTE_HTML = `<!DOCTYPE html>
     inset: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     gap: 39px;
     padding: 118px clamp(16px, 3.5vw, 40px) 0;
@@ -105,8 +105,8 @@ const VIGNETTE_HTML = `<!DOCTYPE html>
   .textblock {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
     position: relative;
     top: -15px;
   }
@@ -129,7 +129,7 @@ const VIGNETTE_HTML = `<!DOCTYPE html>
     white-space: normal;
     position: relative;
     z-index: 1;
-    text-align: left;
+    text-align: center;
     margin: 0;
   }
   .word {
@@ -266,6 +266,27 @@ const VIGNETTE_HTML = `<!DOCTYPE html>
   var el = document.getElementById('line');
   var eyebrowEl = document.getElementById('eyebrow');
   var li = 0;
+  var MAX_LINE_CHARS = 28;
+
+  function wrapWords(text, maxLen) {
+    var words = text.split(' ');
+    var wrapped = [];
+    var current = [];
+    var currentLen = 0;
+    words.forEach(function (w) {
+      var addLen = (current.length ? 1 : 0) + w.length;
+      if (current.length && currentLen + addLen > maxLen) {
+        wrapped.push(current);
+        current = [w];
+        currentLen = w.length;
+      } else {
+        current.push(w);
+        currentLen += addLen;
+      }
+    });
+    if (current.length) wrapped.push(current);
+    return wrapped;
+  }
 
   function runLine() {
     el.innerHTML = '';
@@ -277,13 +298,21 @@ const VIGNETTE_HTML = `<!DOCTYPE html>
 
     enterText();
 
-    var words = item.text.split(' ');
-    var spans = words.map(function (w) {
-      var s = document.createElement('span');
-      s.className = 'word';
-      s.textContent = w + ' ';
-      el.appendChild(s);
-      return s;
+    var wrappedLines = wrapWords(item.text, MAX_LINE_CHARS);
+    var words = [];
+    var spans = [];
+    wrappedLines.forEach(function (lineWords, wrappedIndex) {
+      lineWords.forEach(function (w) {
+        var s = document.createElement('span');
+        s.className = 'word';
+        s.textContent = w + ' ';
+        el.appendChild(s);
+        spans.push(s);
+        words.push(w);
+      });
+      if (wrappedIndex < wrappedLines.length - 1) {
+        el.appendChild(document.createElement('br'));
+      }
     });
     var i = 0;
     function step() {

@@ -16,9 +16,13 @@ export default function DashboardSection() {
       <SectionRevealItem className="text-left max-lg:text-center">
         <p className="section-eyebrow mb-3 text-brand-blue-light">Transparency</p>
         <h2 className="section-headline text-white">
-          Everything in one place.
+          Everything in
+          <br className="hidden md:block lg:hidden" />
+          {' '}one place.
           <br />
-          For everyone who needs it.
+          For everyone
+          <br className="hidden md:block lg:hidden" />
+          {' '}who needs it.
         </h2>
       </SectionRevealItem>
       <SectionRevealItem className="text-left max-lg:text-center">
@@ -63,7 +67,9 @@ export default function DashboardSection() {
       <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_60%] lg:items-start">
         <SectionRevealItem className="max-lg:text-center">
           <h3 className="section-headline text-white">
-            Insights for brokers and team leaders.
+            Insights for brokers and
+            <br className="hidden md:block lg:hidden" />
+            {' '}team leaders.
           </h3>
           <p className={DESCRIPTOR_CLASS}>
             Easily assign seats, track engagement,
