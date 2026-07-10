@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import type { ConsentState } from "@/lib/consent";
+import type { ConsentChoices } from "@/lib/consent";
 
 // Injects consent-gated third-party scripts. Nothing here loads until the
 // relevant category is granted in the consent cookie. Because injection is
@@ -39,17 +39,17 @@ function injectAnalytics() {
 }
 
 export default function ConsentScripts({
-  consent,
+  choices,
 }: {
-  consent: ConsentState | null;
+  choices: ConsentChoices | null;
 }) {
   useEffect(() => {
-    if (consent?.visitor_id) injectRb2b();
-  }, [consent?.visitor_id]);
+    if (choices?.visitor_id) injectRb2b();
+  }, [choices?.visitor_id]);
 
   useEffect(() => {
-    if (consent?.analytics) injectAnalytics();
-  }, [consent?.analytics]);
+    if (choices?.analytics) injectAnalytics();
+  }, [choices?.analytics]);
 
   return null;
 }

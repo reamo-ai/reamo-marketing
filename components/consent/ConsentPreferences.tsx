@@ -3,12 +3,11 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Toggle from "./Toggle";
-import type { ConsentChoices, ConsentState } from "@/lib/consent";
-import { DEFAULT_CHOICES } from "@/lib/consent";
+import type { ConsentChoices } from "@/lib/consent";
 
 interface ConsentPreferencesProps {
-  /** Existing consent (returning user opening from the footer), or null. */
-  initial: ConsentState | null;
+  /** The choices currently in force (explicit or geo/GPC-derived default). */
+  initial: ConsentChoices;
   onSave: (choices: ConsentChoices) => void;
   onClose: () => void;
 }
@@ -26,8 +25,8 @@ export default function ConsentPreferences({
   onSave,
   onClose,
 }: ConsentPreferencesProps) {
-  const [analytics, setAnalytics] = useState(initial?.analytics ?? DEFAULT_CHOICES.analytics);
-  const [visitorId, setVisitorId] = useState(initial?.visitor_id ?? DEFAULT_CHOICES.visitor_id);
+  const [analytics, setAnalytics] = useState(initial.analytics);
+  const [visitorId, setVisitorId] = useState(initial.visitor_id);
 
   const dialogRef = useRef<HTMLDivElement>(null);
   const previouslyFocused = useRef<HTMLElement | null>(null);

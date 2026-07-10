@@ -5,24 +5,43 @@ import ConsentBanner from "./ConsentBanner";
 import ConsentPreferences from "./ConsentPreferences";
 import ConsentScripts from "./ConsentScripts";
 import type { ConsentChoices, ConsentState } from "@/lib/consent";
-import { OPEN_PREFERENCES_EVENT, readConsent, writeConsent } from "@/lib/consent";
+import {
+  OPEN_PREFERENCES_EVENT,
+  choicesOf,
+  impliedChoices,
+  isGpcEnabled,
+  readConsent,
+  readRegime,
+  writeConsent,
+} from "@/lib/consent";
 
 // Top-level consent orchestrator, mounted once in the root layout so it covers
-// every marketing page. Owns the canonical consent state, shows the first-visit
-// banner, opens the preferences modal (from the banner or the footer link), and
-// feeds consent to the gated script injectors.
+// every marketing page. Owns the canonical consent state, applies geo-aware
+// defaults (US = opt-out / tracking on by default; everyone else = opt-in),
+// honors Global Privacy Control, shows the banner, opens the preferences modal,
+// and feeds the effective choices to the gated script injectors.
 export default function ConsentManager() {
   const [mounted, setMounted] = useState(false);
-  const [consent, setConsent] = useState<ConsentState | null>(null);
+  const [stored, setStored] = useState<ConsentState | null>(null);
+  // The choices actually in force: an explicit stored choice if present,
+  // otherwise the geo/GPC-derived default.
+  const [effective, setEffective] = useState<ConsentChoices | null>(null);
   const [bannerVisible, setBannerVisible] = useState(false);
   const [prefsOpen, setPrefsOpen] = useState(false);
 
-  // Read the cookie on mount (client-side, so the statically-rendered pages
-  // stay static). Returning users with valid consent never see the banner.
+  // Resolve consent on mount (client-side, so the pages stay statically
+  // rendered). Returning users with an explicit choice never see the banner;
+  // first-time visitors get the regime default and are still shown the notice.
   useEffect(() => {
     const existing = readConsent();
-    setConsent(existing);
-    setBannerVisible(existing === null);
+    if (existing) {
+      setStored(existing);
+      setEffective(choicesOf(existing));
+      setBannerVisible(false);
+    } else {
+      setEffective(impliedChoices(readRegime(), isGpcEnabled()));
+      setBannerVisible(true);
+    }
     setMounted(true);
   }, []);
 
@@ -34,7 +53,8 @@ export default function ConsentManager() {
   }, []);
 
   const commit = useCallback((choices: ConsentChoices) => {
-    setConsent(writeConsent(choices));
+    setStored(writeConsent(choices));
+    setEffective(choices);
     setBannerVisible(false);
     setPrefsOpen(false);
   }, []);
@@ -48,9 +68,16 @@ export default function ConsentManager() {
     [commit],
   );
 
+  // Preferences toggles reflect the current effective state (so a US visitor
+  // sees categories pre-enabled, a GPC user sees them off, etc.).
+  const prefsInitial: ConsentChoices = effective ?? {
+    analytics: false,
+    visitor_id: false,
+  };
+
   return (
     <>
-      <ConsentScripts consent={consent} />
+      <ConsentScripts choices={effective} />
       {mounted && bannerVisible && !prefsOpen && (
         <ConsentBanner
           onAcceptAll={acceptAll}
@@ -60,7 +87,7 @@ export default function ConsentManager() {
       )}
       {mounted && prefsOpen && (
         <ConsentPreferences
-          initial={consent}
+          initial={prefsInitial}
           onSave={commit}
           onClose={() => setPrefsOpen(false)}
         />

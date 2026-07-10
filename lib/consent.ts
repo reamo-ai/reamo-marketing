@@ -118,3 +118,59 @@ export function writeConsent(choices: ConsentChoices): ConsentState {
 
   return state;
 }
+
+// --- Geo-aware defaults -----------------------------------------------------
+//
+// Consent DEFAULTS vary by visitor location. `middleware.ts` reads Cloudflare's
+// CF-IPCountry header and stores the ISO country code in the (non-httpOnly)
+// GEO_COOKIE so the client can pick a regime. This only sets the *default*;
+// an explicit choice (stored consent cookie) and Global Privacy Control always
+// win over it.
+
+export const GEO_COOKIE = "reamo_geo";
+
+// "opt-out" = non-essential tracking on by default (US). "opt-in" = off until
+// the visitor explicitly accepts (EU/EEA/UK, every other country, and unknown
+// geo — the conservative fallback). This binary mirrors the privacy policy,
+// which limits person-level visitor identification to US visitors.
+export type ConsentRegime = "opt-in" | "opt-out";
+
+export function regimeForCountry(country: string | null | undefined): ConsentRegime {
+  return country?.toUpperCase() === "US" ? "opt-out" : "opt-in";
+}
+
+/** Reads the geo cookie set by middleware and derives the regime (client-side). */
+export function readRegime(): ConsentRegime {
+  if (typeof document === "undefined") return "opt-in";
+  const match = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith(`${GEO_COOKIE}=`));
+  return regimeForCountry(match?.slice(GEO_COOKIE.length + 1));
+}
+
+/** True when the browser is sending a Global Privacy Control opt-out signal. */
+export function isGpcEnabled(): boolean {
+  if (typeof navigator === "undefined") return false;
+  return (
+    (navigator as unknown as { globalPrivacyControl?: boolean })
+      .globalPrivacyControl === true
+  );
+}
+
+/**
+ * The effective choices to apply when the visitor has NOT made an explicit
+ * choice yet. GPC forces everything off regardless of regime (legally required
+ * in CA/CO); otherwise the regime default applies.
+ */
+export function impliedChoices(regime: ConsentRegime, gpc: boolean): ConsentChoices {
+  if (gpc) return { analytics: false, visitor_id: false };
+  return regime === "opt-out"
+    ? { analytics: true, visitor_id: true }
+    : { analytics: false, visitor_id: false };
+}
+
+/** Narrows a full consent state (or null) to just the category choices. */
+export function choicesOf(state: ConsentState | null): ConsentChoices | null {
+  if (!state) return null;
+  return { analytics: state.analytics, visitor_id: state.visitor_id };
+}
