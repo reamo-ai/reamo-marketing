@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import CookieSettingsButton from '@/components/consent/CookieSettingsButton';
 
 export default function Footer() {
   return (
@@ -14,6 +15,7 @@ export default function Footer() {
         <Link href="/terms-of-service" className="text-xs text-black/40 no-underline hover:text-black/70">
           Terms
         </Link>
+        <CookieSettingsButton />
       </nav>
     </footer>
   );
