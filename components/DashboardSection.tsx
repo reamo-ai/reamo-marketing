@@ -2,10 +2,10 @@ import SectionRevealItem from '@/components/SectionRevealItem';
 import Image from 'next/image';
 
 const DESCRIPTOR_CLASS =
-  'mt-4 max-w-2xl font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(19.4px,1.5vw,22.4px)] font-medium leading-[1.3] text-neutral-400 max-lg:mx-auto';
+  'mt-4 max-w-2xl font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(19.4px,1.5vw,22.4px)] font-medium leading-[1.3] text-neutral-600 max-lg:mx-auto';
 
 const DASHBOARD_IMAGE_CLASS =
-  'block h-auto w-full rounded-2xl border border-white object-top';
+  'block h-auto w-full rounded-2xl border border-black/10 object-top';
 
 const DETAIL_IMAGE_WIDTH_CLASS =
   'w-[calc((100%/1.2)*1.2*0.85*1.05*1.05*1.05)] max-w-none';
@@ -15,7 +15,7 @@ export default function DashboardSection() {
     <section id="dashboard" className="relative w-full pb-[var(--section-pad-y)]" data-no-reveal>
       <SectionRevealItem className="text-left max-lg:text-center">
         <p className="section-eyebrow mb-3 text-brand-blue-light">Transparency</p>
-        <h2 className="section-headline text-white">
+        <h2 className="section-headline text-black">
           Everything in
           <br className="hidden md:block lg:hidden" />
           {' '}one place.
@@ -41,7 +41,7 @@ export default function DashboardSection() {
               alt="Reamo dashboard showing recent client calls and conversation summaries"
               fill
               sizes="(min-width: 1024px) 60vw, 100vw"
-              className="rounded-2xl border border-white object-cover object-top"
+              className="rounded-2xl border border-black/10 object-cover object-top"
             />
             <Image
               src="/images/dashboard/client-detail.png"
@@ -66,7 +66,7 @@ export default function DashboardSection() {
 
       <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_60%] lg:items-start">
         <SectionRevealItem className="max-lg:text-center">
-          <h3 className="section-headline text-white">
+          <h3 className="section-headline text-black">
             Insights for brokers and
             <br className="hidden md:block lg:hidden" />
             {' '}team leaders.

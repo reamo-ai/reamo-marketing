@@ -43,11 +43,11 @@ const VIGNETTE_HTML = `<!DOCTYPE html>
     line-height: 1.7;
     background-image: linear-gradient(
       135deg,
-      rgba(60,60,60,0.5) 0%,
-      rgba(110,110,110,0.7) 30%,
-      rgba(130,130,130,0.6) 50%,
-      rgba(110,110,110,0.7) 70%,
-      rgba(60,60,60,0.5) 100%
+      rgba(60,60,60,0.22) 0%,
+      rgba(110,110,110,0.32) 30%,
+      rgba(130,130,130,0.28) 50%,
+      rgba(110,110,110,0.32) 70%,
+      rgba(60,60,60,0.22) 100%
     );
     background-size: 300% 300%;
     -webkit-background-clip: text;
@@ -94,7 +94,7 @@ const VIGNETTE_HTML = `<!DOCTYPE html>
   .waveform .bar {
     width: 2px;
     border-radius: 1px;
-    background: #ffffff;
+    background: #1b3a6b;
     height: 7.2px;
     animation: wave 1.1s ease-in-out infinite;
   }
@@ -124,8 +124,8 @@ const VIGNETTE_HTML = `<!DOCTYPE html>
   .line {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: clamp(calc(16px + 1pt), calc(5.6vw + 1pt), calc(32px + 1pt));
-    font-weight: 500;
-    color: #ffffff;
+    font-weight: 700;
+    color: #1d1d1f;
     white-space: normal;
     position: relative;
     z-index: 1;

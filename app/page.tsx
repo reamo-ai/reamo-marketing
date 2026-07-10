@@ -15,10 +15,10 @@ const SHOW_INTEGRATIONS = false;
 
 export default function Home() {
   return (
-    <main className="w-full min-w-0 bg-near-black text-white">
-      <div className="bg-hero-near-black">
-        <section className="relative w-full bg-hero-near-black" data-no-reveal>
-          <div className="home-hero-viewport flex w-full items-start justify-center" data-nav-surface="dark">
+    <main className="w-full min-w-0 bg-white text-[var(--ink)]" data-nav-surface="light">
+      <div className="bg-white">
+        <section className="relative w-full bg-white" data-no-reveal>
+          <div className="home-hero-viewport flex w-full items-start justify-center" data-nav-surface="light">
             <div className="w-full px-page">
               <div className="mx-auto w-full min-w-0 max-w-[1200px]">
                 <PhoneCallEndsSection />
@@ -43,7 +43,7 @@ export default function Home() {
             ) : null}
           </div>
         </div>
-        <div className="bg-hero-near-black">
+        <div className="bg-white">
           <div className="px-page">
             <div className="mx-auto w-full min-w-0 max-w-[1200px]">
               <DashboardSection />

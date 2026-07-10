@@ -7,15 +7,15 @@ import StoryPhoneGraphic from '@/components/story/StoryPhoneGraphic';
 import Image from 'next/image';
 
 const DESCRIPTOR_CLASS =
-  'm-0 font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(17.4px,1.5vw,20.4px)] font-medium leading-[1.3] text-neutral-400';
+  'm-0 font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(17.4px,1.5vw,20.4px)] font-medium leading-[1.3] text-neutral-600';
 
 const SLIDE_LABEL_CLASS =
-  'm-0 font-[family-name:var(--font-dm-sans),sans-serif] [font-size:var(--paragraph-header-size)] font-bold leading-snug text-white';
+  'm-0 font-[family-name:var(--font-dm-sans),sans-serif] [font-size:var(--paragraph-header-size)] font-bold leading-snug text-black';
 
 const MEDIA_BOX_WIDTH_CLASS = 'mx-auto w-full lg:w-[92%]';
 
 const MEDIA_BOX_CLASS =
-  `relative ${MEDIA_BOX_WIDTH_CLASS} h-auto overflow-hidden rounded-2xl bg-[#1c1c1e] px-[max(0px,calc((100%-28.5rem)/2))] pt-0 max-md:px-[max(0px,calc((100%-22rem)/2))] lg:h-[481px] lg:bg-white lg:pt-[38px]`;
+  `relative ${MEDIA_BOX_WIDTH_CLASS} h-auto overflow-hidden rounded-2xl bg-[#1c1c1e] px-[max(0px,calc((100%-28.5rem)/2))] pt-0 max-md:px-[max(0px,calc((100%-22rem)/2))] lg:h-[481px] lg:bg-[var(--bg)] lg:pt-[38px]`;
 
 const MEDIA_BOX_CALL_CLASS = MEDIA_BOX_CLASS.replace('overflow-hidden', 'overflow-visible');
 
@@ -86,7 +86,7 @@ const SLIDES = [
 const FEATURE_SQUARE_TEXT_WIDTH_CLASS = 'w-full max-w-[247px] sm:max-w-[266px] md:max-w-[304px]';
 
 const FEATURE_SQUARE_TEXT_CLASS =
-  `m-0 ${FEATURE_SQUARE_TEXT_WIDTH_CLASS} text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(17.4px,1.5vw,20.4px)] font-medium leading-[1.3] text-neutral-400`;
+  `m-0 ${FEATURE_SQUARE_TEXT_WIDTH_CLASS} text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(17.4px,1.5vw,20.4px)] font-medium leading-[1.3] text-neutral-600`;
 
 const FEATURE_SQUARE_TEXT_TITLE_CLASS =
   'mb-1 block [font-size:var(--paragraph-header-size)] font-bold text-black';
@@ -125,7 +125,7 @@ const FEATURE_SQUARES = [
 ] as const;
 
 const FEATURE_BOX_CLASS =
-  'relative mx-auto flex h-[204px] w-full max-w-[222px] items-center justify-center overflow-hidden rounded-2xl bg-hero-near-black px-6 sm:h-[221px] sm:max-w-[239px] sm:px-8 md:h-[251px] md:max-w-[274px]';
+  'relative mx-auto flex h-[204px] w-full max-w-[222px] items-center justify-center overflow-hidden rounded-2xl bg-white px-6 sm:h-[221px] sm:max-w-[239px] sm:px-8 md:h-[251px] md:max-w-[274px]';
 
 const FEATURE_GRID_CLASS =
   'mx-auto grid w-full max-w-[1000px] grid-cols-1 justify-items-center gap-12 lg:w-auto lg:max-w-none lg:grid-cols-[repeat(3,max-content)] lg:justify-center lg:gap-8';
@@ -139,7 +139,7 @@ export default function WorksHowYouWorkSection({
 }) {
   return (
     <section
-      className={`relative flex min-h-[calc(100svh-var(--nav-height))] w-full min-w-0 flex-col justify-start pt-[var(--section-pad-y)]${showIntegrationsGap ? ` ${INTEGRATIONS_PILL_GAP_PAD}` : ''}`}
+      className={`relative flex min-h-[calc(100svh-var(--nav-height))] w-full min-w-0 flex-col justify-start bg-gradient-to-b from-[var(--bg)] to-white pt-[var(--section-pad-y)]${showIntegrationsGap ? ` ${INTEGRATIONS_PILL_GAP_PAD}` : ''}`}
       data-no-reveal
       data-nav-surface="light"
     >
@@ -164,7 +164,7 @@ export default function WorksHowYouWorkSection({
                       width={square.imageWidth}
                       height={square.imageHeight}
                       unoptimized
-                      className={`object-contain${'imageClassName' in square ? ` ${square.imageClassName}` : ''}`}
+                      className={`object-contain drop-shadow-[0_2px_5px_rgba(0,0,0,0.22)]${'imageClassName' in square ? ` ${square.imageClassName}` : ''}`}
                     />
                   ) : null}
                 </div>
@@ -182,13 +182,13 @@ export default function WorksHowYouWorkSection({
         </div>
       </div>
       <div
-        className="w-full bg-hero-near-black px-page py-[var(--section-pad-y)]"
-        data-nav-surface="dark"
+        className="w-full bg-white px-page py-[var(--section-pad-y)]"
+        data-nav-surface="light"
       >
         <div className="mx-auto w-full min-w-0 max-w-[1200px]">
           <SectionRevealItem className="text-left max-lg:text-center">
             <p className="section-eyebrow mb-3 text-brand-blue-light">A teammate you can rely on</p>
-            <h2 className="section-headline text-white">
+            <h2 className="section-headline text-black">
               Always a text away.
             </h2>
           </SectionRevealItem>

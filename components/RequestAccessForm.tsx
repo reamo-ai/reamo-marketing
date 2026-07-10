@@ -4,12 +4,12 @@ import { useRouter } from 'next/navigation';
 import { FormEvent, useEffect, useState } from 'react';
 
 const inputClass =
-  'w-full min-w-0 rounded-lg border border-[rgba(255,255,255,0.15)] bg-[rgba(255,255,255,0.04)] px-4 py-3 text-base text-white placeholder-[rgba(255,255,255,0.32)] outline-none transition-colors focus:border-brand-blue-light focus:ring-0 disabled:opacity-60 sm:text-sm';
+  'w-full min-w-0 rounded-lg border border-[rgba(0,0,0,0.14)] bg-[rgba(0,0,0,0.02)] px-4 py-3 text-base text-black placeholder-[rgba(0,0,0,0.32)] outline-none transition-colors focus:border-brand-blue-light focus:ring-0 disabled:opacity-60 sm:text-sm';
 
 const selectClass = `${inputClass} appearance-none`;
 
 const labelClass =
-  'font-[family-name:var(--font-dm-sans),sans-serif] text-xs font-medium uppercase tracking-wide text-[rgba(255,255,255,0.45)]';
+  'font-[family-name:var(--font-dm-sans),sans-serif] text-xs font-medium uppercase tracking-wide text-[rgba(0,0,0,0.5)]';
 
 type FormStatus = 'idle' | 'loading' | 'error' | 'success';
 
@@ -85,16 +85,16 @@ export default function RequestAccessForm() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="waitlist-success-title"
-            className="w-full max-w-md rounded-2xl border border-[rgba(255,255,255,0.1)] bg-[#171717] p-8 text-center shadow-xl"
+            className="w-full max-w-md rounded-2xl border border-black/10 bg-white p-8 text-center shadow-xl"
           >
             <p className="section-eyebrow text-brand-blue-light">Application received</p>
             <h2
               id="waitlist-success-title"
-              className="mt-2 text-2xl font-bold tracking-tight text-white"
+              className="mt-2 text-2xl font-bold tracking-tight text-black"
             >
               Thank you!
             </h2>
-            <p className="mt-3 font-[family-name:var(--font-dm-sans),sans-serif] text-base leading-[1.55] text-neutral-400">
+            <p className="mt-3 font-[family-name:var(--font-dm-sans),sans-serif] text-base leading-[1.55] text-neutral-600">
               We&apos;ll review your application and be in touch shortly. Redirecting you home…
             </p>
           </div>
@@ -298,7 +298,7 @@ export default function RequestAccessForm() {
       <button
         type="submit"
         disabled={status === 'loading' || status === 'success'}
-        className="flex min-h-[44px] w-full items-center justify-center rounded-full bg-white px-6 py-3.5 text-[15px] font-medium text-black transition-opacity hover:opacity-88 disabled:opacity-60"
+        className="flex min-h-[44px] w-full items-center justify-center rounded-full bg-near-black px-6 py-3.5 text-[15px] font-medium text-white transition-opacity hover:opacity-88 disabled:opacity-60"
       >
         {status === 'loading' ? 'Submitting…' : 'Join the waitlist'}
       </button>

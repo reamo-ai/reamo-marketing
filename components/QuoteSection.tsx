@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function QuoteSection() {
   return (
-    <section className="section-y relative z-[2] bg-white px-page text-center" data-no-reveal data-nav-surface="light">
+    <section className="section-y relative z-[2] bg-[var(--bg)] px-page text-center" data-no-reveal data-nav-surface="light">
       <SectionRevealItem className="mx-auto mb-8 h-24 w-24 overflow-hidden rounded-full lg:mb-9 lg:h-28 lg:w-28">
         <Image
           src="/images/quotes/pam-socha.png"

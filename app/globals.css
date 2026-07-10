@@ -12,7 +12,7 @@
 
   /* New homepage design tokens */
   --white: #ffffff;
-  --page-surface: #171717;
+  --page-surface: #ffffff;
   --bg: #f5f5f7;
   --section-gutter: var(--page-surface);
   --hero-bg: var(--page-surface);
@@ -47,13 +47,13 @@
   --reveal-content-delay: 0.4s;
 
   /* Legacy tokens (secondary pages + pricing) */
-  --color-background: #0a0a0f;
-  --color-surface: #14141e;
-  --color-input: #1c1c28;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-accent: #00d4a0;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #9999aa;
+  --color-background: #ffffff;
+  --color-surface: #f4f5f7;
+  --color-input: #eef0f3;
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-accent: #00a884;
+  --color-text-primary: #1d1d1f;
+  --color-text-secondary: #5b5b66;
   --font-inter: 'Inter', system-ui, sans-serif;
 
   --text-muted: #6b6b7a;
@@ -96,8 +96,8 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding-top: var(--nav-height);
-  background-color: var(--near-black);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--ink);
   font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
 }
@@ -109,9 +109,8 @@ body.no-nav-pad {
 .home-hero-viewport {
   position: relative;
   margin-top: calc(-1 * var(--nav-height));
-  min-height: 100svh;
   padding-top: var(--nav-height);
-  background-color: var(--hero-near-black);
+  background-color: var(--white);
 }
 
 /* ── Scroll reveal ─────────────────────────────────────────────────────────── */
@@ -286,6 +285,7 @@ body.no-nav-pad {
 
   .nav-glass-on-light {
     background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow:
       0 8px 32px rgba(0, 0, 0, 0.08),
       inset 0 1px 1px rgba(255, 255, 255, 0.9);
@@ -408,16 +408,24 @@ body.no-nav-pad {
   }
 }
 
-/* Soft ambient glow behind the hero vignette — a blurred radial blob that
-   fades to fully transparent, no hard box edges. */
+/* Soft ambient glow behind the hero vignette — same gradient as the
+   checklist pills, blurred and masked so it fades to fully transparent
+   at the edges with no hard box lines. */
 .hero-vignette-glow {
-  background: radial-gradient(
-    ellipse 65% 32% at center,
-    rgba(93, 145, 189, 0.22) 0%,
-    rgba(93, 145, 189, 0) 100%
+  background-image: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #cfe6f5 20%,
+    #8fbfdd 40%,
+    #ffffff 60%,
+    #8fbfdd 80%,
+    #cfe6f5 100%
   );
-  transform: rotate(-45deg);
-  filter: blur(56px);
+  background-size: 640px 320px;
+  opacity: 0.55;
+  filter: blur(64px);
+  -webkit-mask-image: radial-gradient(ellipse 85% 80% at center, black 0%, transparent 90%);
+  mask-image: radial-gradient(ellipse 85% 80% at center, black 0%, transparent 90%);
 }
 
 @keyframes checkmark-pulse {
@@ -688,7 +696,7 @@ body.no-nav-pad {
   transform: translateY(-50%);
   width: 1px;
   height: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.1);
   pointer-events: none;
 }
 
@@ -1077,7 +1085,7 @@ body.no-nav-pad {
     transform: translateY(-50%);
     width: 1px;
     height: 50%;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.1);
     pointer-events: none;
   }
 
@@ -1089,7 +1097,7 @@ body.no-nav-pad {
     transform: translateX(-50%);
     width: 50%;
     height: 1px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.1);
     pointer-events: none;
   }
 
@@ -1145,7 +1153,7 @@ body.no-nav-pad {
     transform: translateX(-50%);
     width: 50%;
     height: 1px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.1);
     pointer-events: none;
   }
 }

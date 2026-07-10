@@ -55,7 +55,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable} ${dmSans.variable}`}>
-      <body className="bg-near-black">
+      <body className="bg-white">
         <RootLayoutClient>{children}</RootLayoutClient>
       </body>
     </html>

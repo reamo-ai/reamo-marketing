@@ -20,7 +20,7 @@ function getNavSampleY() {
 }
 
 export function useNavSurface() {
-  const [onLightSurface, setOnLightSurface] = useState(false);
+  const [onLightSurface, setOnLightSurface] = useState(true);
 
   useEffect(() => {
     const update = () => {
@@ -37,7 +37,7 @@ export function useNavSurface() {
         }
       }
 
-      setOnLightSurface(false);
+      setOnLightSurface(true);
     };
 
     update();

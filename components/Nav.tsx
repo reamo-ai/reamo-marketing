@@ -90,9 +90,9 @@ export default function Nav() {
       </header>
 
       {menuOpen ? (
-        <div className="fixed inset-0 z-[300] flex flex-col bg-near-black lg:hidden">
+        <div className="fixed inset-0 z-[300] flex flex-col bg-white lg:hidden">
           <div className="flex items-center justify-between px-4 pt-[var(--nav-float-top)] sm:px-5">
-            <span className="font-montserrat text-[19px] font-extrabold leading-none tracking-[0.005em] text-white">
+            <span className="font-montserrat text-[19px] font-extrabold leading-none tracking-[0.005em] text-near-black">
               Reamo
             </span>
             <button
@@ -101,8 +101,8 @@ export default function Nav() {
               aria-label="Close menu"
               className="relative flex h-9 w-9 items-center justify-center"
             >
-              <span className="absolute block h-[2px] w-5 rotate-45 rounded-full bg-white" />
-              <span className="absolute block h-[2px] w-5 -rotate-45 rounded-full bg-white" />
+              <span className="absolute block h-[2px] w-5 rotate-45 rounded-full bg-near-black" />
+              <span className="absolute block h-[2px] w-5 -rotate-45 rounded-full bg-near-black" />
             </button>
           </div>
 
@@ -110,14 +110,14 @@ export default function Nav() {
             <a
               href="https://app.reamo.ai"
               onClick={() => setMenuOpen(false)}
-              className="inline-flex w-full max-w-xs items-center justify-center rounded-full border border-white/20 px-6 py-4 text-base text-white no-underline transition-colors hover:border-white/40"
+              className="inline-flex w-full max-w-xs items-center justify-center rounded-full border border-brand-blue px-6 py-4 text-base text-brand-blue no-underline transition-colors hover:border-brand-blue/70 hover:text-brand-blue/70"
             >
               Login
             </a>
             <Link
               href="/waitlist"
               onClick={() => setMenuOpen(false)}
-              className="inline-flex w-full max-w-xs items-center justify-center rounded-full bg-white px-6 py-4 text-base text-black no-underline transition-opacity hover:opacity-85"
+              className="inline-flex w-full max-w-xs items-center justify-center rounded-full bg-near-black px-6 py-4 text-base text-white no-underline transition-opacity hover:opacity-85"
             >
               Join waitlist
             </Link>

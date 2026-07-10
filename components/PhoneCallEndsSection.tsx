@@ -17,7 +17,7 @@ const PILL_COUNT = 6;
 function VignetteBlock() {
   return (
     <div className="relative mx-auto flex w-full max-w-[560px] flex-col items-center lg:min-w-0">
-      <div className="hero-vignette-glow absolute -inset-16" aria-hidden />
+      <div className="hero-vignette-glow absolute -inset-32" aria-hidden />
       <div className="w-full -translate-y-5 max-lg:[mask-image:linear-gradient(to_bottom,transparent,black_18%,black_82%,transparent)]">
         <LoopCreatedVignette />
       </div>
@@ -86,7 +86,7 @@ export default function PhoneCallEndsSection() {
             middle office
             <sup className="relative top-0 ml-0.5 inline-block -translate-y-[8px] align-baseline text-[0.4em]">TM</sup>
           </p>
-          <h1 className="text-center font-[family-name:var(--font-montserrat),sans-serif] text-[clamp(44px,11vw,48.7px)] font-bold leading-[1.1] tracking-[-0.02em] text-white lg:whitespace-nowrap lg:text-[clamp(30.7px,9vw,48.7px)] lg:text-left">
+          <h1 className="text-center font-[family-name:var(--font-montserrat),sans-serif] text-[clamp(44px,11vw,48.7px)] font-bold leading-[1.1] tracking-[-0.02em] text-black lg:whitespace-nowrap lg:text-[clamp(30.7px,9vw,48.7px)] lg:text-left">
             The client
             <br className="md:hidden" />
             <span className="max-md:hidden"> </span>
@@ -97,10 +97,10 @@ export default function PhoneCallEndsSection() {
             <span className="max-md:hidden"> </span>
             to work.
           </h1>
-          <p className="mt-[14px] px-6 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(18.4px,1.5vw,21.4px)] font-medium leading-[1.3] text-neutral-400 md:px-0 lg:text-left">
+          <p className="mt-[14px] px-6 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(18.4px,1.5vw,21.4px)] font-medium leading-[1.3] text-neutral-600 md:px-0 lg:text-left">
             Reamo listens to your client calls, knows what should happen next, and does it for you - automatically.
           </p>
-          <p className="mt-3 px-6 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(18.4px,1.5vw,21.4px)] font-medium leading-[1.3] text-neutral-400 md:px-0 lg:mt-[16px] lg:text-left">
+          <p className="mt-3 px-6 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(18.4px,1.5vw,21.4px)] font-medium leading-[1.3] text-neutral-600 md:px-0 lg:mt-[16px] lg:text-left">
             No onboarding. Nothing new to learn. Connect and go.
           </p>
           <div className="mt-8 w-full lg:hidden">
