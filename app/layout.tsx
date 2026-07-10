@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import RootLayoutClient from "./RootLayoutClient";
 import "./globals.css";
 
@@ -56,6 +57,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable} ${dmSans.variable}`}>
       <body className="bg-white">
+        {process.env.NODE_ENV === "production" && (
+          <Script
+            id="rb2b"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("W6Z57HZKWROX");`,
+            }}
+          />
+        )}
         <RootLayoutClient>{children}</RootLayoutClient>
       </body>
     </html>
