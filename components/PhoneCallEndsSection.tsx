@@ -29,7 +29,7 @@ function CheckedItem({ label, index }: { label: string; index: number }) {
   const delay = `-${((PILL_COUNT - index) % PILL_COUNT)}s`;
   return (
     <li className="relative z-[1] list-none">
-      <div className="pill-unified-gradient inline-flex w-max max-w-full items-center gap-[8.73px] rounded-full px-[18.32px] py-[17.3px] text-left lg:gap-[6.62px] lg:px-[14.18px] lg:py-[13.23px]">
+      <div className="inline-flex w-max max-w-full items-center gap-[8.73px] rounded-full border border-black/15 bg-white px-[18.32px] py-[17.3px] text-left lg:gap-[6.62px] lg:px-[14.18px] lg:py-[13.23px]">
         <span
           aria-hidden
           style={{ animationDelay: delay }}
