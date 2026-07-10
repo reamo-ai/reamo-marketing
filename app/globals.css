@@ -235,7 +235,7 @@ body.no-nav-pad {
 
   .section-headline {
     font-family: var(--font-montserrat), sans-serif;
-    font-size: clamp(47px, 10.5vw, 74px);
+    font-size: clamp(44px, 11vw, 48.7px);
     font-weight: 700;
     line-height: 0.98;
     letter-spacing: -0.04em;
@@ -243,7 +243,7 @@ body.no-nav-pad {
 
   @media (min-width: 1024px) {
     .section-headline {
-      font-size: clamp(23px, calc(6vw - 2pt), calc(74px - 2pt));
+      font-size: clamp(30.7px, 9vw, 48.7px);
     }
   }
 
@@ -397,17 +397,6 @@ body.no-nav-pad {
   background-position: 0 0;
 }
 
-/* Mobile/tablet browsers render background-attachment: fixed inconsistently
-   during scroll (visible seams/hard lines). Use a per-element gradient
-   there instead — cross-pill continuity isn't visible anyway since pills
-   stack vertically at this size. */
-@media (max-width: 1023px) {
-  .pill-unified-gradient {
-    background-size: 100% 100%;
-    background-attachment: scroll;
-  }
-}
-
 /* Soft ambient glow behind the hero vignette — same gradient as the
    checklist pills, blurred and masked so it fades to fully transparent
    at the edges with no hard box lines. */
@@ -421,11 +410,12 @@ body.no-nav-pad {
     #8fbfdd 80%,
     #cfe6f5 100%
   );
-  background-size: 640px 320px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   opacity: 0.55;
   filter: blur(64px);
-  -webkit-mask-image: radial-gradient(ellipse 85% 80% at center, black 0%, transparent 90%);
-  mask-image: radial-gradient(ellipse 85% 80% at center, black 0%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 55% at center, black 0%, transparent 60%);
+  mask-image: radial-gradient(ellipse 60% 55% at center, black 0%, transparent 60%);
 }
 
 @keyframes checkmark-pulse {

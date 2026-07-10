@@ -17,7 +17,7 @@ const PILL_COUNT = 6;
 function VignetteBlock() {
   return (
     <div className="relative mx-auto flex w-full max-w-[560px] flex-col items-center lg:min-w-0">
-      <div className="hero-vignette-glow absolute -inset-32" aria-hidden />
+      <div className="hero-vignette-glow absolute -inset-40" aria-hidden />
       <div className="w-full -translate-y-5 max-lg:[mask-image:linear-gradient(to_bottom,transparent,black_18%,black_82%,transparent)]">
         <LoopCreatedVignette />
       </div>
