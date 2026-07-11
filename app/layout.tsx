@@ -21,19 +21,19 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://reamo.ai";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Reamo — The Real Estate Agent Middle Office",
+  title: "Reamo. The Real Estate Agent Middle Office™",
   description:
     "Reamo connects to your business phone system and handles call notes, CRM updates, calendar management, and follow-ups automatically — while you talk.",
   openGraph: {
     type: "website",
     siteName: "Reamo",
-    title: "Reamo — The Real Estate Agent Middle Office",
+    title: "Reamo. The Real Estate Agent Middle Office™",
     description:
       "Reamo connects to your business phone system and handles call notes, CRM updates, calendar management, and follow-ups automatically — while you talk.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reamo — The Real Estate Agent Middle Office",
+    title: "Reamo. The Real Estate Agent Middle Office™",
     description:
       "Reamo connects to your business phone system and handles call notes, CRM updates, calendar management, and follow-ups automatically — while you talk.",
   },
