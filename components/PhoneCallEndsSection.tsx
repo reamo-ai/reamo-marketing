@@ -76,7 +76,7 @@ export default function PhoneCallEndsSection() {
     >
       <div className="hero-text-reveal hero-text-reveal--header flex w-full flex-col items-center gap-10 sm:gap-12 lg:flex-row lg:items-center lg:justify-center lg:gap-20 min-[1440px]:gap-24">
         <div className="w-full max-w-[480px] md:max-w-[680px] lg:max-w-none lg:min-w-0 lg:flex-[0_1_54%] lg:-translate-y-[10px]">
-          <p className="section-eyebrow mb-[25px] text-center text-[16.5px] text-brand-blue-light lg:whitespace-nowrap lg:text-left lg:text-[21.5px]">
+          <p className="section-eyebrow mb-[25px] text-center text-[16.5px] text-brand-blue-light lg:whitespace-nowrap lg:text-left lg:text-[clamp(18.5px,1.507vw,21.5px)]">
             The real estate agent
             <br className="md:hidden" />
             <span className="max-md:hidden"> </span>
@@ -86,7 +86,7 @@ export default function PhoneCallEndsSection() {
               <sup className="relative top-0 ml-0.5 inline-block -translate-y-[8px] align-baseline text-[0.4em] lg:-translate-y-[11px]">TM</sup>
             </span>
           </p>
-          <h1 className="text-center font-[family-name:var(--font-montserrat),sans-serif] text-[clamp(41px,11vw,45.7px)] font-extrabold leading-[1.0] tracking-[-0.02em] text-black lg:whitespace-nowrap lg:text-[clamp(27.7px,9vw,51.3px)] lg:text-left">
+          <h1 className="text-center font-[family-name:var(--font-montserrat),sans-serif] text-[clamp(41px,11vw,45.7px)] font-extrabold leading-[1.0] tracking-[-0.02em] text-black lg:whitespace-nowrap lg:text-[clamp(44.1px,3.596vw,51.3px)] lg:text-left">
             The client
             <br className="md:hidden" />
             <span className="max-md:hidden"> </span>
@@ -97,12 +97,12 @@ export default function PhoneCallEndsSection() {
             <span className="max-md:hidden"> </span>
             to work.
           </h1>
-          <p className="mt-[22px] px-6 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(18.4px,1.5vw,21.4px)] font-medium leading-[1.3] text-neutral-600 md:px-0 lg:text-left">
+          <p className="mt-[22px] px-6 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(18.4px,1.5vw,21.4px)] font-medium leading-[1.3] text-neutral-600 md:px-0 lg:whitespace-nowrap lg:text-left">
             Reamo listens to your client calls, knows what should{' '}
             <br className="max-md:hidden" />
             happen next, and does it for you - automatically.
           </p>
-          <p className="mt-3 px-6 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(18.4px,1.5vw,21.4px)] font-medium leading-[1.3] text-neutral-600 md:px-0 lg:mt-[16px] lg:text-left">
+          <p className="mt-3 px-6 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(18.4px,1.5vw,21.4px)] font-medium leading-[1.3] text-neutral-600 md:px-0 lg:mt-[16px] lg:whitespace-nowrap lg:text-left">
             No new app. No onboarding. Nothing to learn.
             <br />
             Connect what you already use, and get back to selling.
