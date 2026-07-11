@@ -5,15 +5,17 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
-const fontPath = join(root, "assets/fonts/Montserrat-Bold.ttf");
 
-GlobalFonts.registerFromPath(fontPath, "Montserrat");
+// Bold (700) is used for the "R" glyph icons; ExtraBold (800) matches the
+// site's nav wordmark/headlines and is used for the "Reamo" share-card mark.
+GlobalFonts.registerFromPath(join(root, "assets/fonts/Montserrat-Bold.ttf"), "Montserrat");
+GlobalFonts.registerFromPath(
+  join(root, "assets/fonts/Montserrat-ExtraBold.ttf"),
+  "Montserrat ExtraBold"
+);
 
 const WHITE = "#ffffff";
 const BLACK = "#111111";
-const TAGLINE = "rgba(17, 17, 17, 0.55)";
-
-const TAGLINE_TEXT = "THE REAL ESTATE AGENT MIDDLE OFFICE™";
 
 /** Matches the nav wordmark: Montserrat bold R centered on white. */
 function renderBrandIcon(size) {
@@ -51,34 +53,15 @@ function renderOpenGraphImage() {
 
   ctx.textAlign = "center";
   ctx.textBaseline = "alphabetic";
-  const centerX = width / 2;
 
   const wordmarkSize = 150;
-  const taglineSize = 22;
-  const gap = 34;
-
-  ctx.font = `700 ${wordmarkSize}px Montserrat`;
+  ctx.font = `800 ${wordmarkSize}px "Montserrat ExtraBold"`;
   ctx.letterSpacing = "0px";
   const wordmarkCap = ctx.measureText("Reamo").actualBoundingBoxAscent;
+  const baselineY = (height + wordmarkCap) / 2;
 
-  ctx.font = `700 ${taglineSize}px Montserrat`;
-  ctx.letterSpacing = "3px";
-  const taglineCap = ctx.measureText(TAGLINE_TEXT).actualBoundingBoxAscent;
-
-  const blockHeight = wordmarkCap + gap + taglineCap;
-  const blockTop = (height - blockHeight) / 2;
-  const wordmarkBaselineY = blockTop + wordmarkCap;
-  const taglineBaselineY = wordmarkBaselineY + gap + taglineCap;
-
-  ctx.font = `700 ${wordmarkSize}px Montserrat`;
-  ctx.letterSpacing = "0px";
   ctx.fillStyle = BLACK;
-  ctx.fillText("Reamo", centerX, wordmarkBaselineY);
-
-  ctx.font = `700 ${taglineSize}px Montserrat`;
-  ctx.letterSpacing = "3px";
-  ctx.fillStyle = TAGLINE;
-  ctx.fillText(TAGLINE_TEXT, centerX, taglineBaselineY);
+  ctx.fillText("Reamo", width / 2, baselineY);
 
   return canvas.toBuffer("image/png");
 }
