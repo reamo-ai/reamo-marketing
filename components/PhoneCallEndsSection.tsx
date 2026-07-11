@@ -4,12 +4,12 @@ import { useLayoutEffect, useRef } from 'react';
 import LoopCreatedVignette from './LoopCreatedVignette';
 
 const CHECKLIST_ITEMS = [
-  { label: 'Life events flagged' },
-  { label: 'CRM updated' },
-  { label: 'Loop created & filled', align: 'left' },
-  { label: 'Calendar managed', align: 'right' },
-  { label: 'Follow-up created' },
-  { label: 'Summary written' },
+  'Life events flagged',
+  'CRM updated',
+  'Loop created & filled',
+  'Calendar managed',
+  'Follow-up created',
+  'Summary written',
 ] as const;
 
 const PILL_COUNT = 6;
@@ -25,19 +25,10 @@ function VignetteBlock() {
   );
 }
 
-function CheckedItem({
-  label,
-  index,
-  align,
-}: {
-  label: string;
-  index: number;
-  align?: 'left' | 'right';
-}) {
+function CheckedItem({ label, index }: { label: string; index: number }) {
   const delay = `-${((PILL_COUNT - index) % PILL_COUNT)}s`;
-  const alignClass = align === 'left' ? 'max-lg:mr-auto' : align === 'right' ? 'max-lg:ml-auto' : '';
   return (
-    <li className={`relative z-[1] list-none ${alignClass}`}>
+    <li className="relative z-[1] flex w-full list-none justify-center lg:w-auto">
       <div className="inline-flex w-max max-w-full items-center gap-[8.73px] rounded-full border border-black/15 bg-white px-[18.32px] py-[17.3px] text-left lg:gap-[6.62px] lg:px-[14.18px] lg:py-[13.23px]">
         <span
           aria-hidden
@@ -120,14 +111,9 @@ export default function PhoneCallEndsSection() {
             <VignetteBlock />
           </div>
           <div className="hero-text-reveal mt-8 flex w-full flex-col items-center gap-2 sm:gap-[7.7px] lg:mt-[46px] lg:items-start lg:gap-2 xl:gap-2.5">
-            <ul className="flex w-full max-w-[560px] flex-wrap items-center justify-center gap-2 sm:gap-[7.7px] lg:max-w-none lg:justify-start lg:gap-2 xl:gap-2.5">
+            <ul className="grid w-full max-w-[420px] grid-cols-1 justify-items-center gap-2 sm:gap-[7.7px] min-[560px]:max-w-[560px] min-[560px]:grid-cols-2 lg:flex lg:max-w-none lg:flex-wrap lg:items-center lg:justify-start lg:gap-2 xl:gap-2.5">
               {CHECKLIST_ITEMS.map((item, index) => (
-                <CheckedItem
-                  key={item.label}
-                  label={item.label}
-                  index={index}
-                  align={'align' in item ? item.align : undefined}
-                />
+                <CheckedItem key={item} label={item} index={index} />
               ))}
             </ul>
           </div>
