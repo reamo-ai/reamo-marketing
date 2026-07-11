@@ -187,7 +187,7 @@ export default function WorksHowYouWorkSection({
       >
         <div className="mx-auto w-full min-w-0 max-w-[1200px]">
           <SectionRevealItem className="text-left max-lg:text-center">
-            <p className="section-eyebrow mb-3 text-brand-blue-light">A teammate you can rely on</p>
+            <p className="section-eyebrow mb-3 text-brand-blue-light">Use the device you already use</p>
             <h2 className="section-headline text-black">
               Always a text away.
             </h2>
@@ -216,7 +216,7 @@ export default function WorksHowYouWorkSection({
                       </div>
                     </div>
                     <div
-                      className={`mt-4 flex ${MEDIA_BOX_WIDTH_CLASS} flex-col gap-1 md:mt-5 md:row-start-2 ${colStartClass}`}
+                      className={`mt-1 flex ${MEDIA_BOX_WIDTH_CLASS} flex-col gap-1 md:mt-1 md:row-start-2 ${colStartClass}`}
                     >
                       <p className={SLIDE_LABEL_CLASS}>{slide.label}</p>
                       <p className={DESCRIPTOR_CLASS}>{slide.description}</p>

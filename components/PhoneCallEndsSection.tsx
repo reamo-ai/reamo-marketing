@@ -69,9 +69,6 @@ export default function PhoneCallEndsSection() {
     requestAnimationFrame(() => nodes.forEach((node) => node.classList.add('visible')));
   }, []);
 
-  const topRow = CHECKLIST_ITEMS.slice(0, 3);
-  const bottomRow = CHECKLIST_ITEMS.slice(3);
-
   return (
     <section
       ref={rootRef}
@@ -79,14 +76,17 @@ export default function PhoneCallEndsSection() {
     >
       <div className="hero-text-reveal hero-text-reveal--header flex w-full flex-col items-center gap-10 sm:gap-12 lg:flex-row lg:items-center lg:justify-center lg:gap-20 min-[1440px]:gap-24">
         <div className="w-full max-w-[480px] md:max-w-[680px] lg:max-w-none lg:min-w-0 lg:flex-[0_1_54%] lg:-translate-y-[10px]">
-          <p className="section-eyebrow mb-[25px] text-center text-[16.5px] text-brand-blue-light lg:text-left">
+          <p className="section-eyebrow mb-[25px] text-center text-[16.5px] text-brand-blue-light lg:whitespace-nowrap lg:text-left lg:text-[21.5px]">
             The real estate agent
             <br className="md:hidden" />
             <span className="max-md:hidden"> </span>
-            middle office
-            <sup className="relative top-0 ml-0.5 inline-block -translate-y-[8px] align-baseline text-[0.4em]">TM</sup>
+            middle{' '}
+            <span className="whitespace-nowrap">
+              office
+              <sup className="relative top-0 ml-0.5 inline-block -translate-y-[8px] align-baseline text-[0.4em] lg:-translate-y-[11px]">TM</sup>
+            </span>
           </p>
-          <h1 className="text-center font-[family-name:var(--font-montserrat),sans-serif] text-[clamp(44px,11vw,48.7px)] font-bold leading-[1.1] tracking-[-0.02em] text-black lg:whitespace-nowrap lg:text-[clamp(30.7px,9vw,48.7px)] lg:text-left">
+          <h1 className="text-center font-[family-name:var(--font-montserrat),sans-serif] text-[clamp(41px,11vw,45.7px)] font-extrabold leading-[1.0] tracking-[-0.02em] text-black lg:whitespace-nowrap lg:text-[clamp(27.7px,9vw,51.3px)] lg:text-left">
             The client
             <br className="md:hidden" />
             <span className="max-md:hidden"> </span>
@@ -97,24 +97,23 @@ export default function PhoneCallEndsSection() {
             <span className="max-md:hidden"> </span>
             to work.
           </h1>
-          <p className="mt-[14px] px-6 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(18.4px,1.5vw,21.4px)] font-medium leading-[1.3] text-neutral-600 md:px-0 lg:text-left">
-            Reamo listens to your client calls, knows what should happen next, and does it for you - automatically.
+          <p className="mt-[22px] px-6 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(18.4px,1.5vw,21.4px)] font-medium leading-[1.3] text-neutral-600 md:px-0 lg:text-left">
+            Reamo listens to your client calls, knows what should{' '}
+            <br className="max-md:hidden" />
+            happen next, and does it for you - automatically.
           </p>
           <p className="mt-3 px-6 text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(18.4px,1.5vw,21.4px)] font-medium leading-[1.3] text-neutral-600 md:px-0 lg:mt-[16px] lg:text-left">
-            No onboarding. Nothing new to learn. Connect and go.
+            No new app. No onboarding. Nothing to learn.
+            <br />
+            Connect what you already use, and get back to selling.
           </p>
-          <div className="mt-8 w-full lg:hidden">
+          <div className="mt-12 w-full lg:hidden">
             <VignetteBlock />
           </div>
-          <div className="hero-text-reveal mt-7 flex w-full flex-col items-center gap-2 sm:gap-[7.7px] lg:mt-[38px] lg:items-start lg:gap-2 xl:gap-2.5">
-            <ul className="flex w-full flex-wrap items-center justify-center gap-2 sm:gap-[7.7px] lg:justify-start lg:gap-2 xl:gap-2.5">
-              {topRow.map((item) => (
-                <CheckedItem key={item} label={item} index={CHECKLIST_ITEMS.indexOf(item)} />
-              ))}
-            </ul>
-            <ul className="flex w-full flex-wrap items-center justify-center gap-2 sm:gap-[7.7px] lg:justify-start lg:gap-2 xl:gap-2.5">
-              {bottomRow.map((item) => (
-                <CheckedItem key={item} label={item} index={CHECKLIST_ITEMS.indexOf(item)} />
+          <div className="hero-text-reveal mt-8 flex w-full flex-col items-center gap-2 sm:gap-[7.7px] lg:mt-[46px] lg:items-start lg:gap-2 xl:gap-2.5">
+            <ul className="flex w-full max-w-[560px] flex-wrap items-center justify-center gap-2 sm:gap-[7.7px] lg:max-w-none lg:justify-start lg:gap-2 xl:gap-2.5">
+              {CHECKLIST_ITEMS.map((item, index) => (
+                <CheckedItem key={item} label={item} index={index} />
               ))}
             </ul>
           </div>
