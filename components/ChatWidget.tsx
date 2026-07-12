@@ -28,7 +28,7 @@ type HandoffStatus = 'closed' | 'form' | 'submitting' | 'done' | 'error';
 const SUGGESTED_QUESTIONS = [
   'What does Reamo do?',
   'Which CRMs does Reamo integrate with?',
-  'How much does Reamo cost?',
+  'What phone systems do you support?',
   'How do I get access?',
 ];
 
