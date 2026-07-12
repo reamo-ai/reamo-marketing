@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 export const metadata = {
   title: 'Unsubscribe | Reamo',
   description: 'Unsubscribe from Reamo product updates.',
+  alternates: { canonical: '/unsubscribe' },
 };
 
 export default function UnsubscribePage() {

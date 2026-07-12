@@ -2,6 +2,7 @@ import LegalPage, { LegalSection, LegalSubSection, LegalList, LegalP } from '@/c
 
 export const metadata = {
   title: 'Privacy Policy | Reamo',
+  alternates: { canonical: '/privacy-policy' },
 };
 
 export default function PrivacyPolicy() {
