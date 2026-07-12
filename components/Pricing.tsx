@@ -7,11 +7,8 @@ const prices = {
   annual:  { agent: '$63', team: '$55', brokerage: '$47' },
 };
 
-const ctaBases = {
-  agent:     'https://app.reamo.ai/signup',
-  team:      'https://app.reamo.ai/signup/team',
-  brokerage: 'https://app.reamo.ai/signup/team',
-};
+// Reamo is currently waitlist-only; every plan CTA routes to the waitlist.
+const WAITLIST_HREF = '/waitlist';
 
 function GreenCheck() {
   return (
@@ -27,10 +24,6 @@ function PricingTable() {
   const [isAnnual, setIsAnnual] = useState(false);
 
   const mode = isAnnual ? 'annual' : 'monthly';
-
-  function ctaHref(base: string) {
-    return isAnnual ? `${base}?interval=annual` : base;
-  }
 
   function toggleBilling() {
     setIsAnnual((prev) => !prev);
@@ -90,7 +83,7 @@ function PricingTable() {
               <li className="feature-item"><GreenCheck />SMS AI agent <span className="cap-tag">100 msg/mo</span></li>
               <li className="feature-item"><GreenCheck />30-day data portability</li>
             </ul>
-            <a href={ctaHref(ctaBases.agent)} className="plan-cta cta-secondary">Start for Free</a>
+            <a href={WAITLIST_HREF} className="plan-cta cta-secondary">Join the waitlist</a>
           </div>
 
           {/* Team */}
@@ -115,7 +108,7 @@ function PricingTable() {
               <li className="feature-item"><GreenCheck />Single invoice</li>
               <li className="feature-item"><GreenCheck />Email support</li>
             </ul>
-            <a href={ctaHref(ctaBases.team)} className="plan-cta cta-secondary">Start for Free</a>
+            <a href={WAITLIST_HREF} className="plan-cta cta-secondary">Join the waitlist</a>
           </div>
 
           {/* Brokerage */}
@@ -140,7 +133,7 @@ function PricingTable() {
               <li className="feature-item"><GreenCheck />Dedicated onboarding</li>
               <li className="feature-item"><GreenCheck />Priority support</li>
             </ul>
-            <a href={ctaHref(ctaBases.brokerage)} className="plan-cta cta-secondary">Start for Free</a>
+            <a href={WAITLIST_HREF} className="plan-cta cta-secondary">Join the waitlist</a>
           </div>
 
         </div>
@@ -178,9 +171,9 @@ export default function Pricing() {
       </p>
 
       <p className="mb-10 text-center text-[17px] font-normal leading-snug tracking-tight text-primary sm:mb-12 sm:text-[29px] lg:mb-14 lg:text-[41px]">
-        Try Reamo for free.
+        Reamo is currently available by waitlist.
         <br />
-        No credit card required.
+        Join the list for early access.
       </p>
 
       <PricingTable />
