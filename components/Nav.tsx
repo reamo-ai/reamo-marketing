@@ -54,12 +54,22 @@ export default function Nav() {
           </Link>
 
           <div className="relative z-[1] hidden h-full items-center gap-2 sm:gap-3 lg:flex">
+            <Link
+              href="/partners"
+              className={`inline-flex items-center px-3.5 py-2 text-xs leading-none no-underline transition-colors duration-300 ${
+                onLightSurface
+                  ? 'text-near-black/70 hover:text-near-black'
+                  : 'text-white/80 nav-text-on-dark-shadow hover:text-white'
+              }`}
+            >
+              Integrations
+            </Link>
             <a
               href="https://app.reamo.ai"
-              className={`inline-flex items-center rounded-full border px-3.5 py-2 text-xs leading-none no-underline transition-colors duration-300 ${
+              className={`inline-flex items-center px-3.5 py-2 text-xs leading-none no-underline transition-colors duration-300 ${
                 onLightSurface
-                  ? 'border-brand-blue text-brand-blue hover:border-brand-blue/70 hover:text-brand-blue/70'
-                  : 'border-white/20 text-white hover:border-white/40 hover:text-white'
+                  ? 'text-near-black/70 hover:text-near-black'
+                  : 'text-white/80 nav-text-on-dark-shadow hover:text-white'
               }`}
             >
               Login
@@ -107,6 +117,13 @@ export default function Nav() {
           </div>
 
           <div className="flex flex-1 flex-col items-center justify-center gap-6 px-6">
+            <Link
+              href="/partners"
+              onClick={() => setMenuOpen(false)}
+              className="inline-flex w-full max-w-xs items-center justify-center px-6 py-2 text-base text-near-black no-underline transition-opacity hover:opacity-70"
+            >
+              Integrations
+            </Link>
             <a
               href="https://app.reamo.ai"
               onClick={() => setMenuOpen(false)}
