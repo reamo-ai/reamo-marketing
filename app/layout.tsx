@@ -24,6 +24,12 @@ export const metadata: Metadata = {
   title: "Reamo. The Real Estate Agent Middle Office™",
   description:
     "Reamo connects to your business phone system and handles call notes, CRM updates, calendar management, and follow-ups automatically — while you talk.",
+  // Homepage canonical. This consolidates www.reamo.ai + reamo.ai (and any
+  // query-string variants) into a single indexed URL. Subpages override this
+  // with their own canonical in their route's metadata.
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     siteName: "Reamo",

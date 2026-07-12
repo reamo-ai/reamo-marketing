@@ -2,6 +2,7 @@ import ContactUsForm from '@/components/ContactUsForm';
 
 export const metadata = {
   title: 'Contact Us | Reamo',
+  alternates: { canonical: '/contact-us' },
 };
 
 export default function ContactUs() {

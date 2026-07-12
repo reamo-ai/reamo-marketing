@@ -2,6 +2,7 @@ import LegalPage, { LegalSection, LegalSubSection, LegalList, LegalP } from '@/c
 
 export const metadata = {
   title: 'Terms of Service | Reamo',
+  alternates: { canonical: '/terms-of-service' },
 };
 
 export default function TermsOfService() {

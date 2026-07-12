@@ -5,6 +5,7 @@ export const metadata = {
   title: 'Apply for Access | Reamo',
   description:
     'Reamo is invite-only. Apply for access to join a limited number of teams using AI to handle real estate admin automatically.',
+  alternates: { canonical: '/waitlist' },
 };
 
 export default function RequestAccessPage() {
