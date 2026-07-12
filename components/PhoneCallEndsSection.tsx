@@ -110,16 +110,23 @@ export default function PhoneCallEndsSection() {
           <div className="mt-12 w-full lg:hidden">
             <VignetteBlock />
           </div>
-          <div className="hero-text-reveal mt-8 flex w-full flex-col items-center gap-2 sm:gap-[7.7px] lg:mt-[46px] lg:items-start lg:gap-2 xl:gap-2.5">
-            <ul className="grid w-full max-w-[420px] grid-cols-1 justify-items-center gap-2 sm:gap-[7.7px] min-[560px]:max-w-[560px] min-[560px]:grid-cols-2 lg:flex lg:max-w-none lg:flex-wrap lg:items-center lg:justify-start lg:gap-2 xl:gap-2.5">
+          <div className="hero-text-reveal mt-8 flex w-full flex-col items-center gap-2 sm:gap-[7.7px] lg:hidden">
+            <ul className="grid w-full max-w-[420px] grid-cols-1 justify-items-center gap-2 sm:gap-[7.7px] min-[560px]:max-w-[560px] min-[560px]:grid-cols-2">
               {CHECKLIST_ITEMS.map((item, index) => (
                 <CheckedItem key={item} label={item} index={index} />
               ))}
             </ul>
           </div>
         </div>
-        <div className="hidden lg:flex lg:min-w-0 lg:flex-[0_1_46%]">
-          <VignetteBlock />
+        <div className="hidden lg:flex lg:min-w-0 lg:flex-[0_1_46%] lg:flex-col lg:items-center">
+          <div className="w-full max-w-[560px] origin-top scale-90">
+            <VignetteBlock />
+          </div>
+          <ul className="relative z-[2] -mt-[59px] mb-10 flex w-max max-w-[360px] flex-wrap justify-center gap-2 min-[1200px]:max-w-[540px] xl:gap-2.5">
+            {CHECKLIST_ITEMS.map((item, index) => (
+              <CheckedItem key={item} label={item} index={index} />
+            ))}
+          </ul>
         </div>
       </div>
     </section>
