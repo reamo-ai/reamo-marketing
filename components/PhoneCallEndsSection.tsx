@@ -1,6 +1,6 @@
 'use client';
 
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef, type CSSProperties } from 'react';
 import LoopCreatedVignette from './LoopCreatedVignette';
 
 const CHECKLIST_ITEMS = [
@@ -29,7 +29,10 @@ function CheckedItem({ label, index }: { label: string; index: number }) {
   const delay = `-${((PILL_COUNT - index) % PILL_COUNT)}s`;
   return (
     <li className="relative z-[1] flex w-full list-none justify-center lg:w-auto">
-      <div className="inline-flex w-max max-w-full items-center gap-[8.73px] rounded-full border border-black/15 bg-white px-[18.32px] py-[17.3px] text-left lg:gap-[6.62px] lg:px-[14.18px] lg:py-[13.23px]">
+      <div
+        className="hero-pill inline-flex w-max max-w-full items-center gap-[8.73px] rounded-full border border-black/15 bg-white px-[18.32px] py-[17.3px] text-left lg:gap-[6.62px] lg:px-[14.18px] lg:py-[13.23px]"
+        style={{ '--pop-index': index } as CSSProperties}
+      >
         <span
           aria-hidden
           style={{ animationDelay: delay }}
@@ -74,8 +77,8 @@ export default function PhoneCallEndsSection() {
       ref={rootRef}
       className="relative flex h-full min-h-0 w-full min-w-0 flex-col items-center justify-start pb-10 pt-10 max-md:pb-8 max-md:pt-[52px] md:pb-12 md:pt-[68px] lg:pt-[93px]"
     >
-      <div className="hero-text-reveal hero-text-reveal--header flex w-full flex-col items-center gap-10 sm:gap-12 lg:flex-row lg:items-center lg:justify-center lg:gap-20 min-[1440px]:gap-24">
-        <div className="w-full max-w-[480px] md:max-w-[680px] lg:max-w-none lg:min-w-0 lg:flex-[0_1_54%] lg:-translate-y-[10px]">
+      <div className="hero-text-reveal hero-text-reveal--header flex w-full flex-col items-center gap-10 sm:gap-12 lg:mx-auto lg:max-w-[1120px] lg:flex-row lg:items-center lg:justify-center lg:gap-12 min-[1440px]:gap-14">
+        <div className="w-full max-w-[480px] md:max-w-[680px] lg:max-w-none lg:min-w-0 lg:flex-[0_1_54%] lg:-translate-y-[26px]">
           <p className="section-eyebrow mb-[25px] text-center text-[16.5px] text-brand-blue-light lg:whitespace-nowrap lg:text-left lg:text-[clamp(18.5px,1.507vw,21.5px)]">
             The real estate agent
             <br className="md:hidden" />

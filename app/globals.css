@@ -429,6 +429,32 @@ body.no-nav-pad {
   animation: checkmark-pulse 6s ease-in-out infinite;
 }
 
+/* ── Hero checklist pop-in ─────────────────────────────────────────────────── */
+
+@keyframes hero-pill-pop {
+  0%   { opacity: 0; transform: scale(0.5); }
+  70%  { opacity: 1; transform: scale(1.06); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.hero-pill {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.hero-text-reveal.visible .hero-pill {
+  animation: hero-pill-pop 0.32s var(--reveal-ease) both;
+  animation-delay: calc(0.5s + var(--pop-index, 0) * 0.07s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-pill {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
 /* ── Hero checklist scroll cue ─────────────────────────────────────────────── */
 
 @keyframes hero-scroll-cue-fill-horizontal {
