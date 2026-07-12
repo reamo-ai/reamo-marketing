@@ -86,7 +86,7 @@ const SLIDES = [
 const FEATURE_SQUARE_TEXT_WIDTH_CLASS = 'w-full max-w-[247px] sm:max-w-[266px] md:max-w-[304px]';
 
 const FEATURE_SQUARE_TEXT_CLASS =
-  `m-0 ${FEATURE_SQUARE_TEXT_WIDTH_CLASS} text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(17.4px,1.5vw,20.4px)] font-medium leading-[1.3] text-neutral-600`;
+  `m-0 ${FEATURE_SQUARE_TEXT_WIDTH_CLASS} text-center font-[family-name:var(--font-dm-sans),sans-serif] text-[clamp(14.7px,1.5vw,17.7px)] font-medium leading-[1.3] text-neutral-600`;
 
 const FEATURE_SQUARE_TEXT_TITLE_CLASS =
   'mb-1 block [font-size:var(--paragraph-header-size)] font-bold text-black';
