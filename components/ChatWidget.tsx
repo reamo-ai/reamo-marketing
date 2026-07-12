@@ -107,7 +107,7 @@ export default function ChatWidget() {
     return () => document.removeEventListener('keydown', onKey);
   }, [open, closePanel]);
 
-  // Teaser popup: a small "Have questions?" nudge that appears 5s after load,
+  // Teaser popup: a small "Have questions?" nudge that appears 7s after load,
   // at most once per session. Clicking it opens the chat; the X dismisses it.
   const dismissTeaser = useCallback(() => {
     teaserDismissedRef.current = true;
@@ -128,7 +128,7 @@ export default function ChatWidget() {
     if (teaserDismissedRef.current) return;
     const t = setTimeout(() => {
       if (!teaserDismissedRef.current) setTeaserVisible(true);
-    }, 5000);
+    }, 7000);
     return () => clearTimeout(t);
   }, []);
 
@@ -356,7 +356,7 @@ export default function ChatWidget() {
         {open ? <CloseIcon /> : <ChatIcon />}
       </button>
 
-      {/* Teaser popup — appears 5s after load, until opened or dismissed */}
+      {/* Teaser popup — appears 7s after load, until opened or dismissed */}
       {teaserVisible && !open && (
         <div className="rc-teaser" role="region" aria-label="Message from Reamo">
           <button
@@ -375,7 +375,10 @@ export default function ChatWidget() {
               setOpen(true);
             }}
           >
-            <span className="rc-teaser-dot" aria-hidden="true" />
+            <span className="rc-teaser-name">
+              <span className="rc-teaser-dot" aria-hidden="true" />
+              Reamo
+            </span>
             <span className="rc-teaser-text">Have questions? Let me know!</span>
           </button>
         </div>
@@ -579,7 +582,7 @@ const WIDGET_CSS = `
 
 .rc-teaser {
   position: fixed; right: 20px; bottom: 90px; z-index: 2147483000;
-  width: 232px;
+  width: max-content; max-width: calc(100vw - 32px);
   background: #fff; border: 1px solid rgba(7,16,32,0.10);
   border-radius: 16px;
   box-shadow: 0 14px 38px rgba(7,16,32,0.22), 0 3px 10px rgba(7,16,32,0.10);
@@ -588,14 +591,15 @@ const WIDGET_CSS = `
 }
 @keyframes rc-teaser-in { from { opacity: 0; transform: translateY(10px) scale(0.96); } to { opacity: 1; transform: none; } }
 .rc-teaser-body {
-  display: flex; align-items: center; gap: 10px; width: 100%;
-  padding: 14px 34px 14px 15px; text-align: left;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 3px; width: 100%;
+  padding: 12px 15px 13px 15px; text-align: left;
   border: none; background: transparent; cursor: pointer; border-radius: 16px;
 }
 .rc-teaser-body:hover { background: rgba(27,58,107,0.04); }
 .rc-teaser-body:focus-visible { outline: 2px solid rgba(99,147,180,0.7); outline-offset: -2px; }
-.rc-teaser-dot { flex: 0 0 auto; width: 9px; height: 9px; border-radius: 999px; background: var(--brand-blue-light, #6393b4); box-shadow: 0 0 0 3px rgba(99,147,180,0.22); }
-.rc-teaser-text { font-size: 14px; font-weight: 500; line-height: 1.35; color: var(--color-text-primary, #1d1d1f); }
+.rc-teaser-name { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--brand-blue, #1b3a6b); }
+.rc-teaser-dot { flex: 0 0 auto; width: 8px; height: 8px; border-radius: 999px; background: var(--brand-blue-light, #6393b4); box-shadow: 0 0 0 3px rgba(99,147,180,0.20); }
+.rc-teaser-text { font-size: 14px; font-weight: 500; line-height: 1.35; color: var(--color-text-primary, #1d1d1f); white-space: nowrap; }
 .rc-teaser-close {
   position: absolute; top: 7px; right: 7px;
   display: flex; padding: 3px; border: none; background: transparent; cursor: pointer;
