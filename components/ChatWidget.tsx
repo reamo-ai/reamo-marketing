@@ -55,6 +55,8 @@ export default function ChatWidget() {
   const [handoffPrefill, setHandoffPrefill] = useState('');
   const [handoffError, setHandoffError] = useState('');
 
+  const [teaserVisible, setTeaserVisible] = useState(false);
+
   const sessionIdRef = useRef<string>('');
   const launcherRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -62,6 +64,7 @@ export default function ChatWidget() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
   const handoffFailuresRef = useRef(0);
+  const teaserDismissedRef = useRef(false);
 
   // Stable session id (survives refresh within the tab), used for backend per-session rate limiting.
   useEffect(() => {
@@ -103,6 +106,36 @@ export default function ChatWidget() {
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [open, closePanel]);
+
+  // Teaser popup: a small "Have questions?" nudge that appears 5s after load,
+  // at most once per session. Clicking it opens the chat; the X dismisses it.
+  const dismissTeaser = useCallback(() => {
+    teaserDismissedRef.current = true;
+    try {
+      sessionStorage.setItem('reamo_chat_teaser_dismissed', '1');
+    } catch {
+      /* ignore */
+    }
+    setTeaserVisible(false);
+  }, []);
+
+  useEffect(() => {
+    try {
+      if (sessionStorage.getItem('reamo_chat_teaser_dismissed')) teaserDismissedRef.current = true;
+    } catch {
+      /* ignore */
+    }
+    if (teaserDismissedRef.current) return;
+    const t = setTimeout(() => {
+      if (!teaserDismissedRef.current) setTeaserVisible(true);
+    }, 5000);
+    return () => clearTimeout(t);
+  }, []);
+
+  // Opening the chat (by any means) retires the teaser for the rest of the session.
+  useEffect(() => {
+    if (open) dismissTeaser();
+  }, [open, dismissTeaser]);
 
   // Minimal focus trap within the open panel.
   const onPanelKeyDown = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -323,6 +356,31 @@ export default function ChatWidget() {
         {open ? <CloseIcon /> : <ChatIcon />}
       </button>
 
+      {/* Teaser popup — appears 5s after load, until opened or dismissed */}
+      {teaserVisible && !open && (
+        <div className="rc-teaser" role="region" aria-label="Message from Reamo">
+          <button
+            type="button"
+            className="rc-teaser-close"
+            aria-label="Dismiss message"
+            onClick={dismissTeaser}
+          >
+            <CloseIcon />
+          </button>
+          <button
+            type="button"
+            className="rc-teaser-body"
+            onClick={() => {
+              dismissTeaser();
+              setOpen(true);
+            }}
+          >
+            <span className="rc-teaser-dot" aria-hidden="true" />
+            <span className="rc-teaser-text">Have questions? Let me know!</span>
+          </button>
+        </div>
+      )}
+
       {/* Panel */}
       {open && (
         <div
@@ -519,6 +577,34 @@ const WIDGET_CSS = `
 .rc-launcher:hover { transform: translateY(-2px) scale(1.03); background: #142a4f; }
 .rc-launcher:focus-visible { outline: 3px solid rgba(99,147,180,0.6); outline-offset: 2px; }
 
+.rc-teaser {
+  position: fixed; right: 20px; bottom: 90px; z-index: 2147483000;
+  width: 232px;
+  background: #fff; border: 1px solid rgba(7,16,32,0.10);
+  border-radius: 16px;
+  box-shadow: 0 14px 38px rgba(7,16,32,0.22), 0 3px 10px rgba(7,16,32,0.10);
+  animation: rc-teaser-in .3s cubic-bezier(0.22, 1, 0.36, 1);
+  font-family: var(--font-inter, system-ui, sans-serif);
+}
+@keyframes rc-teaser-in { from { opacity: 0; transform: translateY(10px) scale(0.96); } to { opacity: 1; transform: none; } }
+.rc-teaser-body {
+  display: flex; align-items: center; gap: 10px; width: 100%;
+  padding: 14px 34px 14px 15px; text-align: left;
+  border: none; background: transparent; cursor: pointer; border-radius: 16px;
+}
+.rc-teaser-body:hover { background: rgba(27,58,107,0.04); }
+.rc-teaser-body:focus-visible { outline: 2px solid rgba(99,147,180,0.7); outline-offset: -2px; }
+.rc-teaser-dot { flex: 0 0 auto; width: 9px; height: 9px; border-radius: 999px; background: var(--brand-blue-light, #6393b4); box-shadow: 0 0 0 3px rgba(99,147,180,0.22); }
+.rc-teaser-text { font-size: 14px; font-weight: 500; line-height: 1.35; color: var(--color-text-primary, #1d1d1f); }
+.rc-teaser-close {
+  position: absolute; top: 7px; right: 7px;
+  display: flex; padding: 3px; border: none; background: transparent; cursor: pointer;
+  color: var(--color-text-secondary, #8a8a94); border-radius: 7px;
+}
+.rc-teaser-close:hover { background: rgba(7,16,32,0.06); color: #1d1d1f; }
+.rc-teaser-close svg { width: 14px; height: 14px; }
+.rc-teaser-close:focus-visible { outline: 2px solid rgba(99,147,180,0.7); outline-offset: 1px; }
+
 .rc-panel {
   position: fixed; right: 20px; bottom: 88px;
   width: 384px; max-width: calc(100vw - 32px);
@@ -621,10 +707,11 @@ const WIDGET_CSS = `
   }
   @keyframes rc-sheet { from { transform: translateY(100%); } to { transform: none; } }
   .rc-launcher { right: 16px; bottom: 16px; }
+  .rc-teaser { right: 16px; bottom: 84px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rc-panel, .rc-launcher, .rc-send, .rc-suggestion, .rc-handoff-submit { animation: none !important; transition: none !important; }
+  .rc-panel, .rc-launcher, .rc-send, .rc-suggestion, .rc-handoff-submit, .rc-teaser { animation: none !important; transition: none !important; }
   .rc-typing span { animation: none; opacity: .7; }
 }
 `;
