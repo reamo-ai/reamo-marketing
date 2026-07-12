@@ -1,5 +1,6 @@
 "use client";
 
+import ChatWidget from "@/components/ChatWidget";
 import Footer from "@/components/Footer";
 import GlobalScrollReveal from "@/components/GlobalScrollReveal";
 import Nav from "@/components/Nav";
@@ -33,6 +34,7 @@ export default function RootLayoutClient({
       <Nav />
       {children}
       <Footer />
+      <ChatWidget />
     </>
   );
 }
