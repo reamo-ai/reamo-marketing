@@ -17,8 +17,8 @@ export default function TermsOfService() {
       <LegalSection heading="1. Acceptance of Terms">
         <LegalP>
           These Terms of Service (&ldquo;Terms&rdquo;) constitute a legally binding agreement between you
-          (&ldquo;User,&rdquo; &ldquo;you,&rdquo; or &ldquo;your&rdquo;) and Reamo, Inc. (&ldquo;Reamo,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), a
-          Delaware corporation, governing your access to and use of the Reamo platform, software,
+          (&ldquo;User,&rdquo; &ldquo;you,&rdquo; or &ldquo;your&rdquo;) and Reamo, LLC (&ldquo;Reamo,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), a
+          limited liability company, governing your access to and use of the Reamo platform, software,
           APIs, and all associated services (collectively, the &ldquo;Service&rdquo;).
         </LegalP>
         <LegalP>
@@ -59,7 +59,7 @@ export default function TermsOfService() {
           'AI-generated call summaries, transcripts, and follow-up drafts',
           'Automated SMS, email, and follow-up workflow execution',
           'Contact and lead management for real estate clients and prospects',
-          'Integration with supported VoIP providers (currently: Dialpad, JustCall, OpenPhone, Kixie, RingCentral, and Aircall, subject to change)',
+          'Integration with supported third-party VoIP providers, which may change from time to time',
           'Template libraries, workflow builders, and scheduling tools',
         ]} />
         <LegalP>
@@ -334,7 +334,7 @@ export default function TermsOfService() {
         <LegalSubSection heading="8.1 Privacy Policy">
           <LegalP>
             Reamo&apos;s collection and use of personal information is governed by our Privacy Policy,
-            available at reamo.ai/privacy, which is incorporated into these Terms by reference.
+            available at reamo.ai/privacy-policy, which is incorporated into these Terms by reference.
           </LegalP>
         </LegalSubSection>
         <LegalSubSection heading="8.2 Your Ownership of Client Data">
