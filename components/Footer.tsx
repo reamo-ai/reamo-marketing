@@ -15,6 +15,9 @@ export default function Footer() {
         <Link href="/terms-of-service" className="text-xs text-black/40 no-underline hover:text-black/70">
           Terms
         </Link>
+        <Link href="/information-security-policy" className="text-xs text-black/40 no-underline hover:text-black/70">
+          Security
+        </Link>
         <CookieSettingsButton />
       </nav>
     </footer>
