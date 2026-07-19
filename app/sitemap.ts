@@ -10,6 +10,7 @@ const routes: Array<{ path: string; priority: number }> = [
   { path: "/contact-us", priority: 0.5 },
   { path: "/privacy-policy", priority: 0.3 },
   { path: "/terms-of-service", priority: 0.3 },
+  { path: "/information-security-policy", priority: 0.3 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
