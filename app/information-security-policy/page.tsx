@@ -86,8 +86,12 @@ export default function InformationSecurityPolicy() {
         <LegalP>Reamo encrypts Sensitive/Confidential data both in transit and at rest:</LegalP>
         <LegalList items={[
           'In transit: All data transmitted between clients, Reamo services, and integrated third parties is encrypted using TLS 1.2 or higher.',
-          'At rest: Stored data, including call recordings, transcripts, and database contents, is encrypted using industry-standard algorithms (e.g., AES-256).',
+          'At rest: Data stored in our production database is encrypted at rest using the industry-standard encryption provided by our cloud infrastructure provider.',
         ]} />
+        <LegalP>
+          In addition, sensitive third-party integration credentials are encrypted at the application
+          layer using AES-256-GCM before they are stored.
+        </LegalP>
         <LegalP>
           Encryption keys are managed through the key-management services of our infrastructure
           providers and are restricted to authorized systems and personnel.
@@ -156,7 +160,7 @@ export default function InformationSecurityPolicy() {
         <LegalP>
           Reamo maintains logging and monitoring of production systems to detect and respond to
           anomalous or unauthorized activity. Security-relevant events are recorded, and logs are
-          protected against unauthorized access and tampering. Reamo reviews monitoring signals to
+          protected through access controls. Reamo reviews monitoring signals to
           support timely detection of potential security incidents.
         </LegalP>
       </LegalSection>
@@ -187,8 +191,8 @@ export default function InformationSecurityPolicy() {
 
       <LegalSection heading="15. Business Continuity and Backup">
         <LegalP>
-          Reamo maintains regular backups of critical data and leverages the resiliency and redundancy
-          of its cloud infrastructure providers to support availability. Backup and recovery practices
+          Reamo maintains regular automated backups of critical data through the managed backup
+          capabilities of our cloud infrastructure provider. Backup and recovery practices
           are designed to enable restoration of service and data following a disruption.
         </LegalP>
       </LegalSection>

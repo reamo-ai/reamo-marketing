@@ -10,14 +10,14 @@ export default function PrivacyPolicy() {
     <LegalPage title="Privacy Policy" effectiveDate="July 7, 2026">
 
       <LegalP>
-        This Privacy Policy explains how Reamo, Inc. collects, uses, and shares information about
+        This Privacy Policy explains how Reamo, LLC collects, uses, and shares information about
         you when you use our platform and services.
       </LegalP>
       <LegalP>By using Reamo, you agree to the practices described here.</LegalP>
 
       <LegalSection heading="1. Overview">
         <LegalP>
-          Reamo, Inc. (&ldquo;Reamo,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates a vertical SaaS platform for
+          Reamo, LLC (&ldquo;Reamo,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) operates a vertical SaaS platform for
           licensed real estate professionals. This Privacy Policy applies to information we collect
           through our platform, website (reamo.ai), APIs, and related services (collectively, the
           &ldquo;Service&rdquo;).
@@ -88,7 +88,7 @@ export default function PrivacyPolicy() {
         <LegalP>We use the information we collect for the following purposes:</LegalP>
         <LegalList items={[
           'Providing the Service — Processing call data, executing workflow automations, and syncing calendar data.',
-          'AI Data Processing and Transparency — To provide our core services, Reamo utilizes a self-hosted AI model. Unlike applications that rely on external third-party AI APIs for real-time processing, Reamo\'s AI infrastructure is hosted and managed directly within our secure environment. This allows us to process and summarize your data without sharing the raw content of your communications or personal data with third-party AI providers for model inference.',
+          'AI Data Processing and Transparency — To provide our core services, Reamo uses third-party AI and infrastructure providers to process and summarize your data. These providers process your data on our behalf under contractual data-protection terms, including data processing agreements (DPAs). We do not sell your data, and we do not permit these providers to train their models on your identifiable data.',
           'Account management — Creating and maintaining your Account, authenticating logins, managing subscriptions and billing.',
           'Communications — Sending transactional emails and SMS, responding to support requests, delivering product updates and notifications.',
           'Sales and marketing — Identifying and prioritizing outreach to website visitors who match our target customer profile, including via third-party visitor identification tools, and delivering relevant marketing communications.',
@@ -101,12 +101,11 @@ export default function PrivacyPolicy() {
         <LegalSubSection heading="4.1 Service Providers and Processors">
           <LegalP>
             We share information with third-party vendors who help us operate the Service, under
-            confidentiality obligations and data processing agreements. While we use a self-hosted AI
-            model for data processing and inference to ensure user transparency and data isolation,
-            we may use infrastructure and marketing providers for the following:
+            confidentiality obligations and data processing agreements. These providers include:
           </LegalP>
           <LegalList items={[
-            'Cloud infrastructure and hosting providers (e.g., to host our internal AI models)',
+            'Cloud infrastructure and hosting providers',
+            'AI model providers (for transcription, summarization, and related processing)',
             'Vector database and search infrastructure providers',
             'Payment processing providers',
             'Email and SMS delivery providers',
@@ -150,12 +149,11 @@ export default function PrivacyPolicy() {
         </LegalSubSection>
         <LegalSubSection heading="4.6 What We Do Not Do">
           <LegalP>
-            We do not sell your personal information for money. We do not allow third-party AI
-            providers to train their models on your identifiable data, as all AI inference is
-            performed via our self-hosted infrastructure. Our use of website visitor identification
-            technology as described in Section 4.2 may constitute &ldquo;sharing&rdquo; under certain state
-            privacy laws (e.g., for cross-context behavioral advertising purposes); you can opt out
-            as described in Sections 4.2 and 9.
+            We do not sell your personal information for money. We do not permit third-party AI
+            providers to train their models on your identifiable data. Our use of website visitor
+            identification technology as described in Section 4.2 may constitute &ldquo;sharing&rdquo; under
+            certain state privacy laws (e.g., for cross-context behavioral advertising purposes); you
+            can opt out as described in Sections 4.2 and 9.
           </LegalP>
         </LegalSubSection>
       </LegalSection>
@@ -198,12 +196,12 @@ export default function PrivacyPolicy() {
             You may request deletion of your Reamo account at any time from Settings.
           </LegalP>
           <LegalP>
-            Upon request, your account enters a 14-day grace period, during which your account is
+            Upon request, your account enters a 30-day grace period, during which your account is
             deactivated but your data is retained. If you log in and reverse the request during this
             window, your account and data will be restored.
           </LegalP>
           <LegalP>
-            After 14 days, Reamo will permanently delete your account and all associated data —
+            After 30 days, Reamo will permanently delete your account and all associated data —
             including calls, transcripts, summaries, contact records, and calendar event history —
             regardless of whether any linked transactions are still open. The transaction-lock
             described above does not apply to full account deletion.
