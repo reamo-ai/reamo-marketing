@@ -12,6 +12,7 @@ import CtaApply from '@/components/CtaApply';
 
 const SHOW_BLOCKS = false;
 const SHOW_INTEGRATIONS = false;
+const SHOW_QUOTE = false;
 
 export default function Home() {
   return (
@@ -50,7 +51,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <QuoteSection />
+        {SHOW_QUOTE ? <QuoteSection /> : null}
       </div>
       <PrivacySection />
       <CtaApply />
